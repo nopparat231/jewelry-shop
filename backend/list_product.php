@@ -86,7 +86,7 @@ $totalRows_prd = mysql_num_rows($prd);
               <td valign="top"><?php echo $row_prd['t_name']; ?></td>
               <td valign="top"><b> <?php echo $row_prd['p_name']; ?>
 
-              <a href="product_detail.php?p_id=<?php echo $row_prd['p_id'];?>&t_id=<?php echo $row_prd['t_id'];?>&act=edit" class="btn btn-info btn-xs"> รายละเอียด </a>
+              <a href="product_details.php?p_id=<?php echo $row_prd['p_id'];?>&t_id=<?php echo $row_prd['t_id'];?>&act=edit" class="btn btn-info btn-xs"> รายละเอียด </a>
               </b>
               <br>
               <?php // echo $row_prd['p_detial']; ?>

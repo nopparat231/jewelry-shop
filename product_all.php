@@ -30,36 +30,27 @@ if (!function_exists("GetSQLValueString")) {
 }
 
 mysql_select_db($database_condb);
-$query_prdg = "SELECT * FROM tbl_product ORDER BY rand()";
-$prdg = mysql_query( $query_prdg,$condb) or die(mysql_error());
-$row_prdg = mysql_fetch_assoc($prdg);
-$totalRows_prdg = mysql_num_rows($prdg);
+$query_prd = "SELECT * FROM tbl_product ORDER BY p_id DESC ";
+$prd = mysql_query( $query_prd,$condb) or die(mysql_error());
+$row_prd = mysql_fetch_assoc($prd);
+$totalRows_prd = mysql_num_rows($prd);
 ?>
 
 
 
-<?php include 'header.php';?>
-<!-- 
-Body Section 
--->
 <div class="row">
-	<!-- sidebar -->
-	<?php include 'sidebar.php';?>
-	<!-- end sidebar -->
-
-
 
 	<!-- -------------Show Product----------------->
 	<div class="span9">
 
 		<div class="well well-small">
-			<h3>สินค้าทั้งหมด </h3>
+			<h3>Our Products </h3>
 			<!-- <div class="row"> -->
 				<div class="row-fluid">
 
 					<ul class="thumbnails">
 
-						<?php if ($totalRows_prdg > 0) {?> <!-- ตรวจสอบถ้ามีสินค้าในดาต้าเบสมากกว่า 0 ชิ้น ให้แสดงสินค้า -->
+						<?php if ($totalRows_prd > 0) {?> <!-- ตรวจสอบถ้ามีสินค้าในดาต้าเบสมากกว่า 0 ชิ้น ให้แสดงสินค้า -->
 
 						<?php 
 						$n = 1;
@@ -72,12 +63,12 @@ Body Section
 
 					<li class="span4">
 						<div class="thumbnail">
-							<a href="product_details.php?p_id=<?php echo $row_prdg['p_id'];?>" class="overlay"></a>
-							<a class="zoomTool" href="product_details.php?p_id=<?php echo $row_prdg['p_id'];?>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-							<a href="product_details.php?p_id=<?php echo $row_prdg['p_id'];?>"><img src="pimg/<?php echo $row_prdg['p_img1'];?>" alt=""></a>
+							<a href="product_details.php?p_id=<?php echo $row_prd['p_id'];?>" class="overlay"></a>
+							<a class="zoomTool" href="product_details.php?p_id=<?php echo $row_prd['p_id'];?>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+							<a href="product_details.php?p_id=<?php echo $row_prd['p_id'];?>"><img src="pimg/<?php echo $row_prd['p_img1'];?>" alt=""></a>
 							<div class="caption cntr">
-								<p><?php echo $row_prdg['p_name']; ?></p>
-								<p><strong><?php echo number_format($row_prdg['p_price']); ?> บาท</strong></p>
+								<p><?php echo $row_prd['p_name']; ?></p>
+								<p><strong><?php echo number_format($row_prd['p_price']); ?> บาท</strong></p>
 								<h4><a class="shopBtn" href="cart.php" title="add to cart"> Add to cart </a></h4>
 								<div class="actionList">
 									<a class="pull-left" href="#">Add to Wish List </a> 
@@ -94,24 +85,12 @@ Body Section
 					}
 					$n += 1;
 
-				} while ($row_prdg = mysql_fetch_assoc($prdg)); ?>
-			<?php } mysql_free_result($prdg); ?>
+				} while ($row_prd = mysql_fetch_assoc($prd)); ?>
+			<?php } mysql_free_result($prd); ?>
 
 		</ul>
 	</div>
 </div>
-
-
 </div>
-</div>
-
-
 <!-- --------------End Show Product------------- -->
-
-<!--
-Footer
--->
-<?php include 'footer.php'; ?>
-<!--
-End Footer
--->
+</div>

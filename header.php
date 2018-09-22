@@ -1,17 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Twitter Bootstrap shopping cart</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="author" content="">
-	<!-- Bootstrap styles -->
-	<link href="assets/css/bootstrap.css" rel="stylesheet"/>
-	<!-- Customize styles -->
-	<link href="style.css" rel="stylesheet"/>
-	<!-- font awesome styles -->
-	<link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+ <?php
+ session_start();
+ ?>
+ 
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+ 	<meta charset="utf-8">
+ 	<title>JJ Shop</title>
+ 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 	<meta name="description" content="">
+ 	<meta name="author" content="">
+ 	<!-- Bootstrap styles -->
+ 	<link href="assets/css/bootstrap.css" rel="stylesheet"/>
+ 	<!-- Customize styles -->
+ 	<link href="style.css" rel="stylesheet"/>
+ 	<!-- font awesome styles -->
+ 	<link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 		<!--[if IE 7]>
 			<link href="css/font-awesome-ie7.min.css" rel="stylesheet">
 		<![endif]-->
@@ -82,17 +87,16 @@ Navigation Bar Section
 
 					?>
 
-					<li class="<?= ($activePage == 'index') ? 'active':''; ?>"><a href="index.php" >Home	</a></li>
+					<li class="<?= ($activePage == 'index') ? 'active':''; ?>"><a href="index.php" >หน้าหลัก</a></li>
 
-					<li class="<?= ($activePage == 'list-view') ? 'active':''; ?>"><a href="list-view.php" >List View</a></li>
+					<li class="<?= ($activePage == 'list-view') ? 'active':''; ?>"><a href="list-view.php" >มุมมอง รายการ</a></li>
 
-					<li class="<?= ($activePage == 'grid-view') ? 'active':''; ?>"><a href="grid-view.php" >Grid View</a></li>
+					<li class="<?= ($activePage == 'grid-view') ? 'active':''; ?>"><a href="grid-view.php" >มุมมอง ตาราง</a></li>
 
-					<li class="<?= ($activePage == 'three-col') ? 'active':''; ?>"><a href="three-col.php" >Three Column</a></li>
+					<li class="<?= ($activePage == 'three-col') ? 'active':''; ?>"><a href="three-col.php" >มุมมอง 3 คอลัม</a></li>
 
-					<li class="<?= ($activePage == 'four-col') ? 'active':''; ?>"><a href="four-col.php" >Four Column</a></li>
+					<li class="<?= ($activePage == 'four-col') ? 'active':''; ?>"><a href="four-col.php" >มุมมอง 4 คอลัม</a></li>
 
-					<li class="<?= ($activePage == 'general') ? 'active':''; ?>"><a href="general.php" >General Content</a></li>
 				</ul>
 				<form action="#" class="navbar-search pull-left">
 					<input type="text" placeholder="Search" class="search-query span2">
@@ -109,10 +113,8 @@ Navigation Bar Section
 									<input type="password" class="span2" id="inputPassword" placeholder="Password">
 								</div>
 								<div class="control-group">
-									<label class="checkbox">
-										<input type="checkbox"> Remember me
-									</label>
 									<button type="submit" class="shopBtn btn-block">Sign in</button>
+									<a href="#">Forget password?</a>
 								</div>
 							</form>
 						</div>

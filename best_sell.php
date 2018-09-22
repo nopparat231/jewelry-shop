@@ -30,7 +30,7 @@ if (!function_exists("GetSQLValueString")) {
 }
 
 mysql_select_db($database_condb);
-$query_prdg = "SELECT * FROM tbl_product ORDER BY rand()";
+$query_prdg = "SELECT * FROM tbl_product ORDER BY p_view DESC ";
 $prdg = mysql_query( $query_prdg,$condb) or die(mysql_error());
 $row_prdg = mysql_fetch_assoc($prdg);
 $totalRows_prdg = mysql_num_rows($prdg);
@@ -53,7 +53,7 @@ Body Section
 	<div class="span9">
 
 		<div class="well well-small">
-			<h3>สินค้าทั้งหมด </h3>
+			<h3>สินค้าขายดี </h3>
 			<!-- <div class="row"> -->
 				<div class="row-fluid">
 
