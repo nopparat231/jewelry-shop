@@ -75,11 +75,16 @@ include 'header.php';?>
 						<h4>สินค้าคงเหลือ <?php echo $row_prdt['p_qty']; ?> <?php echo $row_prdt['p_unit']; ?></h4>
 						<br>
 
+
 						<button type="submit" name="act" value="add" class="shopBtn"><span class=" icon-shopping-cart"></span> Add to cart</button>
+						<input  name="p_id" value="<?php echo $p_id;?>" style="visibility:hidden"></input>
 					</form>
 				</div>
 			</div>
-			<hr class="softn clr"/>
+
+
+			
+			<hr class="softn clr" />
 
 
 			<ul id="productDetail" class="nav nav-tabs">

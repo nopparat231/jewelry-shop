@@ -78,7 +78,7 @@ Body Section
 							<div class="caption cntr">
 								<p><?php echo $row_prdg['p_name']; ?></p>
 								<p><strong><?php echo number_format($row_prdg['p_price']); ?> บาท</strong></p>
-								<h4><a class="shopBtn" href="cart.php" title="add to cart"> Add to cart </a></h4>
+								<h4><a class="shopBtn" href="cart.php?p_id=<?php echo $row_prdg['p_id'];?>&act=add" title="add to cart"> Add to cart </a></h4>
 								<div class="actionList">
 									<a class="pull-left" href="#">Add to Wish List </a> 
 									<a class="pull-left" href="#"> Add to Compare </a>

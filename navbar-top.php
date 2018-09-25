@@ -8,12 +8,28 @@
 					<a href="#"><span class="icon-youtube"></span></a>
 					<a href="#"><span class="icon-tumblr"></span></a>
 				</div>
-				<?php 
-					
-					$activePage = basename($_SERVER['PHP_SELF'], ".php");
-					
 
-					?>
+		
+				<?php 
+
+				$activePage = basename($_SERVER['PHP_SELF'], ".php");
+
+
+
+				if (isset($_SESSION['shopping_cart'])) {
+					$meQty = 0;
+					foreach ($_SESSION['shopping_cart'] as $meItem) {
+						$meQty = $meQty + $meItem;
+					}
+				} else {
+					$meQty = 0;
+				}
+
+
+
+
+
+				?>
 				<a href="index.php" class="<?= ($activePage == 'index') ? 'active':''; ?>""> <span class="icon-home"></span> Home</a> 
 
 				<a href="#" ><span class="icon-user"></span> My Account</a> 
@@ -22,7 +38,7 @@
 
 				<a href="contact.php" class="<?= ($activePage == 'contact') ? 'active':''; ?>""><span class="icon-envelope"></span> Contact us</a>
 
-				<a href="cart.php" class="<?= ($activePage == 'cart') ? 'active':''; ?>""><span class="icon-shopping-cart"></span> 2 Item(s) - <span class="badge badge-warning"> $448.42</span></a>
+				<a href="cart.php" class="<?= ($activePage == 'cart') ? 'active':''; ?>""><span class="icon-shopping-cart"></span> <span class="badge badge-warning"><?php echo $meQty; ?> Item(s)</span></a>
 
 			</div>
 		</div>

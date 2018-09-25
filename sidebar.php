@@ -50,13 +50,14 @@ $totalRows_typeprd = mysql_num_rows($typeprd);
 
 			<!-- สิ้นสุดแถบด้านข้าง -->
 
+
 			<li style="border:0"> &nbsp;</li>
 
-			<li> <a class="totalInCart" href="cart.php"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;">$448.42</span></strong></a></li>
+			<li> <a class="totalInCart" href="cart.php"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;"><?php echo $meQty; ?></span></strong></a></li>
 		</ul>
 	</div>
 
-	<?php 
+	<?php
 
 mysql_select_db($database_condb);
 $query_prd = "SELECT * FROM tbl_product ORDER BY p_view desc limit 0,4";
