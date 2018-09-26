@@ -102,23 +102,50 @@ Navigation Bar Section
 					<input type="text" placeholder="Search" class="search-query span2">
 				</form>
 				<ul class="nav pull-right">
-					<li class="dropdown">
-						<a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="icon-lock"></span> Login <b class="caret"></b></a>
-						<div class="dropdown-menu">
-							<form class="form-horizontal loginFrm">
-								<div class="control-group">
-									<input type="text" class="span2" id="inputEmail" placeholder="Email">
-								</div>
-								<div class="control-group">
-									<input type="password" class="span2" id="inputPassword" placeholder="Password">
-								</div>
-								<div class="control-group">
-									<button type="submit" class="shopBtn btn-block">Sign in</button>
-									<a href="#">Forget password?</a>
-								</div>
-							</form>
-						</div>
-					</li>
+					<?php
+
+					if(isset($_SESSION['MM_Username']) != ''){
+
+
+						?>
+
+						<li class="dropdown">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="icon-user"></span> โปรไฟล์ <?php echo $_SESSION['MM_Username']; ?><b class="caret"></b></a>
+							<ul class="dropdown-menu">
+
+								<li><a  tabindex="-1" href="#">รายการสั่งซื้อ</a></li>
+								
+
+								<li><a  tabindex="-1" href="#">แก้ไขข้อมูลส่วนตัว</a></li>
+								
+								
+								<li><a  tabindex="-1" href="logout.php">ออกจากระบบ</a></li>
+
+
+							</ul>
+						</li>
+					<?php }else{?>
+						<li class="dropdown">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="icon-lock"></span> Login <b class="caret"></b></a>
+
+							<?php include 'login_db.php' ?>
+
+							<div class="dropdown-menu">
+								<form class="form-horizontal loginFrm" action="<?php echo $loginFormAction; ?>" method="POST" id="login">
+									<div class="control-group">
+										<input type="text" class="span2" name="mem_username" id="mem_username" placeholder="ชื่อผู้ใช้">
+									</div>
+									<div class="control-group">
+										<input type="password" class="span2" name="mem_password"  id="mem_password" placeholder="รหัสผ่าน" >
+									</div>
+									<div class="control-group">
+										<button type="submit" class="shopBtn btn-block">Sign in</button>
+										<a href="#">Forget password?</a>
+									</div>
+								</form>
+							</div>
+						</li>
+					<?php } ?>
 				</ul>
 			</div>
 		</div>

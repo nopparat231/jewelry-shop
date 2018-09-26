@@ -2,6 +2,9 @@
 <!-- sidebar -->
 <?php include 'sidebar.php';?>
 <!-- end sidebar -->
+<?php 
+ session_start();
+include 'login_db.php'; ?>
 
 	<div class="span9">
     <ul class="breadcrumb">
@@ -12,38 +15,22 @@
 	<hr class="soft"/>
 	
 	<div class="row">
-		<div class="span4">
-			<div class="well">
-			<h5>CREATE YOUR ACCOUNT</h5><br/>
-			Enter your e-mail address to create an account.<br/><br/><br/>
-			<form>
-			  <div class="control-group">
-				<label class="control-label" for="inputEmail">E-mail address</label>
-				<div class="controls">
-				  <input class="span3"  type="text" placeholder="Email">
-				</div>
-			  </div>
-			  <div class="controls">
-			  <button type="submit" class="btn block">Create Your Account</button>
-			  </div>
-			</form>
-		</div>
-		</div>
+	
 		<div class="span1"> &nbsp;</div>
 		<div class="span4">
 			<div class="well">
 			<h5>ALREADY REGISTERED ?</h5>
-			<form>
+			<form name="formlogin" action="<?php echo $loginFormAction; ?>" method="POST" id="login">
 			  <div class="control-group">
-				<label class="control-label" for="inputEmail">Email</label>
+				<label class="control-label" for="inputEmail">Username</label>
 				<div class="controls">
-				  <input class="span3"  type="text" placeholder="Email">
+				  <input class="span3"  type="text" name="mem_username" id="mem_username" placeholder="ชื่อผู้ใช้" >
 				</div>
 			  </div>
 			  <div class="control-group">
 				<label class="control-label" for="inputPassword">Password</label>
 				<div class="controls">
-				  <input type="password" class="span3" placeholder="Password">
+				  <input type="password" class="span3"  name="mem_password"  id="mem_password" placeholder="รหัสผ่าน" >
 				</div>
 			  </div>
 			  <div class="control-group">

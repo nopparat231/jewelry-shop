@@ -29,16 +29,7 @@ $totalRows_prd = mysql_num_rows($prd);
 							<a href="product_details.php?p_id=<?php echo $row_prd['p_id'];?>" class="overlay"></a>
 							<a class="zoomTool" href="product_details.php?p_id=<?php echo $row_prd['p_id'];?>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
 							<a href="product_details.php?p_id=<?php echo $row_prd['p_id'];?>"><img src="pimg/<?php echo $row_prd['p_img1'];?>" alt=""></a>
-							<div class="caption cntr">
-								<p><?php echo $row_prd['p_name']; ?></p>
-								<p><strong><?php echo number_format($row_prd['p_price']); ?> บาท</strong></p>
-								<h4><a class="shopBtn" href="cart.php" title="add to cart"> Add to cart </a></h4>
-								<div class="actionList">
-									<a class="pull-left" href="#">Add to Wish List </a> 
-									<a class="pull-left" href="#"> Add to Compare </a>
-								</div> 
-								<br class="clr">
-							</div>
+							<?php include 'outstock.php'; ?>
 						</div>
 					</li>
 

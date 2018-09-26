@@ -26,9 +26,6 @@
 				}
 
 
-
-
-
 				?>
 				<a href="index.php" class="<?= ($activePage == 'index') ? 'active':''; ?>""> <span class="icon-home"></span> Home</a> 
 
