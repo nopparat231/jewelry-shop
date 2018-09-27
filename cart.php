@@ -59,7 +59,7 @@ Body Section
       <li class="active">Check Out</li>
     </ul>
     <div class="well well-small">
-      <h1>Check Out <small class="pull-right"> <?php //echo $item; ?> Items are in the cart </small></h1>
+      <h1>รายการสินค้า <small class="pull-right"> สินค้า <?php echo $meQty; ?> ชิ้นในคระกล้า</small></h1>
       <hr class="soften"/>	
 
       <table class="table table-bordered table-condensed">
@@ -70,9 +70,9 @@ Body Section
 
 
             <th>Unit price</th>
-
-            <th>Qty </th>
             <th>Ems</th>
+            <th>Qty </th>
+            
             <th>Total</th>
           </tr>
         </thead>
@@ -102,9 +102,9 @@ Body Section
                 <td><?php echo $row['p_price']; ?></td>
                 <td><?php echo $row['p_price']; ?></td>
                 <td>
-                 <input class="span1" style="max-width:34px" placeholder="1" id="appendedInputButtons" size="16" type="text" value="<?php echo $p_qty; ?>">
+
                  <div class="input-append">
-                   <button class="btn btn-mini" type="button">-</button><button class="btn btn-mini" type="button"> + </button><button class="btn btn-mini btn-danger" type="button"><a href="cart.php?p_id=<?php echo $p_id; ?>&act=remove"><span class="icon-remove"></span></a></button>
+                   <button class="btn" type="button"  style="max-width:20px">-</button> <input class="span1" style="max-width:20px" placeholder="1" id="appendedInputButtons" size="16" type="text" value="<?php echo $p_qty; ?>"/><button class="btn" type="button" style="max-width:20px"> + </button><button class="btn btn-danger" type="button"><a href="cart.php?p_id=<?php echo $p_id; ?>&act=remove"><span class="icon-remove"></span></a></button>
                  </div>
                </td>
                <td><?php echo number_format($sum); ?></td>
@@ -124,38 +124,11 @@ Body Section
       </table><br/>
     <?php  } ?>
 
-  <table class="table table-bordered">
-   <tbody>
-    <tr><td>ESTIMATE YOUR SHIPPING & TAXES</td></tr>
-    <tr> 
-     <td>
-       <form class="form-horizontal">
-         <div class="control-group">
-          <label class="span2 control-label" for="inputEmail">Country</label>
-          <div class="controls">
-            <input type="text" placeholder="Country">
-          </div>
-        </div>
-        <div class="control-group">
-          <label class="span2 control-label" for="inputPassword">Post Code/ Zipcode</label>
-          <div class="controls">
-            <input type="password" placeholder="Password">
-          </div>
-        </div>
-        <div class="control-group">
-          <div class="controls">
-            <button type="submit" class="shopBtn">Click to check the price</button>
-          </div>
-        </div>
-      </form> 
-    </td>
-  </tr>
-</tbody>
-</table>		
-<a href="products.php" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Continue Shopping </a>
-<a href="login.php" class="shopBtn btn-large pull-right">Next <span class="icon-arrow-right"></span></a>
 
-</div>
+    <a href="products.php" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Continue Shopping </a>
+    <a href="order.php" class="shopBtn btn-large pull-right">Next <span class="icon-arrow-right"></span></a>
+
+  </div>
 </div>
 </div>
 
