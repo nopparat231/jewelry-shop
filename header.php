@@ -28,7 +28,8 @@
 		<!-- Favicons -->
 		<link rel="shortcut icon" href="assets/ico/favicon.ico">
 	</head>
-	<body>
+	<body  id="top" >
+
 <!-- 
 	Upper Header Section 
 -->
@@ -113,13 +114,12 @@ Navigation Bar Section
 							<a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="icon-user"></span> โปรไฟล์ <?php echo $_SESSION['MM_Username']; ?><b class="caret"></b></a>
 							<ul class="dropdown-menu">
 
-								<li><a  tabindex="-1" href="#">รายการสั่งซื้อ</a></li>
-								
+								<li><a href="my_order.php?page=mycart"><span class="icon-chevron-right"></span> รายการสั่งซื้อทั้งหมด</a></li>
 
-								<li><a  tabindex="-1" href="#">แก้ไขข้อมูลส่วนตัว</a></li>
-								
-								
-								<li><a  tabindex="-1" href="logout.php">ออกจากระบบ</a></li>
+								<li><a href="my_order.php?mem_id=<?php echo $row_pf['mem_id']; ?>"><span class="icon-chevron-right" ></span> แก้ไขข้อมูลส่วนตัว</a></li>
+
+								<li><a href="logout.php" class="list-group-item list-group-item-danger"><span class="icon-chevron-right"></span> ออกจากระบบ</a></li>
+
 
 
 							</ul>

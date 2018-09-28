@@ -76,7 +76,7 @@ Body Section
             <?php
             require_once('Connections/condb.php');
             $total = 0;
-            if ($totalRows_buyer > 0) {
+            if ($totalRows_buyer > 0 & isset($_SESSION['shopping_cart']) <> '') {
 
               foreach($_SESSION['shopping_cart'] as $p_id=>$p_qty)
               {

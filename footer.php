@@ -1,6 +1,7 @@
 <!-- 
 Clients 
 -->
+
 <section class="our_client">
 	<hr class="soften"/>
 	<h4 class="title cntr"><span class="text">Manufactures</span></h4>
@@ -79,7 +80,7 @@ accompanied by English versions from the 1914 translation by H. Rackham.
 	<span>Copyright &copy; 2013<br> bootstrap ecommerce shopping template</span>
 </div>
 </div>
-<a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>
+<a class="gotop" id="gotop"><i class="icon-double-angle-up"></i></a>
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>
 	<script src="assets/js/bootstrap.min.js"></script>
@@ -88,3 +89,11 @@ accompanied by English versions from the 1914 translation by H. Rackham.
     <script src="assets/js/shop.js"></script>
   </body>
 </html>
+<script type="text/javascript">
+	jQuery("#gotop").click(function (){
+        jQuery('html, body').animate({
+            scrollTop: jQuery('#top').offset().top
+        }, 1200);                          
+});
+
+</script>

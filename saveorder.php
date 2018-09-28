@@ -66,7 +66,7 @@ if($query1 && $query4){
 		unset($_SESSION['shopping_cart']);
 		echo "<script>";
 		echo "alert('บันทึกข้อมูลเรียบร้อยแล้ว');";
-		echo "window.location='my_order.php?order_id=$order_id$act=show-order';";
+		echo "window.location='my_order.php?order_id=$order_id';";
 		echo "</script>";
 	}
 }
@@ -76,7 +76,7 @@ else{
 	
 	echo "<script>";
 	echo "alert('บันทึกข้อมูลไม่สำเร็จ');";
-	echo "window.location='confirm_order.php';";
+	echo "window.location='cart.php';";
 	echo "</script>";
 }
 mysql_close($condb);
