@@ -3,13 +3,9 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">เทพเครื่องหนัง</a>
-       
+      <a class="navbar-brand" href="#">JJ Shop</a>
+
       </a>
     </div>
   </div>
 </nav>
-<br>
-<br>
-<br>
-<br>

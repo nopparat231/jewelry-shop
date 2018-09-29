@@ -6,20 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php include('h.php');?>
-
+ <?php include('menu.php');?>  
 
   </head>
   <body>
   <div class="container">
  <?php include('navbar.php');?>
   	<div class="row">
-    	<div class="col-md-2">
-       
-        <?php include('menu.php');?>        	 
-      </div>
+    	
       <div class="col-md-10">
         <h3 align="center"> เพิ่มรายการธนาคาร</h3>
-        <div class="table-responsive">
+        <div class="table">
         		<form action="add_bank_db.php"  method="post" enctype="multipart/form-data" name="Add_Product" id="Add_Product" >
 
   

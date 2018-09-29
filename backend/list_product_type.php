@@ -46,18 +46,17 @@ $totalRows_ptype = mysql_num_rows($ptype);
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php include('h.php');?>
     <?php include('datatable.php');?>
+
   </head>
   <body>
    <?php include('navbar.php');?>
+    <?php include('menu.php');?>
   <div class="container">
   
          
   
     <div class="row">
-    	<div class="col-md-2">
-       
-        <?php include('menu.php');?>
-      </div>
+    	
       <div class="col-md-10">
         <h3 align="center"> ประเภทสินค้า <a href="add_product_type.php" class="btn btn-primary"> เพิ่มประเภท </a> </h3>
         <table id="example" class="display" cellspacing="0" border="1">

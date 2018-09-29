@@ -29,7 +29,7 @@
 				?>
 				<a href="index.php" class="<?= ($activePage == 'index') ? 'active':''; ?>""> <span class="icon-home"></span> Home</a> 
 
-				<a href="#" ><span class="icon-user"></span> My Account</a> 
+				<a href="my_order.php?page=mycart" ><span class="icon-user"></span> My Account</a> 
 
 				<a href="register.php" class="<?= ($activePage == 'register') ? 'active':''; ?>""><span class="icon-edit"></span> Free Register </a> 
 

@@ -66,20 +66,17 @@ $totalRows_ptype = mysql_num_rows($ptype);
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php include('h.php');?>
     <?php include('datatable.php');?>
+    <?php include('menu.php');?>
+     <?php include('navbar.php');?>
   </head>
   <body>
   <div class="container">
-  <div class="row">
-         <?php include('navbar.php');?>
-   </div>
+
   	<div class="row">
-    	<div class="col-md-2">
-      
-        <?php include('menu.php');?>
-      </div>
-      <div class="col-md-6">
+    	
+      <div class="col-md-10">
         <h3 align="center"> เพิ่มประเภทสินค้า </h3>
-        <div class="table-responsive">
+        <div class="table">
         <form action="<?php echo $editFormAction; ?>" method="POST" name="ptype" id="ptype" class="form-horizontal">
         	<div class="form-group">
             	<div class="col-sm-3" align="right"> ประเภทสินค้า </div>

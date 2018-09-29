@@ -7,18 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php include('h.php');?>
   <?php include('datatable.php');?>
+   <?php include('menu.php');?>      
 </head>
 <body>
   <div class="container">
     <?php include('navbar.php');?>
     <div class="row">
-    	<div class="col-md-2">
-
-        <?php include('menu.php');?>        	 
-      </div>
+    	
       <div class="col-md-10">
         <h3 align="center">  เพิ่ม  Admin </h3>
-<div class="table-responsive">
+<div class="table">
         <form  name="register" action="add_admin_db.php" method="POST" id="register" class="form-horizontal">
          <div class="form-group">
            <div class="col-sm-2">  </div>

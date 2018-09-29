@@ -50,21 +50,21 @@ $totalRows_editmem = mysql_num_rows($editmem);
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php include('h.php');?>
     <?php include('datatable.php');?>
+     <?php include('menu.php');?>
   </head>
   <body>
+    <?php include('navbar.php');?>
   <div class="container">
-  <div class="row">
-         <?php include('navbar.php');?>
-   </div>
+  
     <div class="row">
       <div class="col-md-2">
      
         <br>
-        <?php include('menu.php');?>
+       
       </div>
         <div class="col-md-10">
         <h3 align="center">  แก้ไข  MEMBER  <?php include('edit-ok.php');?> </h3>
-<div class="table-responsive">
+<div class="table">
     <form  name="register" action="edit_mem_db.php" method="POST" id="register" class="form-horizontal">
        <div class="form-group">
        <div class="col-sm-2">  </div>

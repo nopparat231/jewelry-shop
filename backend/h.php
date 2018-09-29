@@ -5,7 +5,7 @@ session_start();
 	
 ?>    
     
-    <title>----</title>
+    <title>admin page</title>
     <!-- Bootstrap -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">

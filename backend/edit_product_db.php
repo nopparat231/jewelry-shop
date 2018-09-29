@@ -16,8 +16,10 @@ $p_name = $_POST['p_name'];
 $t_id = $_POST['t_id'];
 $p_detial = $_POST['p_detial'];
 $p_price = $_POST['p_price'];
-
+$promo = $_POST['promo'];
 $p_qty = $_POST['p_qty'];
+$p_size = $_POST['p_size'];
+$p_ems = $_POST['p_ems'];
 $p_unit = $_POST['p_unit'];
 $p_img11 = $_POST['p_img11'];
 $p_img22 = $_POST['p_img22'];
@@ -68,14 +70,19 @@ $upload2=$_FILES['p_img2']['name'];;
 
 	}
 
+// $discount = $p_price*$promo/100;
 
+// $p_price = $discount - $p_price;
 
 $sql ="UPDATE tbl_product SET
 		p_name='$p_name',
 		t_id='$t_id',
 		p_detial='$p_detial',
 		p_price='$p_price',
+		promo='$promo',
 		p_qty='$p_qty',
+		p_size='$p_size',
+		p_ems='$p_ems',
 		p_unit='$p_unit',
 		p_img1='$newname',
 		p_img2='$newname2'
