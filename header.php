@@ -116,7 +116,7 @@ Navigation Bar Section
 
 								<li><a href="my_order.php?page=mycart"><span class="icon-chevron-right"></span> รายการสั่งซื้อทั้งหมด</a></li>
 
-								<li><a href="my_order.php?mem_id=<?php echo $row_pf['mem_id']; ?>"><span class="icon-chevron-right" ></span> แก้ไขข้อมูลส่วนตัว</a></li>
+							
 
 								<li><a href="logout.php" class="list-group-item list-group-item-danger"><span class="icon-chevron-right"></span> ออกจากระบบ</a></li>
 

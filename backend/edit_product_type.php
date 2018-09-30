@@ -73,18 +73,15 @@ $totalRows_edittype = mysql_num_rows($edittype);
     <?php include('datatable.php');?>
   </head>
   <body>
+    <?php include('navbar.php');?>
+    <?php include('menu.php');?>
   <div class="container">
-  <div class="row">
-         <?php include('navbar.php');?>
-   </div>
+  
   	<div class="row">
-    	<div class="col-md-2">
-       
-        <?php include('menu.php');?>
-      </div>
+    
       <div class="col-md-6">
         <h3 align="center"> เพิ่มประเภทสินค้า </h3>
-        <div class="table-responsive">
+        <div class="table">
         <form action="<?php echo $editFormAction; ?>" method="POST" name="ptype" id="ptype" class="form-horizontal">
         	<div class="form-group">
             	<div class="col-sm-3" align="right"> ประเภทสินค้า </div>
