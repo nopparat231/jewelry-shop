@@ -280,15 +280,17 @@ if($status > 1){ }else{?>
         </tr>
 
       </table>
-  </div>
+  
 
-      <p align="center"><br />
+      <p align="center">
         <button type="submit" name="add" class="shopBtn"> บันทึก </button> 
+        <a href="?page=mycart"  type="submit " class="shopBtn pull-left">ชำระเงินภายหลัง</a>
 
       </p>
+      
 
     </form>
-
+</div>
   <?php } ?>
 
 

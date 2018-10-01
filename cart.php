@@ -1,54 +1,9 @@
 <?php include 'header.php';
-error_reporting(E_ALL ^ E_DEPRECATED);
-error_reporting( error_reporting() & ~E_NOTICE );
-
-?>
-
-
-<?php 
-@session_start();
-
-$p_id = $_GET['p_id'];
-$act = $_GET['act'];
-
-
-if($act == 'add' && !empty($p_id))
-{
-  if(!isset($_SESSION['shopping_cart']))
-  {
-    $_SESSION['shopping_cart'] = array();
-  }else{
-
-  }
-  if(isset($_SESSION['shopping_cart'][$p_id]))
-  {
-
-    $_SESSION['shopping_cart'][$p_id]++;
-
-  }else{
-    $_SESSION['shopping_cart'][$p_id]=1;
-  }
-
-}
-
-
-if($act == 'remove' && !empty($p_id))
-{
-  unset($_SESSION['shopping_cart'][$p_id]);
-}
-
-if($act == 'update')
-{
-  $amount_array = $_POST['amount'];
-  foreach($amount_array as $p_id => $amount)
-  {
-    $_SESSION['shopping_cart'][$p_id] = $amount;
-  }
-}
 
 
 ?>
 
+<?php include 'cart_session.php'; ?>
 <!-- 
 Body Section 
 -->
@@ -59,7 +14,7 @@ Body Section
       <li class="active">Check Out</li>
     </ul>
     <div class="well well-small">
-      <h1>รายการสินค้า <small class="pull-right"> สินค้า <?php echo $meQty; ?> ชิ้นในคระกล้า</small></h1>
+      <h1>รายการสินค้า</h1>
       <hr class="soften"/>	
 
       <table class="table table-bordered table-condensed">

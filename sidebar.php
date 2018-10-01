@@ -53,7 +53,7 @@ $totalRows_typeprd = mysql_num_rows($typeprd);
 
 			<li style="border:0"> &nbsp;</li>
 
-			<li> <a class="totalInCart" href="cart.php"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;"><?php echo $meQty; ?></span></strong></a></li>
+			<li> <a class="totalInCart" href="cart.php"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;"><?php echo $cart_count; ?></span></strong></a></li>
 		</ul>
 	</div>
 
