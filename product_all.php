@@ -29,6 +29,7 @@ if (!function_exists("GetSQLValueString")) {
 	}
 }
 
+
 mysql_select_db($database_condb);
 $query_prd = "SELECT * FROM tbl_product ORDER BY p_id DESC ";
 $prd = mysql_query( $query_prd,$condb) or die(mysql_error());

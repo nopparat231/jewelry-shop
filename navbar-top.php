@@ -14,19 +14,43 @@
 
 				$activePage = basename($_SERVER['PHP_SELF'], ".php");
 
-include 'cart_session.php';
+				include 'cart_session.php';
 				$cart_count = 0;
 				if(!empty($_SESSION["shopping_cart"])) {
 					$cart_count = count(array_keys($_SESSION["shopping_cart"]));
 				}
-					?>
-					
+				$total = 0;
+				if(!empty($_SESSION['shopping_cart']))
+				{
+					require_once('Connections/condb.php'); 
+					foreach($_SESSION['shopping_cart'] as $p_id=>$p_qty)
+					{	
+						$sql = "select * from tbl_product where p_id=$p_id";
+						$query = mysql_query($sql, $condb );
+						$row = mysql_fetch_array($query);
+						$sum = $row['p_price'] * $p_qty;
+						$total += $sum;
+
+						
+					}
+				}
+
+
+				?>
+
 				
 
 
-					<a href="index.php" class="<?= ($activePage == 'index') ? 'active':''; ?>""> <span class="icon-home"></span> Home</a> 
+				<a href="index.php" class="<?= ($activePage == 'index') ? 'active':''; ?>""> <span class="icon-home"></span> Home</a> 
+
+				<?php
+
+				if(isset($_SESSION['MM_Username']) != ''){ 	?>
 
 					<a href="my_order.php?page=mycart" ><span class="icon-user"></span> My Account</a> 
+
+				<?php }?>
+
 
 					<a href="register.php" class="<?= ($activePage == 'register') ? 'active':''; ?>""><span class="icon-edit"></span> Free Register </a> 
 

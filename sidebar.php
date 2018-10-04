@@ -43,7 +43,7 @@ $totalRows_typeprd = mysql_num_rows($typeprd);
 
 			<?php do { ?>
 
-				<li><a href="index.php?t_id=<?php echo $row_typeprd['t_id'];?>&type_name=<?php echo $row_typeprd['t_name'];?>"><span class="icon-chevron-right"></span><?php echo $row_typeprd['t_name']; ?></a></li>
+				<li><a href="list-type.php?t_id=<?php echo $row_typeprd['t_id'];?>&type_name=<?php echo $row_typeprd['t_name'];?>"><span class="icon-chevron-right"></span><?php echo $row_typeprd['t_name']; ?></a></li>
 
 			<?php } while ($row_typeprd = mysql_fetch_assoc($typeprd)); ?>
 
@@ -53,7 +53,7 @@ $totalRows_typeprd = mysql_num_rows($typeprd);
 
 			<li style="border:0"> &nbsp;</li>
 
-			<li> <a class="totalInCart" href="cart.php"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;"><?php echo $cart_count; ?></span></strong></a></li>
+			<li> <a class="totalInCart" href="cart.php"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;"><?php echo $total; ?></span></strong></a></li>
 		</ul>
 	</div>
 

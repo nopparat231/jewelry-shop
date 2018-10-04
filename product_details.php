@@ -40,10 +40,10 @@ include 'header.php';?>
 					<div id="myCarousel" class="carousel slide cntr">
 						<div class="carousel-inner">
 							<div class="item active">
-								<a href="#"> <img src="pimg/<?php echo $row_prdt['p_img1'];?>" alt="" style="width:100%"></a>
+								<a href="pimg/<?php echo $row_prdt['p_img1'];?>"> <img src="pimg/<?php echo $row_prdt['p_img1'];?>" alt="" style="width:100%"></a>
 							</div>
 							<div class="item">
-								<a href="#"> <img src="pimg/<?php echo $row_prdt['p_img2'];?>" alt="" style="width:100%"></a>
+								<a href="pimg/<?php echo $row_prdt['p_img2'];?>"> <img src="pimg/<?php echo $row_prdt['p_img2'];?>" alt="" style="width:100%"></a>
 							</div>
 
 						</div>
@@ -61,14 +61,9 @@ include 'header.php';?>
 							<label class="control-label"><span>ราคา <b>[ <?php echo $row_prdt['p_price']; ?> ] </b> บาท</span></label>
 
 						</div>
-						<h4> สี : <a href="#"> ชมพู</a></h4>
 						
-						<?php  include 't_id.php';
-
-
-						?>
-
-						<h4> ประเภท : <a href="index.php?t_id=<?php echo $row_typeprd['t_id'];?>" ><?php echo $row_typeprd['t_name'];?></a></h4><br /><br />
+						
+						<br /><br />
 
 						<h5><span class="icon-eye-open"></span> <?php echo $row_prdt['p_view']; ?></h5>
 

@@ -1,3 +1,5 @@
+<?php include 'config_page.php'; ?>
+
 <div class="well np">
 		<div id="myCarousel" class="carousel slide homCar">
             <div class="carousel-inner">

@@ -26,7 +26,7 @@
 		<![endif]-->
 
 		<!-- Favicons -->
-		<link rel="shortcut icon" href="assets/ico/favicon.ico">
+		<link rel="shortcut icon" href="assets/ico/favicon.ico" >
 	</head>
 	<body  id="top" >
 
@@ -45,25 +45,21 @@ Lower Header Section
 			<div class="span4">
 				<h1>
 					<a class="logo" href="index.php"><span>Twitter Bootstrap ecommerce template</span> 
-						<img src="assets/img/logo-bootstrap-shoping-cart.png" alt="bootstrap sexy shop">
+						<img src="assets/img/logo-bootstrap-shoping-cart.png" alt="bootstrap sexy shop" >
 					</a>
 				</h1>
 			</div>
 			<div class="span4">
-				<div class="offerNoteWrapper">
-					<h1 class="dotmark">
-						<i class="icon-cut"></i>
-						Twitter Bootstrap shopping cart HTML template is available @ $14
-					</h1>
-				</div>
+				
 			</div>
 			<div class="span4 alignR">
-				<p><br> <strong> Support (24/7) :  0800 1234 678 </strong><br><br></p>
-				<span class="btn btn-mini">[ 2 ] <span class="icon-shopping-cart"></span></span>
-				<span class="btn btn-warning btn-mini">$</span>
-				<span class="btn btn-mini">&pound;</span>
-				<span class="btn btn-mini">&euro;</span>
-			</div>
+				<p><br>
+				 <strong> Support (24/7) :  0800 1234 678 </strong><br>
+				 <strong> 					The standard  used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 </strong><br>
+
+
+					<br></p>
+				
 		</div>
 	</header>
 
@@ -99,8 +95,8 @@ Navigation Bar Section
 					<li class="<?= ($activePage == 'four-col') ? 'active':''; ?>"><a href="four-col.php" >มุมมอง 4 คอลัม</a></li>
 
 				</ul>
-				<form action="#" class="navbar-search pull-left">
-					<input type="text" placeholder="Search" class="search-query span2">
+				<form action="listprd_by_q.php" class="navbar-search pull-left">
+					<input type="text" placeholder="Search" name="q" class="search-query span2">
 				</form>
 				<ul class="nav pull-right">
 					<?php
