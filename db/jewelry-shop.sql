@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 29, 2018 at 11:53 AM
+-- Generation Time: Oct 05, 2018 at 04:44 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 5.6.36
 
@@ -47,7 +47,7 @@ CREATE TABLE `tbl_admin` (
 INSERT INTO `tbl_admin` (`admin_id`, `admin_user`, `admin_pass`, `admin_name`, `admin_address`, `admin_tel`, `admin_email`, `status`, `date_save`) VALUES
 (1, '1', '1', 'admin', 'test add', '0234567890', 'e-mail@admin.com', 'admin', '2017-08-30 01:57:41'),
 (2, 'staff', '2', 'staff', 'test staff', '0123456789', 'e-mail@staff.com', 'admin', '2018-01-25 04:13:06'),
-(10, 'jjjj', 'jjjj', 'jjjj', 'jjjj', '0902020202', 'dsasaf@hotmail.com', 'admin ', '2018-08-30 13:05:35'),
+(10, 'jjjj', 'jjjj', 'jjjj', 'jjjj', '0902020202', 'dsasaf@hotmail.com', 'admin', '2018-08-30 13:05:35'),
 (11, 'fgfgfgfg', 'gfgfgfg', 'fgfgfg', 'fgfgfg', '0902020202', 'dsasaf@hotmail.com', 'staff', '2018-08-31 16:30:32');
 
 -- --------------------------------------------------------
@@ -74,6 +74,26 @@ INSERT INTO `tbl_bank` (`b_id`, `b_number`, `b_name`, `b_type`, `b_owner`, `bn_n
 (2, '365-3032132-3212', 'กรุงไทย', 'ออมทรัพ', 'สมชาย ใจดี', 'พระสมุทรเจดีย์', 'imgb87159464020180819_000254.jpg'),
 (3, '543-1534-54634-212', 'กสิกรไทย', 'ออมทรัพย์', 'มงคล ศรีสุข', 'พระสมุทรเจดีย์', 'imgb197504342620180818_223441.png'),
 (4, '445-354-3232-212', 'ไทยพาณิชย์', 'ออมทรัพย์', 'สมบูรณ์ มั่งมี', 'พระสมุทรเจดีย์', 'imgb133828463220180818_223607.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_carousel`
+--
+
+CREATE TABLE `tbl_carousel` (
+  `carousel_id` int(50) NOT NULL,
+  `carousel_img_1` varchar(200) NOT NULL,
+  `carousel_img_2` varchar(200) NOT NULL,
+  `carousel_img_3` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_carousel`
+--
+
+INSERT INTO `tbl_carousel` (`carousel_id`, `carousel_img_1`, `carousel_img_2`, `carousel_img_3`) VALUES
+(4, 'img1113616315020181005_204216.png', 'img2157582531720181005_204428.png', 'img3157582531720181005_204428.png');
 
 -- --------------------------------------------------------
 
@@ -145,7 +165,9 @@ CREATE TABLE `tbl_order` (
 INSERT INTO `tbl_order` (`order_id`, `mem_id`, `name`, `address`, `email`, `phone`, `order_status`, `pay_slip`, `b_name`, `b_number`, `pay_date`, `pay_amount`, `postcode`, `order_date`) VALUES
 (0000000001, 17, 'ddd', 'ddd', '23.noop@gmail.com', 2147483647, 3, '76364182020180928_141119.jpg', 'กสิกรไทย', '543-1534-54634-212', '2018-09-28', 4, 'TH21231545213', '2018-09-27 15:32:44'),
 (0000000007, 17, 'ddd', 'ddd', '23.noop@gmail.com', 2147483647, 1, '', '', '', '0000-00-00', 0, '', '2018-09-28 13:09:44'),
-(0000000010, 17, 'ddd', 'ddd 633 dfdf', '23.noop@gmail.com', 2147483647, 2, '202473542220180928_155646.jpg', 'ไทยพาณิชย์', '445-354-3232-212', '2018-09-28', 1, '', '2018-09-28 15:56:18');
+(0000000010, 17, 'ddd', 'ddd 633 dfdf', '23.noop@gmail.com', 2147483647, 2, '202473542220180928_155646.jpg', 'ไทยพาณิชย์', '445-354-3232-212', '2018-09-28', 1, '', '2018-09-28 15:56:18'),
+(0000000011, 17, 'ddd', 'ddd 633 dfdf', '23.noop@gmail.com', 2147483647, 2, '100596596520180929_211913.jpg', 'กสิกรไทย', '543-1534-54634-212', '2018-09-29', 1, '', '2018-09-29 21:17:19'),
+(0000000012, 17, 'ddd', 'ddd 633 dfdf', '23.noop@gmail.com', 2147483647, 1, '', '', '', '0000-00-00', 0, '', '2018-09-30 10:42:49');
 
 -- --------------------------------------------------------
 
@@ -169,7 +191,12 @@ CREATE TABLE `tbl_order_detail` (
 INSERT INTO `tbl_order_detail` (`d_id`, `order_id`, `p_id`, `p_name`, `p_c_qty`, `total`) VALUES
 (1, 1, 48, 'แหวน Biker Z1 clear', 3, 4882),
 (7, 7, 51, 'แหวน Biker Z1 clear', 1, 1665),
-(8, 10, 49, 'แหวน Biker Z1 clear', 1, 1665);
+(8, 10, 49, 'แหวน Biker Z1 clear', 1, 1665),
+(9, 11, 55, 'แหวน Biker Z1 clear', 1, 1665),
+(10, 12, 56, 'PROMISE RING EMERALD BAND', 1, 34368),
+(11, 12, 49, 'แหวน Biker Z1 clear', 6, 9990),
+(12, 12, 51, 'แหวน Biker Z1 clear', 4, 6660),
+(13, 12, 52, 'แหวน Biker Z1 clear', 2, 3330);
 
 -- --------------------------------------------------------
 
@@ -190,6 +217,7 @@ CREATE TABLE `tbl_product` (
   `p_qty` int(11) DEFAULT NULL,
   `p_ems` int(50) NOT NULL,
   `p_size` varchar(50) NOT NULL,
+  `promo` varchar(50) NOT NULL,
   `date_save` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -197,15 +225,14 @@ CREATE TABLE `tbl_product` (
 -- Dumping data for table `tbl_product`
 --
 
-INSERT INTO `tbl_product` (`p_id`, `t_id`, `p_name`, `p_detial`, `p_price`, `p_unit`, `p_img1`, `p_img2`, `p_view`, `p_qty`, `p_ems`, `p_size`, `date_save`) VALUES
-(55, 13, 'แหวน Biker Z1 clear', '<p><strong>หมวกกันน็อคหนัง Biker Z1 clear</strong><br />\r\nหมวกหนังดำ หนาอย่างดี ปลอดภัย หุ้มอย่างดี<br />\r\nสินค้าพรีเมียม โครตตตต เท่ !!!! หมวกหนังมีใบเดียวเท่านั้น!!!</p>\r\n\r\n<p><strong>หมวกกันน็อคหนัง Biker Z1 clear</strong><br />\r\nใครโชคดีจองเร็ว จัดไปครับ ดีไซน์โครตหล่อ<br />\r\n<strong>แถม หน้ากาก Biker Z1 และ แว่นกันลม</strong></p>\r\n\r\n<p><strong>ราคาพิเศษ 15,900บาท&nbsp; จากปกติ 21,000บ ของใหม่เอี่ยม มือหนึ่ง !!&nbsp;</strong><br />\r\nสินค้าพรีเมียม ของดี มีจำนวนจำกัด<br />\r\nโปรโมชั่นราคาพิเศษ ส่งฟรี&nbsp;ติดต่อมาได้เลยครับใบสุดท้าย</p>\r\n', 1521, 'วง', 'img1204634697820180910_200745.jpg', 'img2204634697820180910_200745.jpg', 62, 12, 35, 'm', '2018-09-11 17:00:00'),
-(54, 13, 'แหวน Biker Z1 clear', '<p><strong>หมวกกันน็อคหนัง Biker Z1 clear</strong><br />\r\nหมวกหนังดำ หนาอย่างดี ปลอดภัย หุ้มอย่างดี<br />\r\nสินค้าพรีเมียม โครตตตต เท่ !!!! หมวกหนังมีใบเดียวเท่านั้น!!!</p>\r\n\r\n<p><strong>หมวกกันน็อคหนัง Biker Z1 clear</strong><br />\r\nใครโชคดีจองเร็ว จัดไปครับ ดีไซน์โครตหล่อ<br />\r\n<strong>แถม หน้ากาก Biker Z1 และ แว่นกันลม</strong></p>\r\n\r\n<p><strong>ราคาพิเศษ 15,900บาท&nbsp; จากปกติ 21,000บ ของใหม่เอี่ยม มือหนึ่ง !!&nbsp;</strong><br />\r\nสินค้าพรีเมียม ของดี มีจำนวนจำกัด<br />\r\nโปรโมชั่นราคาพิเศษ ส่งฟรี&nbsp;ติดต่อมาได้เลยครับใบสุดท้าย</p>\r\n', 1521, 'วง', 'img1204634697820180910_200745.jpg', 'img2204634697820180910_200745.jpg', 11, 12, 35, 'm', '2018-09-11 17:00:00'),
-(53, 13, 'แหวน Biker Z1 clear', '<p><strong>หมวกกันน็อคหนัง Biker Z1 clear</strong><br />\r\nหมวกหนังดำ หนาอย่างดี ปลอดภัย หุ้มอย่างดี<br />\r\nสินค้าพรีเมียม โครตตตต เท่ !!!! หมวกหนังมีใบเดียวเท่านั้น!!!</p>\r\n\r\n<p><strong>หมวกกันน็อคหนัง Biker Z1 clear</strong><br />\r\nใครโชคดีจองเร็ว จัดไปครับ ดีไซน์โครตหล่อ<br />\r\n<strong>แถม หน้ากาก Biker Z1 และ แว่นกันลม</strong></p>\r\n\r\n<p><strong>ราคาพิเศษ 15,900บาท&nbsp; จากปกติ 21,000บ ของใหม่เอี่ยม มือหนึ่ง !!&nbsp;</strong><br />\r\nสินค้าพรีเมียม ของดี มีจำนวนจำกัด<br />\r\nโปรโมชั่นราคาพิเศษ ส่งฟรี&nbsp;ติดต่อมาได้เลยครับใบสุดท้าย</p>\r\n', 1521, 'วง', 'img1204634697820180910_200745.jpg', 'img2204634697820180910_200745.jpg', 9, 12, 35, 'm', '2018-09-11 17:00:00'),
-(52, 13, 'แหวน Biker Z1 clear', '<p><strong>หมวกกันน็อคหนัง Biker Z1 clear</strong><br />\r\nหมวกหนังดำ หนาอย่างดี ปลอดภัย หุ้มอย่างดี<br />\r\nสินค้าพรีเมียม โครตตตต เท่ !!!! หมวกหนังมีใบเดียวเท่านั้น!!!</p>\r\n\r\n<p><strong>หมวกกันน็อคหนัง Biker Z1 clear</strong><br />\r\nใครโชคดีจองเร็ว จัดไปครับ ดีไซน์โครตหล่อ<br />\r\n<strong>แถม หน้ากาก Biker Z1 และ แว่นกันลม</strong></p>\r\n\r\n<p><strong>ราคาพิเศษ 15,900บาท&nbsp; จากปกติ 21,000บ ของใหม่เอี่ยม มือหนึ่ง !!&nbsp;</strong><br />\r\nสินค้าพรีเมียม ของดี มีจำนวนจำกัด<br />\r\nโปรโมชั่นราคาพิเศษ ส่งฟรี&nbsp;ติดต่อมาได้เลยครับใบสุดท้าย</p>\r\n', 1521, 'วง', 'img1204634697820180910_200745.jpg', 'img2204634697820180910_200745.jpg', 15, 10, 35, 'm', '2018-09-11 17:00:00'),
-(51, 13, 'แหวน Biker Z1 clear', '<p><strong>หมวกกันน็อคหนัง Biker Z1 clear</strong><br />\r\nหมวกหนังดำ หนาอย่างดี ปลอดภัย หุ้มอย่างดี<br />\r\nสินค้าพรีเมียม โครตตตต เท่ !!!! หมวกหนังมีใบเดียวเท่านั้น!!!</p>\r\n\r\n<p><strong>หมวกกันน็อคหนัง Biker Z1 clear</strong><br />\r\nใครโชคดีจองเร็ว จัดไปครับ ดีไซน์โครตหล่อ<br />\r\n<strong>แถม หน้ากาก Biker Z1 และ แว่นกันลม</strong></p>\r\n\r\n<p><strong>ราคาพิเศษ 15,900บาท&nbsp; จากปกติ 21,000บ ของใหม่เอี่ยม มือหนึ่ง !!&nbsp;</strong><br />\r\nสินค้าพรีเมียม ของดี มีจำนวนจำกัด<br />\r\nโปรโมชั่นราคาพิเศษ ส่งฟรี&nbsp;ติดต่อมาได้เลยครับใบสุดท้าย</p>\r\n', 1521, 'วง', 'img1204634697820180910_200745.jpg', 'img2204634697820180910_200745.jpg', 16, 11, 35, 'm', '2018-09-11 17:00:00'),
-(49, 13, 'แหวน Biker Z1 clear', '<p><strong>หมวกกันน็อคหนัง Biker Z1 clear</strong><br />\r\nหมวกหนังดำ หนาอย่างดี ปลอดภัย หุ้มอย่างดี<br />\r\nสินค้าพรีเมียม โครตตตต เท่ !!!! หมวกหนังมีใบเดียวเท่านั้น!!!</p>\r\n\r\n<p><strong>หมวกกันน็อคหนัง Biker Z1 clear</strong><br />\r\nใครโชคดีจองเร็ว จัดไปครับ ดีไซน์โครตหล่อ<br />\r\n<strong>แถม หน้ากาก Biker Z1 และ แว่นกันลม</strong></p>\r\n\r\n<p><strong>ราคาพิเศษ 15,900บาท&nbsp; จากปกติ 21,000บ ของใหม่เอี่ยม มือหนึ่ง !!&nbsp;</strong><br />\r\nสินค้าพรีเมียม ของดี มีจำนวนจำกัด<br />\r\nโปรโมชั่นราคาพิเศษ ส่งฟรี&nbsp;ติดต่อมาได้เลยครับใบสุดท้าย</p>\r\n', 1521, 'วง', 'img1204634697820180910_200745.jpg', 'img2204634697820180910_200745.jpg', 8, 7, 35, 'm', '2018-09-11 17:00:00'),
-(50, 13, 'แหวน Biker Z1 clear', '<p><strong>หมวกกันน็อคหนัง Biker Z1 clear</strong><br />\r\nหมวกหนังดำ หนาอย่างดี ปลอดภัย หุ้มอย่างดี<br />\r\nสินค้าพรีเมียม โครตตตต เท่ !!!! หมวกหนังมีใบเดียวเท่านั้น!!!</p>\r\n\r\n<p><strong>หมวกกันน็อคหนัง Biker Z1 clear</strong><br />\r\nใครโชคดีจองเร็ว จัดไปครับ ดีไซน์โครตหล่อ<br />\r\n<strong>แถม หน้ากาก Biker Z1 และ แว่นกันลม</strong></p>\r\n\r\n<p><strong>ราคาพิเศษ 15,900บาท&nbsp; จากปกติ 21,000บ ของใหม่เอี่ยม มือหนึ่ง !!&nbsp;</strong><br />\r\nสินค้าพรีเมียม ของดี มีจำนวนจำกัด<br />\r\nโปรโมชั่นราคาพิเศษ ส่งฟรี&nbsp;ติดต่อมาได้เลยครับใบสุดท้าย</p>\r\n', 1521, 'วง', 'img1204634697820180910_200745.jpg', 'img2204634697820180910_200745.jpg', 5, 12, 35, 'm', '2018-09-11 17:00:00'),
-(48, 13, 'แหวน Biker Z1 clear', '<p><strong>หมวกกันน็อคหนัง Biker Z1 clear</strong><br />\r\nหมวกหนังดำ หนาอย่างดี ปลอดภัย หุ้มอย่างดี<br />\r\nสินค้าพรีเมียม โครตตตต เท่ !!!! หมวกหนังมีใบเดียวเท่านั้น!!!</p>\r\n\r\n<p><strong>หมวกกันน็อคหนัง Biker Z1 clear</strong><br />\r\nใครโชคดีจองเร็ว จัดไปครับ ดีไซน์โครตหล่อ<br />\r\n<strong>แถม หน้ากาก Biker Z1 และ แว่นกันลม</strong></p>\r\n\r\n<p><strong>ราคาพิเศษ 15,900บาท&nbsp; จากปกติ 21,000บ ของใหม่เอี่ยม มือหนึ่ง !!&nbsp;</strong><br />\r\nสินค้าพรีเมียม ของดี มีจำนวนจำกัด<br />\r\nโปรโมชั่นราคาพิเศษ ส่งฟรี&nbsp;ติดต่อมาได้เลยครับใบสุดท้าย</p>\r\n', 1521, 'วง', 'img1204634697820180910_200745.jpg', 'img2204634697820180910_200745.jpg', 18, 9, 35, 'm', '2018-09-11 17:00:00');
+INSERT INTO `tbl_product` (`p_id`, `t_id`, `p_name`, `p_detial`, `p_price`, `p_unit`, `p_img1`, `p_img2`, `p_view`, `p_qty`, `p_ems`, `p_size`, `promo`, `date_save`) VALUES
+(54, 13, 'แหวน Biker Z1 clear', '<p><strong>หมวกกันน็อคหนัง Biker Z1 clear</strong><br />\r\nหมวกหนังดำ หนาอย่างดี ปลอดภัย หุ้มอย่างดี<br />\r\nสินค้าพรีเมียม โครตตตต เท่ !!!! หมวกหนังมีใบเดียวเท่านั้น!!!</p>\r\n\r\n<p><strong>หมวกกันน็อคหนัง Biker Z1 clear</strong><br />\r\nใครโชคดีจองเร็ว จัดไปครับ ดีไซน์โครตหล่อ<br />\r\n<strong>แถม หน้ากาก Biker Z1 และ แว่นกันลม</strong></p>\r\n\r\n<p><strong>ราคาพิเศษ 15,900บาท&nbsp; จากปกติ 21,000บ ของใหม่เอี่ยม มือหนึ่ง !!&nbsp;</strong><br />\r\nสินค้าพรีเมียม ของดี มีจำนวนจำกัด<br />\r\nโปรโมชั่นราคาพิเศษ ส่งฟรี&nbsp;ติดต่อมาได้เลยครับใบสุดท้าย</p>\r\n', 1521, 'วง', 'img1204634697820180910_200745.jpg', 'img2204634697820180910_200745.jpg', 12, 12, 35, 'm', '', '2018-09-11 17:00:00'),
+(53, 13, 'แหวน Biker Z1 clear', '<p><strong>หมวกกันน็อคหนัง Biker Z1 clear</strong><br />\r\nหมวกหนังดำ หนาอย่างดี ปลอดภัย หุ้มอย่างดี<br />\r\nสินค้าพรีเมียม โครตตตต เท่ !!!! หมวกหนังมีใบเดียวเท่านั้น!!!</p>\r\n\r\n<p><strong>หมวกกันน็อคหนัง Biker Z1 clear</strong><br />\r\nใครโชคดีจองเร็ว จัดไปครับ ดีไซน์โครตหล่อ<br />\r\n<strong>แถม หน้ากาก Biker Z1 และ แว่นกันลม</strong></p>\r\n\r\n<p><strong>ราคาพิเศษ 15,900บาท&nbsp; จากปกติ 21,000บ ของใหม่เอี่ยม มือหนึ่ง !!&nbsp;</strong><br />\r\nสินค้าพรีเมียม ของดี มีจำนวนจำกัด<br />\r\nโปรโมชั่นราคาพิเศษ ส่งฟรี&nbsp;ติดต่อมาได้เลยครับใบสุดท้าย</p>\r\n', 1521, 'วง', 'img1204634697820180910_200745.jpg', 'img2204634697820180910_200745.jpg', 9, 12, 35, 'm', '', '2018-09-11 17:00:00'),
+(52, 13, 'แหวน Biker Z1 clear', '<p><strong>หมวกกันน็อคหนัง Biker Z1 clear</strong><br />\r\nหมวกหนังดำ หนาอย่างดี ปลอดภัย หุ้มอย่างดี<br />\r\nสินค้าพรีเมียม โครตตตต เท่ !!!! หมวกหนังมีใบเดียวเท่านั้น!!!</p>\r\n\r\n<p><strong>หมวกกันน็อคหนัง Biker Z1 clear</strong><br />\r\nใครโชคดีจองเร็ว จัดไปครับ ดีไซน์โครตหล่อ<br />\r\n<strong>แถม หน้ากาก Biker Z1 และ แว่นกันลม</strong></p>\r\n\r\n<p><strong>ราคาพิเศษ 15,900บาท&nbsp; จากปกติ 21,000บ ของใหม่เอี่ยม มือหนึ่ง !!&nbsp;</strong><br />\r\nสินค้าพรีเมียม ของดี มีจำนวนจำกัด<br />\r\nโปรโมชั่นราคาพิเศษ ส่งฟรี&nbsp;ติดต่อมาได้เลยครับใบสุดท้าย</p>\r\n', 1521, 'วง', 'img1204634697820180910_200745.jpg', 'img2204634697820180910_200745.jpg', 17, 8, 35, 'm', '', '2018-09-11 17:00:00'),
+(51, 13, 'แหวน Biker Z1 clear', '<p><strong>หมวกกันน็อคหนัง Biker Z1 clear</strong><br />\r\nหมวกหนังดำ หนาอย่างดี ปลอดภัย หุ้มอย่างดี<br />\r\nสินค้าพรีเมียม โครตตตต เท่ !!!! หมวกหนังมีใบเดียวเท่านั้น!!!</p>\r\n\r\n<p><strong>หมวกกันน็อคหนัง Biker Z1 clear</strong><br />\r\nใครโชคดีจองเร็ว จัดไปครับ ดีไซน์โครตหล่อ<br />\r\n<strong>แถม หน้ากาก Biker Z1 และ แว่นกันลม</strong></p>\r\n\r\n<p><strong>ราคาพิเศษ 15,900บาท&nbsp; จากปกติ 21,000บ ของใหม่เอี่ยม มือหนึ่ง !!&nbsp;</strong><br />\r\nสินค้าพรีเมียม ของดี มีจำนวนจำกัด<br />\r\nโปรโมชั่นราคาพิเศษ ส่งฟรี&nbsp;ติดต่อมาได้เลยครับใบสุดท้าย</p>\r\n', 1521, 'วง', 'img1204634697820180910_200745.jpg', 'img2204634697820180910_200745.jpg', 18, 7, 35, 'm', '', '2018-09-11 17:00:00'),
+(49, 13, 'แหวน Biker Z1 clear', '<p><strong>หมวกกันน็อคหนัง Biker Z1 clear</strong><br />\r\nหมวกหนังดำ หนาอย่างดี ปลอดภัย หุ้มอย่างดี<br />\r\nสินค้าพรีเมียม โครตตตต เท่ !!!! หมวกหนังมีใบเดียวเท่านั้น!!!</p>\r\n\r\n<p><strong>หมวกกันน็อคหนัง Biker Z1 clear</strong><br />\r\nใครโชคดีจองเร็ว จัดไปครับ ดีไซน์โครตหล่อ<br />\r\n<strong>แถม หน้ากาก Biker Z1 และ แว่นกันลม</strong></p>\r\n\r\n<p><strong>ราคาพิเศษ 15,900บาท&nbsp; จากปกติ 21,000บ ของใหม่เอี่ยม มือหนึ่ง !!&nbsp;</strong><br />\r\nสินค้าพรีเมียม ของดี มีจำนวนจำกัด<br />\r\nโปรโมชั่นราคาพิเศษ ส่งฟรี&nbsp;ติดต่อมาได้เลยครับใบสุดท้าย</p>\r\n', 1521, 'วง', 'img1204634697820180910_200745.jpg', 'img2204634697820180910_200745.jpg', 13, 1, 35, 'm', '', '2018-09-11 17:00:00'),
+(50, 13, 'แหวน Biker Z1 clear', '<p><strong>หมวกกันน็อคหนัง Biker Z1 clear</strong><br />\r\nหมวกหนังดำ หนาอย่างดี ปลอดภัย หุ้มอย่างดี<br />\r\nสินค้าพรีเมียม โครตตตต เท่ !!!! หมวกหนังมีใบเดียวเท่านั้น!!!</p>\r\n\r\n<p><strong>หมวกกันน็อคหนัง Biker Z1 clear</strong><br />\r\nใครโชคดีจองเร็ว จัดไปครับ ดีไซน์โครตหล่อ<br />\r\n<strong>แถม หน้ากาก Biker Z1 และ แว่นกันลม</strong></p>\r\n\r\n<p><strong>ราคาพิเศษ 15,900บาท&nbsp; จากปกติ 21,000บ ของใหม่เอี่ยม มือหนึ่ง !!&nbsp;</strong><br />\r\nสินค้าพรีเมียม ของดี มีจำนวนจำกัด<br />\r\nโปรโมชั่นราคาพิเศษ ส่งฟรี&nbsp;ติดต่อมาได้เลยครับใบสุดท้าย</p>\r\n', 1521, 'วง', 'img1204634697820180910_200745.jpg', 'img2204634697820180910_200745.jpg', 9, 12, 35, 'm', '', '2018-09-11 17:00:00'),
+(48, 13, 'แหวน Biker Z1 clear', '<p><strong>หมวกกันน็อคหนัง Biker Z1 clear</strong><br />\r\nหมวกหนังดำ หนาอย่างดี ปลอดภัย หุ้มอย่างดี<br />\r\nสินค้าพรีเมียม โครตตตต เท่ !!!! หมวกหนังมีใบเดียวเท่านั้น!!!</p>\r\n\r\n<p><strong>หมวกกันน็อคหนัง Biker Z1 clear</strong><br />\r\nใครโชคดีจองเร็ว จัดไปครับ ดีไซน์โครตหล่อ<br />\r\n<strong>แถม หน้ากาก Biker Z1 และ แว่นกันลม</strong></p>\r\n\r\n<p><strong>ราคาพิเศษ 15,900บาท&nbsp; จากปกติ 21,000บ ของใหม่เอี่ยม มือหนึ่ง !!&nbsp;</strong><br />\r\nสินค้าพรีเมียม ของดี มีจำนวนจำกัด<br />\r\nโปรโมชั่นราคาพิเศษ ส่งฟรี&nbsp;ติดต่อมาได้เลยครับใบสุดท้าย</p>\r\n', 1521, 'วง', 'img1204634697820180910_200745.jpg', 'img2204634697820180910_200745.jpg', 19, 9, 35, 'm', '', '2018-09-11 17:00:00');
 
 -- --------------------------------------------------------
 
@@ -230,8 +257,8 @@ INSERT INTO `tbl_type` (`t_id`, `t_name`) VALUES
 (12, 'เสื้อแจ็คเก็ตหนัง'),
 (13, 'เข็มขัดหนังแท้'),
 (14, 'รองเท้าหนังแท้'),
-(15, 'หมวกหนังวัวแท้'),
-(16, 'แอคแซสซอรี่');
+(15, 'ต่างหูเพชร'),
+(16, 'แหวนเพชร');
 
 --
 -- Indexes for dumped tables
@@ -248,6 +275,12 @@ ALTER TABLE `tbl_admin`
 --
 ALTER TABLE `tbl_bank`
   ADD PRIMARY KEY (`b_id`);
+
+--
+-- Indexes for table `tbl_carousel`
+--
+ALTER TABLE `tbl_carousel`
+  ADD PRIMARY KEY (`carousel_id`);
 
 --
 -- Indexes for table `tbl_member`
@@ -296,6 +329,12 @@ ALTER TABLE `tbl_bank`
   MODIFY `b_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `tbl_carousel`
+--
+ALTER TABLE `tbl_carousel`
+  MODIFY `carousel_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT for table `tbl_member`
 --
 ALTER TABLE `tbl_member`
@@ -305,19 +344,19 @@ ALTER TABLE `tbl_member`
 -- AUTO_INCREMENT for table `tbl_order`
 --
 ALTER TABLE `tbl_order`
-  MODIFY `order_id` int(10) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `order_id` int(10) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tbl_order_detail`
 --
 ALTER TABLE `tbl_order_detail`
-  MODIFY `d_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `d_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  MODIFY `p_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `p_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `tbl_type`

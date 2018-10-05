@@ -32,7 +32,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 
 mysql_select_db($database_condb);
-$query_cf = "SELECT * FROM tbl_config";
+$query_cf = "SELECT * FROM tbl_carousel";
 $cf = mysql_query($query_cf, $condb) or die(mysql_error());
 $row_cf = mysql_fetch_assoc($cf);
 $totalRows_cf = mysql_num_rows($cf);

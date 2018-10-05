@@ -3,7 +3,7 @@
 
 ?>
 
-<?php include 'cart_session.php'; ?>
+
 <!-- 
 Body Section 
 -->

@@ -6,7 +6,7 @@
 			
 			<li><a href="my_order.php?mem_id=<?php echo $row_pf['mem_id']; ?>"><span class="icon-chevron-right" ></span> แก้ไขข้อมูลส่วนตัว</a></li>
 
-			<li><a href="logout.php" > <span class="icon-chevron-right"></span> ออกจากระบบ</a></li>
+			<li><a href="logout.php" > <span class="icon-chevron-right"></span><font color="red"> ออกจากระบบ</font></a></li>
 
 		</ul>
 	</div>

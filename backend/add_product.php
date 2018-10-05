@@ -211,6 +211,7 @@ $totalRows_prd = mysql_num_rows($prd);
                     <tr>
                       <td>&nbsp;</td>
                       <td colspan="2"><button type="submit" name="button" id="button" value="ตกลง" class="btn btn-primary">เพิ่มสินค้า</button></td>
+                      
                     </tr>
                   </table>
                 </form>

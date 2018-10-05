@@ -7,7 +7,9 @@ $totalRows_prd = mysql_num_rows($prd);
 ?>
 
 	<div class="well well-small" >
-		<a href="#"><img src="assets/img/paypal.jpg" alt="payment method paypal"></a></div>
+		<!-- <a href="#"><img src="assets/img/paypal.jpg" alt="payment method paypal"></a> -->
+
+	</div>
 
 	<a class="shopBtn btn-block" href="best_sell.php">สินค้าขายดี<br></a>
 	<br>
