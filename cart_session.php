@@ -27,6 +27,25 @@ if($act == 'add' && !empty($p_id))
 
 }
 
+if($act == 'rem' && !empty($p_id))
+{
+  if(!isset($_SESSION['shopping_cart']))
+  {
+    $_SESSION['shopping_cart'] = array();
+  }else{
+
+  }
+  if(isset($_SESSION['shopping_cart'][$p_id]))
+  {
+
+    $_SESSION['shopping_cart'][$p_id]--;
+
+  }else{
+    $_SESSION['shopping_cart'][$p_id]=0;
+  }
+
+}
+
 
 if($act == 'remove' && !empty($p_id))
 {

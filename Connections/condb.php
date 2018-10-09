@@ -5,7 +5,7 @@
 $hostname_condb = "localhost";
 $database_condb = "jewelry-shop";
 $username_condb = "root";
-$password_condb = "password";
+$password_condb = "";
 
 $condb = mysql_pconnect($hostname_condb, $username_condb, $password_condb) or trigger_error(mysql_error(),E_USER_ERROR); 
 mysql_query("SET NAMES UTF8");

@@ -56,7 +56,7 @@ Body Section
       <li class="active">Check Out</li>
     </ul>
     <div class="well well-small">
-      <h1>ยืนยันการสั่งซื้อ <small class="pull-right"> สินค้าทั้งหมด <?php echo $meQty; ?> ชิ้น</small></h1>
+      <h1>ยืนยันการสั่งซื้อ <small class="pull-right"> สินค้าทั้งหมด <?php echo $cart_count; ?> ชิ้น</small></h1>
       <hr class="soften"/>	
 
       <table class="table table-bordered table-condensed">
@@ -82,7 +82,7 @@ Body Section
               {
                 $sql = "select * from tbl_product where p_id=$p_id";
                 $query = mysql_query($sql,$condb);
-                $row  = mysql_fetch_array($query);
+                $row  = mysql_fetch_array($query)or die(mysql_error());
                 $sum  = $row['p_price']*$p_qty;
                 $total  += $sum;
                 

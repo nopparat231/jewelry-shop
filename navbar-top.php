@@ -25,9 +25,10 @@
 					require_once('Connections/condb.php'); 
 					foreach($_SESSION['shopping_cart'] as $p_id=>$p_qty)
 					{	
+						mysql_select_db($database_condb);
 						$sql = "select * from tbl_product where p_id=$p_id";
 						$query = mysql_query($sql, $condb );
-						$row = mysql_fetch_array($query);
+						$row = mysql_fetch_array($query) or die(mysql_error());
 						$sum = $row['p_price'] * $p_qty;
 						$total += $sum;
 
