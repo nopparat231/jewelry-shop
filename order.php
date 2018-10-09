@@ -82,7 +82,7 @@ Body Section
               {
                 $sql = "select * from tbl_product where p_id=$p_id";
                 $query = mysql_query($sql,$condb);
-                $row  = mysql_fetch_array($query)or die(mysql_error());
+                $row  = mysql_fetch_array($query);
                 $sum  = $row['p_price']*$p_qty;
                 $total  += $sum;
                 

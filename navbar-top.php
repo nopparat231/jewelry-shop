@@ -27,8 +27,8 @@
 					{	
 						mysql_select_db($database_condb);
 						$sql = "select * from tbl_product where p_id=$p_id";
-						$query = mysql_query($sql, $condb );
-						$row = mysql_fetch_array($query) or die(mysql_error());
+						$query = mysql_query($sql, $condb ) or die(mysql_error());
+						$row = mysql_fetch_array($query);
 						$sum = $row['p_price'] * $p_qty;
 						$total += $sum;
 
