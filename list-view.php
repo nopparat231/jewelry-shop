@@ -28,7 +28,7 @@ Body Section
 		</div>
 		<div class="span4 alignR">
 		<form class="form-horizontal qtyFrm">
-		<h3> <?php echo $row_prd['p_price']; ?> บาท</h3>
+		<h3> <?php echo $row_prd['p_price'],2; ?> บาท</h3>
 	
 		<div class="btn-group">
 		  <a href="cart.php" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>

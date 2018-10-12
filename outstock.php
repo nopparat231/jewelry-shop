@@ -6,7 +6,7 @@ if($qty <= 0){ ?>
 
    <div class="caption cntr" >
         <p><?php echo $row_prd['p_name']; ?></p>
-        <p><strong><?php echo number_format($row_prd['p_price']); ?> บาท</strong></p>
+        <p><strong><?php echo number_format($row_prd['p_price'],2); ?> บาท</strong></p>
         <h4><a class="shopBtn" href="cart.php?p_id=<?php echo $row_prd['p_id'];?>&act=add" dissable title="add to cart"> สินค้าหมด </a></h4>
         <div class="actionList">
             <a class="pull-left" href="#">Add to Wish List </a> 
@@ -26,7 +26,7 @@ if($qty <= 0){ ?>
 
     <div class="caption cntr">
         <p><?php echo $row_prd['p_name']; ?></p>
-        <p><strong><?php echo number_format($row_prd['p_price']); ?> บาท</strong></p>
+        <p><strong><?php echo number_format($row_prd['p_price'],2); ?> บาท</strong></p>
         <h4><a class="shopBtn" href="cart.php?p_id=<?php echo $row_prd['p_id'];?>&act=add" title="add to cart"><span class="totalInCart" ></span> เพิ่มลงตระกล้า </a></h4>
         <div class="actionList">
             <a class="pull-left" href="#">Add to Wish List </a> 

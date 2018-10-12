@@ -58,10 +58,11 @@ include 'header.php';?>
 
 					<form class="form-horizontal qtyFrm" action="cart.php" method="get">
 						<div class="control-group">
-							<label class="control-label"><span>ราคา <b>[ <?php echo $row_prdt['p_price']; ?> ] </b> บาท</span></label>
+							<label class="control-label"><span><b>[ <?php echo number_format($row_prdt['p_price'],2); ?> ] บาท</b></span></label><br>
+							
 
 						</div>
-						
+						<label class="control-label"><span>ไซส์ <b><?php echo $row_prdt['p_size']; ?></b></span></label>
 						
 						<br /><br />
 
@@ -71,7 +72,7 @@ include 'header.php';?>
 						<br>
 
 
-						<button type="submit" name="act" value="add" class="shopBtn"><span class=" icon-shopping-cart"></span> Add to cart</button>
+						<button type="submit" name="act" value="add" class="shopBtn"><span class=" icon-shopping-cart"></span> เพิ่ลงตระกล้า</button>
 						<input  name="p_id" value="<?php echo $p_id;?>" style="visibility:hidden"></input>
 					</form>
 				</div>
@@ -109,10 +110,10 @@ include 'header.php';?>
 								</div>
 								<div class="span4 alignR">
 									<form class="form-horizontal qtyFrm">
-										<h3> <?php echo $row_prd['p_price']; ?> บาท</h3>
+										<h3> <?php echo number_format($row_prd['p_price'],2); ?> บาท</h3>
 
 										<div class="btn-group">
-											<a href="cart.php" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
+											<a href="cart.php" class="defaultBtn"><span class=" icon-shopping-cart"></span> เพิ่ลงตระกล้า</a>
 											<a href="product_details.php?p_id=<?php echo $row_prd['p_id'];?>" class="shopBtn">VIEW</a>
 										</div>
 									</form>

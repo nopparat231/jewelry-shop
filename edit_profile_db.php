@@ -4,7 +4,7 @@
 include('Connections/condb.php');
 
 $mem_id = $_POST['mem_id'];
-$mem_username = $_POST['mem_username'];
+
 $mem_password = $_POST['mem_password'];
 $mem_name = $_POST['mem_name'];
 $mem_email = $_POST['mem_email'];

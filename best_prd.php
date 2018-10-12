@@ -27,7 +27,7 @@ $totalRows_prd = mysql_num_rows($prd);
 				<a class="zoomTool" href="product_details.php?p_id=<?php echo $row_prd['p_id'];?>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
 				<img src="pimg/<?php echo $row_prd['p_img1'];?>" alt="bootstrap ecommerce templates">
 				<div class="caption">
-					<h4><a class="defaultBtn" href="product_details.php?p_id=<?php echo $row_prd['p_id'];?>">VIEW</a> <span class="pull-right"><?php echo $row_prd['p_price']; ?></span></h4>
+					<h4><a class="defaultBtn" href="product_details.php?p_id=<?php echo $row_prd['p_id'];?>">VIEW</a> <span class="pull-right"><?php echo number_format($row_prd['p_price'],2); ?></span></h4>
 				</div>
 			</div>
 		</li>

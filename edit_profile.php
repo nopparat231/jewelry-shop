@@ -64,7 +64,7 @@ $totalRows_editmem = mysql_num_rows($editmem);
       <div class="control-group">
         <label class="control-label" for="mem_username">Username : <sup>*</sup></label>
         <div class="controls">
-          <input type="text" name="mem_name" required placeholder="ชื่อ - สกุล" disabled="disabled" value="<?php echo $row_editmem['mem_name']; ?>">
+          <input type="text" name="mem_username" required placeholder="ชื่อ - สกุล" disabled="disabled" value="<?php echo $row_editmem['mem_username']; ?>">
         </div>
       </div>
       <div class="control-group">
@@ -77,7 +77,7 @@ $totalRows_editmem = mysql_num_rows($editmem);
       <div class="control-group">
         <label class="control-label" for="mem_name">ชื่อ - สกุล : <sup>*</sup></label>
         <div class="controls">
-          <input type="text" name="mem_name" required placeholder="ชื่อ - สกุล"  value="<?php echo $row_editmem['mem_username']; ?>">
+          <input type="text" name="mem_name" required placeholder="ชื่อ - สกุล"  value="<?php echo $row_editmem['mem_name']; ?>">
         </div>
       </div>
       <div class="control-group">

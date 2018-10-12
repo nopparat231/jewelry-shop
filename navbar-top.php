@@ -19,18 +19,19 @@
 				if(!empty($_SESSION["shopping_cart"])) {
 					$cart_count = count(array_keys($_SESSION["shopping_cart"]));
 				}
-				$total = 0;
+				$totaln = 0;
+
 				if(!empty($_SESSION['shopping_cart']))
 				{
 					require_once('Connections/condb.php'); 
 					foreach($_SESSION['shopping_cart'] as $p_id=>$p_qty)
 					{	
 						mysql_select_db($database_condb);
-						$sql = "select * from tbl_product where p_id=$p_id";
-						$query = mysql_query($sql, $condb ) or die(mysql_error());
-						$row = mysql_fetch_array($query);
-						$sum = $row['p_price'] * $p_qty;
-						$total += $sum;
+						$sqln = "select * from tbl_product where p_id=$p_id";
+						$queryn = mysql_query($sqln,$condb);
+						$rown = mysql_fetch_array($queryn);
+						$sum = $rown['p_price'] * $p_qty;
+						$totaln += $sum;
 
 						
 					}

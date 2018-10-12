@@ -56,7 +56,7 @@ Body Section
       <li class="active">Check Out</li>
     </ul>
     <div class="well well-small">
-      <h1>ยืนยันการสั่งซื้อ <small class="pull-right"> สินค้าทั้งหมด <?php echo $cart_count; ?> ชิ้น</small></h1>
+      <h1>ยืนยันการสั่งซื้อ <small class="pull-right"></small></h1>
       <hr class="soften"/>	
 
       <table class="table table-bordered table-condensed">
@@ -65,11 +65,14 @@ Body Section
             <th>Product</th>
 
             <th>Unit price</th>
+            <th>Size </th>
             <th>Ems</th>
             <th>Qty </th>
             
             <th>Total</th>
+
           </tr>
+
         </thead>
         <tbody>
           <form  name="formlogin" action="saveorder.php" method="POST" id="login" class="form-horizontal">
@@ -84,64 +87,86 @@ Body Section
                 $query = mysql_query($sql,$condb);
                 $row  = mysql_fetch_array($query);
                 $sum  = $row['p_price']*$p_qty;
-                $total  += $sum;
+                $totalp += $sum;
+                $total += $sum;
+
+                $ems = $row['p_ems'] * $p_qty;
+                $total += $ems;
+
+                $sumems +=$ems;
                 
+
 
                 ?>
 
                 <tr>
                   <td><?php echo $row['p_name'];?></td>
-                  <td><?php echo $row['p_price']; ?></td>
-                  <td><?php echo $row['p_price']; ?></td>
+                  <td><?php echo number_format($row['p_price'],2); ?></td>
+                  <td><?php echo $row['p_size']; ?></td>
+                  <td><?php echo $row['p_ems']; ?></td>
                   <td>
                    <?php echo $p_qty; ?>
                  </td>
-                 <td><?php echo number_format($sum); ?></td>
+                 <td><?php echo number_format($sum,2); ?></td>
                </tr>
 
-             <?php } ?>
+             <?php }
+
+             $tax = $total * 0.09;
+             $total += $tax;
+
+              ?>
 
              <tr>
-              <td colspan="4" class="alignR">Total products:	</td>
-              <td> $448</td>
+              <td colspan="5" class="alignR">Total products:  </td>
+              <td ><?php echo number_format($totalp,2); ?></td>
             </tr>
             <tr>
-              <td colspan="4" class="alignR">Total products:	</td>
-              <td class="label label-primary" align="center"><h4> <?php echo number_format($total); ?></h4></td>
+              <td colspan="5" class="alignR">Total ems  </td>
+              <td> <?php echo number_format($sumems,2); ?></td>
             </tr>
+            <tr>
+              <td colspan="5" class="alignR">Total vat 9%  </td>
+              <td> <?php echo number_format($tax,2); ?></td>
+            </tr>
+            <tr>
+              <td colspan="5" class="alignR">Total :  </td>
+              <td class="label label-primary" align="center"><h4> <?php echo number_format($total,2); ?></h4></td>
+            </tr>
+
           </tbody>
         </table><br/>
       <?php  } ?>
 
       <table class="table table-bordered">
        <tbody>
-        <tr><td>ESTIMATE YOUR SHIPPING & TAXES</td></tr>
+        <tr><td ><h2>ที่อยู่ในการจัดส่ง</h2></td></tr>
         <tr> 
          <td>
 
            <div class="control-group">
-            <label class="span2 control-label" for="inputEmail">Country</label>
+            <label class="span2 control-label" >ขื่อ - นามสกุล</label>
             <div class="controls">
               <input type="text" name="name" value="<?php echo $row_buyer['mem_name']; ?>" required placeholder="ชื่อ-สกุล">
             </div>
           </div>
 
           <div class="control-group">
-            <label class="span2 control-label" for="inputEmail">Country</label>
+            <label class="span2 control-label" >ที่อยู่</label>
             <div class="controls">
               <textarea name="address" class="form-control"  required placeholder="ที่อยู่ในการส่งสินค้า"><?php echo $row_buyer['mem_address']; ?></textarea> 
             </div>
           </div>
 
           <div class="control-group">
-            <label class="span2 control-label" for="inputEmail">Country</label>
+            <label class="span2 control-label" >เบอร์โทร</label>
             <div class="controls">
               <input type="text"  name="phone" value="<?php echo $row_buyer['mem_tel']; ?>" placeholder="เบอร์โทรศัพท์">
             </div>
           </div>
 
           <div class="control-group">
-            <label class="span2 control-label" for="inputEmail">Country</label>
+            <label class="span2 control-label" >E-mail</label>
             <div class="controls">
               <input type="text" name="email" value="<?php echo $row_buyer['mem_email']; ?>" required placeholder="อีเมล์" >
             </div>
@@ -153,7 +178,7 @@ Body Section
 
 
           <div class="span7 control-group">
-            <label class="span2 control-label" for="inputEmail"></label>
+            <label class="span2 control-label" ></label>
             <div class="controls">
               <button type="submit" class="shopBtn">ยืนยันสั่งซื้อ</button>
             </div>

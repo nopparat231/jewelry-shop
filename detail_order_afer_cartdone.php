@@ -104,6 +104,7 @@ input[type='radio']:checked:before {
 
 
       <table width="700" align="center" class="table">
+       
         <tr>
           <td colspan="7" align="center"><strong>รายการสั่งซื้อล่าสุด คุณ <?php echo $row_cartdone['mem_name'];?> <br />
             <font color="red"> สถานะ :
@@ -113,6 +114,10 @@ input[type='radio']:checked:before {
               ?>
             </font></strong>
           </td>
+
+          <a href="print_report.php" class="btn btn-primary btn-sm pull-right" id="hp" onclick="window.print()"> พิมพ์ใบเสร็จ </a>  </p>
+
+ 
         </tr>
         <tr>
           <td colspan="7" align="center">
@@ -125,7 +130,7 @@ input[type='radio']:checked:before {
               เลข บ/ช <?php 
               echo $row_cartdone['b_number'];?> <br />
 
-              จำนวน <?php echo $row_cartdone['pay_amount'];?> บาท<br />
+              จำนวน <?php echo number_format($row_cartdone['pay_amount'],2);?> บาท<br />
               วันที่ชำระ <?php echo date('d/m/Y',strtotime($row_cartdone['pay_date']));?>
             </font>
             <br />
@@ -163,6 +168,7 @@ input[type='radio']:checked:before {
 
     <?php 
     $sum  = $row_cartdone['p_price']*$row_cartdone['p_c_qty'];
+        $totalp  += $sum;
     $total  += $sum;
     $ems = $row_cartdone['p_ems'] * $row_cartdone['p_c_qty'];
     $total += $ems;
@@ -172,26 +178,30 @@ input[type='radio']:checked:before {
       <td align="center"><?php echo $row_cartdone['d_id'];?></td>
       <td><?php echo $row_cartdone['p_name'];?></td>
       <td align="center"><?php echo $row_cartdone['p_size'];?></td>
-      <td align="center"><?php echo number_format($row_cartdone['p_price']);?></td>
+      <td align="center"><?php echo number_format($row_cartdone['p_price'],2);?></td>
       <td align="center"><?php echo $row_cartdone['p_c_qty'];?></td>
-      <td align='center'><?php echo $ems ?></td>
-      <td align="center"><?php echo number_format($total);?></td>
+      <td align='center'><?php echo number_format($ems,2);?></td>
+      <td align="center"><?php echo number_format($sum,2);?></td>
     </tr> 
 
   <?php } while ($row_cartdone = mysql_fetch_assoc($cartdone)); 
-  $tax = $total*0.07;
+  $tax = $total*0.09;
   $total += $tax;
-  echo "<tr>";
-  echo "<td  align='left' colspan='6'><b>จัดส่ง</b></td>";
-  echo "<td align='center'>"."<b>".number_format($sumems)."</b>"."</td>";
+   echo "<tr>";
+  echo "<td  align='left' colspan='6'><b>สินค้ารวม</b></td>";
+  echo "<td align='center'>"."<b>".number_format($totalp,2)."</b>"."</td>";
   echo "</tr>";
   echo "<tr>";
-  echo "<td  align='left' colspan='6'><b>ภาษี 7%</b></td>";
-  echo "<td align='center'>"."<b>".number_format($tax)."</b>"."</td>";
+  echo "<td  align='left' colspan='6'><b>จัดส่ง</b></td>";
+  echo "<td align='center'>"."<b>".number_format($sumems,2)."</b>"."</td>";
+  echo "</tr>";
+  echo "<tr>";
+  echo "<td  align='left' colspan='6'><b>ภาษี 9%</b></td>";
+  echo "<td align='center'>"."<b>".number_format($tax,2)."</b>"."</td>";
   echo "</tr>";
   echo "<tr class='success'>";
   echo "<td colspan='6' bgcolor='#CEE7FF' align='center'><b>ราคารวม</b></td>";
-  echo "<td align='center' bgcolor='#CEE7FF'>"."<b>".number_format($total)."</b>"."</td>";
+  echo "<td align='center' bgcolor='#CEE7FF'>"."<b>".number_format($total,2)."</b>"."</td>";
   echo "</tr>";
   ?>
 </table>
@@ -253,7 +263,7 @@ if($status > 1){ }else{?>
         <td width="5%" align="center">&nbsp;</td>
         <td align="center" colspan="2">จำนวนเงิน</td>
         <td colspan="5" align="left"><label for="pay_amount"></label>
-          <input type="text" name="pay_amount" id="pay_amount"  value="<?php echo number_format($total);?>" required="required"/></td>
+          <input type="text" name="pay_amount" id="pay_amount"  value="<?php echo number_format($total,2);?>" required="required"/></td>
         </tr>
         <tr>
           <td align="center">&nbsp;</td>

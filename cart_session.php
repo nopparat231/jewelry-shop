@@ -59,7 +59,8 @@ if($act == 'update')
   {
     $_SESSION['shopping_cart'][$p_id] = $amount;
   }
+  
+header('Location: order.php');
 }
-
 
 ?>

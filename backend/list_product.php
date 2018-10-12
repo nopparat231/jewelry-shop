@@ -90,7 +90,7 @@ $totalRows_prd = mysql_num_rows($prd);
               <br>
               <?php // echo $row_prd['p_detial']; ?>
                </td>
-              <td align="right" valign="top"><?php echo number_format($row_prd['p_price']); ?></td>
+              <td align="right" valign="top"><?php echo number_format($row_prd['p_price'],2); ?></td>
               <td align="center" valign="top">
         <?php echo $row_prd['p_qty']; ?>
               

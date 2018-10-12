@@ -63,12 +63,17 @@ $totalRows_mycart = mysql_num_rows($mycart);
 					<th>ราคารวม</th>
 					<th>สถานะ</th>
 					<th>วันที่ทำรายการ</th>
+					<th>ยกเลิกคำสั่งซื้อ</th>
 				</tr>
 			</thead>
 			<?php if ($totalRows_mycart > 0) {
 
 				?>
 				<?php do { ?>
+					<?php if ($row_mycart['order_status'] <> 4){
+
+					?>
+											
 					<tr align="center">
 						<td>
 							<?php echo $row_mycart['oid'];?>
@@ -82,7 +87,7 @@ $totalRows_mycart = mysql_num_rows($mycart);
 							<?php echo $row_mycart['coid'];?>
 						</td>
 						<td align="center">
-							<?php echo number_format($row_mycart['ctotal']);?>
+							<?php echo number_format($row_mycart['ctotal'],2);?>
 						</td>
 						<td align="center">
 							<font color="red">
@@ -93,11 +98,11 @@ $totalRows_mycart = mysql_num_rows($mycart);
 						</td>
 						<td> <?php echo $row_mycart['order_date'];?></td>
 						<td><center>
-							<a href="del_order.php?order_id=<?php echo $row_mycart['oid'];?>" class="icon-remove" onClick="return confirm('รายการสั่งซื้อของคุณจะถูกยกเลิก');">
+							<a href="del_order.php?order_id=<?php echo $row_mycart['oid'];?>&order_status=4" class="icon-remove" onClick="return confirm('รายการสั่งซื้อของคุณจะถูกยกเลิก');">
 							</a></center>
 						</td>
 					</tr>
-
+<?php } ?>
 				<?php } while ($row_mycart = mysql_fetch_assoc($mycart)); ?> 
 			</table>
 		</div>

@@ -7,7 +7,7 @@
  <html lang="en">
  <head>
  	<meta charset="utf-8">
- 	<title>JJ Shop</title>
+ 	<title>CHATA Shop</title>
  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
  	<meta name="description" content="">
  	<meta name="author" content="">
@@ -26,7 +26,7 @@
 		<![endif]-->
 
 		<!-- Favicons -->
-		<link rel="shortcut icon" href="assets/ico/favicon.ico" >
+		<link rel="shortcut icon" href="img/LOGO-CHATA.png" >
 	</head>
 	<body  id="top" >
 
@@ -45,7 +45,7 @@ Lower Header Section
 			<div class="span4">
 				<h1>
 					<a class="logo" href="index.php"><span>Twitter Bootstrap ecommerce template</span> 
-						<img src="assets/img/logo-bootstrap-shoping-cart.png" alt="bootstrap sexy shop" >
+						<img src="img/cc.png" alt="bootstrap sexy shop" width="100%">
 					</a>
 				</h1>
 			</div>

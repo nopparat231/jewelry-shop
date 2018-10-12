@@ -12,7 +12,7 @@ if ($status == 1) {
 	echo "ส่งของแล้ว";
 	echo "</font>";
 }elseif ($status == 4) {
-	echo "<font color='black'>";
+	echo "<font color='#862d2d'>";
 	echo "ยกเลิกคำสั่งซื้อ";
 	echo "</font>";
 }
