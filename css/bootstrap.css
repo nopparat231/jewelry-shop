@@ -1272,7 +1272,8 @@ h2,
 }
 h3,
 .h3 {
-  font-size: 24px;
+	font-size: 24px;
+	color: #09F;
 }
 h4,
 .h4 {
@@ -2258,7 +2259,8 @@ caption {
   text-align: left;
 }
 th {
-  text-align: left;
+	text-align: left;
+	color: #000;
 }
 .table {
   width: 100%;
@@ -6755,3 +6757,6 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+#form1 table tr th h4 {
+	text-align: center;
+}
