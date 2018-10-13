@@ -83,10 +83,7 @@ Body Section
 									<p><?php echo $row_prdg['p_name']; ?></p>
 									<p><strong><?php echo number_format($row_prdg['p_price']); ?> บาท</strong></p>
 									<h4><a class="shopBtn" href="cart.php?p_id=<?php echo $row_prdg['p_id'];?>&act=add" dissable title="add to cart"> สินค้าหมด </a></h4>
-									<div class="actionList">
-										<a class="pull-left" href="#">Add to Wish List </a> 
-										<a class="pull-left" href="#"> Add to Compare </a>
-									</div> 
+									 
 									<br class="clr">
 								</div>
 
@@ -103,10 +100,7 @@ Body Section
 										<p><?php echo $row_prdg['p_name']; ?></p>
 										<p><strong><?php echo number_format($row_prdg['p_price']); ?> บาท</strong></p>
 										<h4><a class="shopBtn" href="cart.php?p_id=<?php echo $row_prdg['p_id'];?>&act=add" title="add to cart"><span class="totalInCart" ></span> เพิ่มลงตระกล้า </a></h4>
-										<div class="actionList">
-											<a class="pull-left" href="#">Add to Wish List </a> 
-											<a class="pull-left" href="#"> Add to Compare </a>
-										</div> 
+										
 										<br class="clr">
 									</div>
 

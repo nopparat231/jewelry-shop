@@ -72,9 +72,7 @@ $totalRows_cartdone = mysql_num_rows($cartdone);
 
 <table width="700" border="0" align="center" class="table">
   <tr>
-    <td colspan="5" align="center"><p align="center"> <a class="btn btn-primary btn-sm" id="hp" onclick="window.print()"> พิมพ์ </a>  </p>
-
-    </td>
+    <a href="../print_report.php?order_id=<?php echo $colname_cartdone;?>" class="btn btn-primary btn-sm pull-right" target="_blank" id="hp" >  <span class="icon icon-print"></span> พิมพ์ใบเสร็จ </a> 
   </tr>
       <td width="100%" colspan="5" align="center">
 

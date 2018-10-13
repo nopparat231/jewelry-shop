@@ -99,7 +99,7 @@ Body Section
              <?php } 
 
 
-             $tax = $total * 0.09;
+             $tax = $total * 0.07;
              $total += $tax;
 
 

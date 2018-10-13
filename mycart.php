@@ -72,45 +72,49 @@ $totalRows_mycart = mysql_num_rows($mycart);
 				<?php do { ?>
 					<?php if ($row_mycart['order_status'] <> 4){
 
-					?>
-											
-					<tr align="center">
-						<td>
-							<?php echo $row_mycart['oid'];?>
-							<span id="hp">
-								<a href="my_order.php?order_id=<?php echo $row_mycart['oid'];?>">
-									<span class="icon-zoom-in"></span>
-								</a>
-							</span>
-						</td>
-						<td align="center">
-							<?php echo $row_mycart['coid'];?>
-						</td>
-						<td align="center">
-							<?php echo number_format($row_mycart['ctotal'],2);?>
-						</td>
-						<td align="center">
-							<font color="red">
-								<?php $status = $row_mycart['order_status'];
-								include('backend/status.php');
-								?>
-							</font>
-						</td>
-						<td> <?php echo $row_mycart['order_date'];?></td>
-						<td><center>
-							<a href="del_order.php?order_id=<?php echo $row_mycart['oid'];?>&order_status=4" class="icon-remove" onClick="return confirm('รายการสั่งซื้อของคุณจะถูกยกเลิก');">
-							</a></center>
-						</td>
-					</tr>
-<?php } ?>
-				<?php } while ($row_mycart = mysql_fetch_assoc($mycart)); ?> 
+						?>
+
+						<tr align="center">
+							<td>
+								<?php echo $row_mycart['oid'];?>
+								<span id="hp">
+									<a href="my_order.php?order_id=<?php echo $row_mycart['oid'];?>">
+										<span class="icon-zoom-in"></span>
+									</a>
+								</span>
+							</td>
+							<td align="center">
+								<?php echo $row_mycart['coid'];?>
+							</td>
+							<td align="center">
+								<?php echo number_format($row_mycart['ctotal'],2);?>
+							</td>
+							<td align="center">
+								<font color="red">
+									<?php $status = $row_mycart['order_status'];
+									include('backend/status.php');
+									?>
+								</font>
+							</td>
+							<td> <?php echo $row_mycart['order_date'];?></td>
+							<td><center>
+								<a href="del_order.php?order_id=<?php echo $row_mycart['oid'];?>&order_status=4" class="icon-remove" onClick="return confirm('รายการสั่งซื้อของคุณจะถูกยกเลิก');">
+								</a></center>
+							</td>
+						</tr>
+					<?php } ?>
+				<?php } while ($row_mycart = mysql_fetch_assoc($mycart)); 
+
+
+			}
+				?> 
 			</table>
 		</div>
 	</div>
 
 	<?php
-	}
+	
 	mysql_free_result($mycart);
 	mysql_free_result($mm);
 
-?>
+	?>

@@ -79,7 +79,7 @@ Body Section
             <?php
             require_once('Connections/condb.php');
             $total = 0;
-            if ($totalRows_buyer > 0 & isset($_SESSION['shopping_cart']) <> '') {
+            if ($totalRows_buyer > 0 ) {
 
               foreach($_SESSION['shopping_cart'] as $p_id=>$p_qty)
               {
@@ -112,7 +112,7 @@ Body Section
 
              <?php }
 
-             $tax = $total * 0.09;
+             $tax = $total * 0.07;
              $total += $tax;
 
               ?>
@@ -126,7 +126,7 @@ Body Section
               <td> <?php echo number_format($sumems,2); ?></td>
             </tr>
             <tr>
-              <td colspan="5" class="alignR">Total vat 9%  </td>
+              <td colspan="5" class="alignR">Total vat 7%  </td>
               <td> <?php echo number_format($tax,2); ?></td>
             </tr>
             <tr>
