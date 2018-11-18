@@ -55,15 +55,15 @@ $totalRows_editmem = mysql_num_rows($editmem);
   <body>
     <?php include('navbar.php');?>
   <div class="container">
-  
+
     <div class="row">
       <div class="col-md-2">
-     
+
         <br>
-       
+
       </div>
         <div class="col-md-10">
-        <h3 align="center">  แก้ไข  MEMBER  <?php include('edit-ok.php');?> </h3>
+        <h3 align="center">  แก้ไข  สมาชิก  <?php include('edit-ok.php');?> </h3>
 <div class="table">
     <form  name="register" action="edit_mem_db.php" method="POST" id="register" class="form-horizontal">
        <div class="form-group">
@@ -73,14 +73,14 @@ $totalRows_editmem = mysql_num_rows($editmem);
        </div>
        </div>
        <div class="form-group">
-        <div class="col-sm-2" align="right"> Username : </div>
+        <div class="col-sm-2" align="right"> ชื่อผู้ใช้ : </div>
           <div class="col-sm-5" align="left">
             <input  name="mem_username" dtype="text"  class="form-control" id="mem_username" placeholder="username" value="<?php echo $row_editmem['mem_username']; ?>" minlength="2"  />
           </div>
       </div>
 
         <div class="form-group">
-        <div class="col-sm-2" align="right"> Password : </div>
+        <div class="col-sm-2" align="right"> รหัสผ่าน : </div>
           <div class="col-sm-5" align="left">
             <input  name="mem_password" type="password" required class="form-control" id="mem_password" placeholder="password" pattern="^[a-zA-Z0-9]+$" value="<?php echo $row_editmem['mem_password']; ?>" minlength="2" />
           </div>
@@ -109,7 +109,7 @@ $totalRows_editmem = mysql_num_rows($editmem);
         </div>
 
         <div class="form-group">
-        <div class="col-sm-2" align="right"> E-mail : </div>
+        <div class="col-sm-2" align="right"> อีเมล์ : </div>
           <div class="col-sm-5" align="left">
             <input  name="mem_email" type="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required class="form-control" id="mem_email" placeholder="E-mail" title="กรุณากรอก Email ให้ถูกต้อง" value="<?php echo $row_editmem['mem_email']; ?>" minlength="2"/>
           </div>

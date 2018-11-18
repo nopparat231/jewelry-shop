@@ -73,7 +73,7 @@ Body Section
 					<li class="span4">
 						<div class="thumbnail">
 							<a href="product_details.php?p_id=<?php echo $row_prdg['p_id'];?>" class="overlay"></a>
-							<a class="zoomTool" href="product_details.php?p_id=<?php echo $row_prdg['p_id'];?>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+							<a class="zoomTool" href="product_details.php?p_id=<?php echo $row_prdg['p_id'];?>" title="add to cart"><span class="icon-search"></span> ดูข้อมูลสินค้า</a>
 							<a href="product_details.php?p_id=<?php echo $row_prdg['p_id'];?>"><img src="pimg/<?php echo $row_prdg['p_img1'];?>" alt=""></a>
 							<?php 
 							$qty = $row_prdg['p_qty'];

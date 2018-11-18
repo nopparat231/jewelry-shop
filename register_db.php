@@ -40,12 +40,11 @@ $result1 = mysql_query($sql,$condb) or die ("Error in query : $sql" .mysql_error
 		$strTo = $mem_email;
 		$strSubject = "Activate Member Account";
 		$strHeader = "Content-type: text/html; charset=windows-874\n"; // or UTF-8 //
-		$strHeader .= "From: webmaster@thaicreate.com\nReply-To: webmaster@thaicreate.com";
 		$strMessage = "";
 		$strMessage .= "Welcome : ".$mem_name."<br>";
 		$strMessage .= "=================================<br>";
 		$strMessage .= "Activate account click here.<br>";
-		$strMessage .= "http://localhost/jewelry-shop/activate.php?sid=".$session_id."&mem_id=".$mem_id."<br>";
+		$strMessage .= "http://localhost/jewelry-shop-master/activate.php?sid=".$session_id."&mem_id=".$mem_id."<br>";
 		$strMessage .= "=================================<br>";
 		$strMessage .= "<br>";
 

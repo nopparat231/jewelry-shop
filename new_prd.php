@@ -22,7 +22,7 @@ $totalRows_prd = mysql_num_rows($prd);
 						<?php do {  ?>
 							<li class="span3">
 								<div class="thumbnail">
-									<a class="zoomTool" href="product_details.php?p_id=<?php echo $row_prd['p_id'];?>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+									<a class="zoomTool" href="product_details.php?p_id=<?php echo $row_prd['p_id'];?>" title="add to cart"><span class="icon-search"></span> ดูข้อมูลสินค้า</a>
 									<a href="#" class="tag"></a>
 									<a href="product_details.php?p_id=<?php echo $row_prd['p_id'];?>"><img src="pimg/<?php echo $row_prd['p_img1'];?>" alt="bootstrap-ring"></a>
 								</div>
@@ -35,7 +35,7 @@ $totalRows_prd = mysql_num_rows($prd);
 			<?php 
 
 			mysql_select_db($database_condb);
-			$query_prdd = "SELECT * FROM tbl_product ORDER BY p_id limit 7,10 ";
+			$query_prdd = "SELECT * FROM tbl_product ORDER BY p_id limit 0,4 ";
 			$prdd = mysql_query( $query_prdd,$condb) or die(mysql_error());
 			$row_prdd = mysql_fetch_assoc($prdd);
 			$totalRows_prdd = mysql_num_rows($prdd);
@@ -48,7 +48,7 @@ $totalRows_prd = mysql_num_rows($prd);
 					<?php do {  ?>
 						<li class="span3">
 							<div class="thumbnail">
-								<a class="zoomTool" href="product_details.php?p_id=<?php echo $row_prdd['p_id'];?>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+								<a class="zoomTool" href="product_details.php?p_id=<?php echo $row_prdd['p_id'];?>" title="add to cart"><span class="icon-search"></span> ดูข้อมูลสินค้า</a>
 								<a href="#" class="tag"></a>
 								<a href="product_details.php?p_id=<?php echo $row_prdd['p_id'];?>"><img src="pimg/<?php echo $row_prdd['p_img1'];?>" alt="bootstrap-ring"></a>
 							</div>

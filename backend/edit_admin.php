@@ -58,8 +58,8 @@ $totalRows_editadmin = mysql_num_rows($editadmin);
 
   	<div class="row">
     	<div class="col-md-2">
-      
-        
+
+
       </div>
         <div class="col-md-10">
         <h3 align="center">  แก้ไข  Admin  <?php include('edit-ok.php');?> </h3>
@@ -72,14 +72,14 @@ $totalRows_editadmin = mysql_num_rows($editadmin);
        </div>
        </div>
        <div class="form-group">
-       	<div class="col-sm-2" align="right"> Username : </div>
+       	<div class="col-sm-2" align="right"> =ชื่อผู้ใช้ : </div>
           <div class="col-sm-5" align="left">
             <input  name="admin_user" type="text" disabled   class="form-control" id="admin_user" placeholder="username" value="<?php echo $row_editadmin['admin_user']; ?>" minlength="2"  />
           </div>
       </div>
 
         <div class="form-group">
-        <div class="col-sm-2" align="right"> Password : </div>
+        <div class="col-sm-2" align="right">รหัสผ่าน : </div>
           <div class="col-sm-5" align="left">
             <input  name="admin_pass" type="password" required class="form-control" id="admin_pass" placeholder="password" pattern="^[a-zA-Z0-9]+$" value="<?php echo $row_editadmin['admin_pass']; ?>" minlength="2" />
           </div>
@@ -107,7 +107,7 @@ $totalRows_editadmin = mysql_num_rows($editadmin);
         </div>
 
         <div class="form-group">
-        <div class="col-sm-2" align="right"> E-mail : </div>
+        <div class="col-sm-2" align="right"> อีเมล์ : </div>
           <div class="col-sm-5" align="left">
             <input  name="admin_email" type="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required class="form-control" id="admin_email" placeholder="E-mail" title="กรุณากรอก Email ให้ถูกต้อง" value="<?php echo $row_editadmin['admin_email']; ?>" minlength="2"/>
           </div>
@@ -121,7 +121,7 @@ $totalRows_editadmin = mysql_num_rows($editadmin);
              <option value="<?php echo $row_editadmin['status']; ?> "><?php echo $row_editadmin['status']; ?></option>
              <option value="admin">admin</option>
              <option value="staff">staff</option>
-             
+
 
            </select>
          </div>

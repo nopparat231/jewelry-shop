@@ -54,8 +54,9 @@ Lower Header Section
 			</div>
 			<div class="span4 alignR">
 				<p><br>
-				 <strong> Support (24/7) :  0800 1234 678 </strong><br>
-				 <strong> 					The standard  used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 </strong><br>
+				 <strong> Support (จ-ส/10.00-21.00) :  081-493-3899 </strong><br>
+				 <strong> 					414 สีลม36 แขวงสุริยวงศ์ เขตบางรัก กรุงเทพฯ
+			 </strong><br>
 
 
 					<br></p>
@@ -86,17 +87,16 @@ Navigation Bar Section
 
 					<li class="<?= ($activePage == 'index') ? 'active':''; ?>"><a href="index.php" >หน้าหลัก</a></li>
 
-					<li class="<?= ($activePage == 'list-view') ? 'active':''; ?>"><a href="list-view.php" >มุมมอง รายการ</a></li>
+					<li class="<?= ($activePage == 'list-view') ? 'active':''; ?>"><a href="list-view.php" ><span class="icon-list"></span></a></li>
 
-					<li class="<?= ($activePage == 'grid-view') ? 'active':''; ?>"><a href="grid-view.php" >มุมมอง ตาราง</a></li>
+					<li class="<?= ($activePage == 'grid-view') ? 'active':''; ?>"><a href="grid-view.php" ><span class="icon-th"></span></a></li>
 
-					<li class="<?= ($activePage == 'three-col') ? 'active':''; ?>"><a href="three-col.php" >มุมมอง 3 คอลัม</a></li>
+					
 
-					<li class="<?= ($activePage == 'four-col') ? 'active':''; ?>"><a href="four-col.php" >มุมมอง 4 คอลัม</a></li>
-
+					
 				</ul>
 				<form action="listprd_by_q.php" class="navbar-search pull-left">
-					<input type="text" placeholder="Search" name="q" class="search-query span2">
+					<input type="text" placeholder="ค้นหา" name="q" class="search-query span2">
 				</form>
 				<ul class="nav pull-right">
 					<?php
@@ -122,7 +122,7 @@ Navigation Bar Section
 						</li>
 					<?php }else{?>
 						<li class="dropdown">
-							<a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="icon-lock"></span> Login <b class="caret"></b></a>
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="icon-lock"></span> ลงชื่อเข้าใช้ <b class="caret"></b></a>
 
 							<?php include 'login_db.php' ?>
 
@@ -135,8 +135,8 @@ Navigation Bar Section
 										<input type="password" class="span2" name="mem_password"  id="mem_password" placeholder="รหัสผ่าน" >
 									</div>
 									<div class="control-group">
-										<button type="submit" class="shopBtn btn-block">Sign in</button>
-										<a href="#">Forget password?</a>
+										<button type="submit" class="shopBtn btn-block">เข้าสู่ระบบ</button>
+										<a href="forget_password.php"> ลืมรหัสผ่าน ?</a>
 									</div>
 								</form>
 							</div>

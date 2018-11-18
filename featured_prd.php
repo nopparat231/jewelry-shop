@@ -11,7 +11,7 @@ $totalRows_prd = mysql_num_rows($prd);
  ?>
 
 <div class="well well-small">
-		  <h3><a class="btn btn-mini pull-right" href="products.php" title="View more">VIew More<span class="icon-plus"></span></a> สินค้าแนะนำ  </h3>
+		  <h3><a class="btn btn-mini pull-right" href="products.php" title="View more">แสดงสินค้า<span class="icon-plus"></span></a> สินค้าแนะนำ  </h3>
 		  <hr class="soften"/>
 		  <div class="row-fluid">
 		  <ul class="thumbnails">
@@ -30,7 +30,7 @@ $totalRows_prd = mysql_num_rows($prd);
 					<li class="span4">
 						<div class="thumbnail">
 							<a href="product_details.php?p_id=<?php echo $row_prd['p_id'];?>" class="overlay"></a>
-							<a class="zoomTool" href="product_details.php?p_id=<?php echo $row_prd['p_id'];?>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+							<a class="zoomTool" href="product_details.php?p_id=<?php echo $row_prd['p_id'];?>" title="add to cart"><span class="icon-search"></span> ดูข้อมูลสินค้า</a>
 							<a href="product_details.php?p_id=<?php echo $row_prd['p_id'];?>"><img src="pimg/<?php echo $row_prd['p_img1'];?>" alt=""></a>
 							<?php 
 							$qty = $row_prd['p_qty'];

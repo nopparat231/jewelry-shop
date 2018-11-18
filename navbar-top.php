@@ -43,22 +43,22 @@
 				
 
 
-				<a href="index.php" class="<?= ($activePage == 'index') ? 'active':''; ?>""> <span class="icon-home"></span> Home</a> 
+				<a href="index.php" class="<?= ($activePage == 'index') ? 'active':''; ?>""> <span class="icon-home"></span> หน้าแรก</a> 
 
 				<?php
 
 				if(isset($_SESSION['MM_Username']) != ''){ 	?>
 
-					<a href="my_order.php?page=mycart" ><span class="icon-user"></span> My Account</a> 
+					<a href="my_order.php?page=mycart" ><span class="icon-user"></span> โปรไฟล์</a> 
 
 				<?php }?>
 
 
-					<a href="register.php" class="<?= ($activePage == 'register') ? 'active':''; ?>""><span class="icon-edit"></span> Free Register </a> 
+					<a href="register.php" class="<?= ($activePage == 'register') ? 'active':''; ?>""><span class="icon-edit"></span> สมัคสมาชิก </a> 
 
-					<a href="contact.php" class="<?= ($activePage == 'contact') ? 'active':''; ?>""><span class="icon-envelope"></span> Contact us</a>
+					<a href="contact.php" class="<?= ($activePage == 'contact') ? 'active':''; ?>""><span class="icon-envelope"></span> ติดต่อ</a>
 
-					<a href="cart.php" class="<?= ($activePage == 'cart') ? 'active':''; ?>""><span class="icon-shopping-cart"></span> <span class="badge badge-warning"><?php echo $cart_count; ?> Item(s)</span></a>
+					<a href="cart.php" class="<?= ($activePage == 'cart') ? 'active':''; ?>""><span class="icon-shopping-cart"></span> <span class="badge badge-warning"><?php echo $cart_count; ?> ชิ้น</span></a>
 
 				</div>
 			</div>

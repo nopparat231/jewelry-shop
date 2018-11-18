@@ -49,24 +49,24 @@ $totalRows_prd = mysql_num_rows($prd);
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php include('h.php');?>
     <?php include('datatable.php');?>
-    
+
 
   </head>
   <body>
     <?php include('navbar.php');?>
     <?php include('menu.php');?>
   <div class="container">
-  
-  
+
+
     <div class="row">
-    	
+
       <div class="col-md-10">
         <h3 align="center"> รายการสินค้า <a href="add_product.php" class="btn btn-primary"> เพิ่มสินค้า </a> </h3>
         <div class="table-responsive">
            <table width="100%" border="1" cellspacing="0" class="display" id="example">
 		<thead>
          <tr>
-            <th width="5%">id</th>
+            <th width="5%">รหัส</th>
             <th width="10%">ประเภท</th>
             <th width="40%">รายละเอียด</th>
             <th width="7%">ราคา</th>
@@ -93,7 +93,7 @@ $totalRows_prd = mysql_num_rows($prd);
               <td align="right" valign="top"><?php echo number_format($row_prd['p_price'],2); ?></td>
               <td align="center" valign="top">
         <?php echo $row_prd['p_qty']; ?>
-              
+
               <?php echo $row_prd['p_unit'];?>
               </td>
               <td align="center" valign="top">

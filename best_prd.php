@@ -24,10 +24,10 @@ $totalRows_prd = mysql_num_rows($prd);
 		
 		<li>
 			<div class="thumbnail">
-				<a class="zoomTool" href="product_details.php?p_id=<?php echo $row_prd['p_id'];?>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+				<a class="zoomTool" href="product_details.php?p_id=<?php echo $row_prd['p_id'];?>" title="add to cart"><span class="icon-search"></span> ดูข้อมูลสินค้า</a>
 				<img src="pimg/<?php echo $row_prd['p_img1'];?>" alt="bootstrap ecommerce templates">
 				<div class="caption">
-					<h4><a class="defaultBtn" href="product_details.php?p_id=<?php echo $row_prd['p_id'];?>">VIEW</a> <span class="pull-right"><?php echo number_format($row_prd['p_price'],2); ?></span></h4>
+					<h4><a class="defaultBtn" href="product_details.php?p_id=<?php echo $row_prd['p_id'];?>">ดูข้อมูล</a> <span class="pull-right"><?php echo number_format($row_prd['p_price'],2); ?></span></h4>
 				</div>
 			</div>
 		</li>

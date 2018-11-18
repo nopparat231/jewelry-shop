@@ -1,9 +1,9 @@
 <br>
 <br>
 <br>
-<?php include('mm.php');?> 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="glyphicon glyphicon-user"> </b>&nbsp;<b>ADMIN : <?php echo $row_mm['admin_name'];?></b> 
-<br>  
+<?php include('mm.php');?>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="glyphicon glyphicon-user"> </b>&nbsp;<b>ผูู้ใช้ระบบ : <?php echo $row_mm['admin_name'];?></b>
+<br>
 <nav class="navbar navbar-inverse sidebar">
 	<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
 		<ul class="nav navbar-nav">
@@ -11,13 +11,13 @@
 
 			<li><a href="index.php" >รายการสั่งซื้อ<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-list-alt"></span></a></li>
 
-			<?php 
+			<?php
 			if ($row_mm['status'] == 'admin') { ?>
 				<li><a href="list_product.php">จัดการสินค้า <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>
 				<li><a href="list_product_type.php">จัดการประเภทสินค้า <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>
 				<li><a href="list_admin.php" >จัดการผู้ดูแลระบบ <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-user"></span></a></li>
 				<li><a href="list_member.php">จัดการสมาชิค <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-user"></span></a></li>
-				
+
 				<li><a href="list_bank.php">จัดการข้อมูลธนาคาร <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-xbt"></span></a></li>
 
 
@@ -58,7 +58,7 @@ nav.sidebar, .main{
 
 	.main{
 		position: absolute;
-		width: calc(100% - 40px); 
+		width: calc(100% - 40px);
 		margin-left: 40px;
 		float: right;
 	}

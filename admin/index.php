@@ -1,7 +1,7 @@
 <?php require_once('../Connections/condb.php'); ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
-  function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+  function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
   {
     if (PHP_VERSION < 6) {
       $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
@@ -12,7 +12,7 @@ if (!function_exists("GetSQLValueString")) {
     switch ($theType) {
       case "text":
       $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
+      break;
       case "long":
       case "int":
       $theValue = ($theValue != "") ? intval($theValue) : "NULL";
@@ -50,22 +50,22 @@ if (isset($_POST['admin_user'])) {
   $MM_redirectLoginFailed = "login_alert.php";
   $MM_redirecttoReferrer = false;
   mysql_select_db($database_condb);
-  
+
   $LoginRS__query=sprintf("SELECT admin_user, admin_pass FROM tbl_admin WHERE admin_user=%s AND admin_pass=%s",
-    GetSQLValueString($loginUsername, "text"), GetSQLValueString($password, "text")); 
-  
+    GetSQLValueString($loginUsername, "text"), GetSQLValueString($password, "text"));
+
   $LoginRS = mysql_query($LoginRS__query, $condb) or die(mysql_error());
   $loginFoundUser = mysql_num_rows($LoginRS);
   if ($loginFoundUser) {
    $loginStrGroup = "";
-   
+
    if (PHP_VERSION >= 5.1) {session_regenerate_id(true);} else {session_regenerate_id();}
     //declare two session variables and assign them
    $_SESSION['MM_Username'] = $loginUsername;
-   $_SESSION['MM_UserGroup'] = $loginStrGroup;        
+   $_SESSION['MM_UserGroup'] = $loginStrGroup;
 
    if (isset($_SESSION['PrevUrl']) && false) {
-    $MM_redirectLoginSuccess = $_SESSION['PrevUrl'];  
+    $MM_redirectLoginSuccess = $_SESSION['PrevUrl'];
   }
   echo "<script>";
   echo "window.location ='../backend/index.php'; ";
@@ -86,7 +86,7 @@ else {
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Log in</title>
+  <title>ลงชื่อเข้าใช้ระบบ</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -105,11 +105,11 @@ else {
 <body class="hold-transition login-page">
   <div class="login-box">
     <div class="login-logo">
-      <a href=""><b>ADMIN</b>Login</a>
+      <a href=""><b>ผู้ดูแลระบบ</b></a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-      <p class="login-box-msg">Sign in to start your session</p>
+      <p class="login-box-msg"></p>
 
       <form action="<?php echo $loginFormAction; ?>"  method="post">
         <div class="form-group has-feedback">
@@ -117,7 +117,7 @@ else {
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">
-          <input type="password" class="form-control" name="admin_pass" placeholder="Password">
+          <input type="password" class="form-control" name="admin_pass" placeholder="รหัสผ่าน">
           <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         </div>
         <div class="row">
@@ -130,7 +130,8 @@ else {
           </div>
           <!-- /.col -->
           <div class="col-xs-4">
-            <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+            <button type="submit" class="btn btn-primary btn-block btn-flat">เข้าสู่ระบบ
+</button>
           </div>
           <!-- /.col -->
         </div>

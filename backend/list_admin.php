@@ -51,18 +51,18 @@ $totalRows_listadmin = mysql_num_rows($listadmin);
   <body>
    <?php include('navbar.php');?>
   <div class="container">
-  
-         
-  
+
+
+
     <div class="row">
-    	
+
         <div class="col-md-10">
-        <h3 align="center"> รายการ Admin  <a href="add_admin.php" class="btn btn-primary"> + เพิ่ม </a> </h3>
+        <h3 align="center"> รายการ ผู้ดูแลระบบ  <a href="add_admin.php" class="btn btn-primary"> + เพิ่ม </a> </h3>
         <div class="table-responsive">
           <table id="example" class="display" cellspacing="0" border="1">
 		<thead>
             <tr align="center">
-              <th width="5%">id</th>
+              <th width="5%">รหัส</th>
               <th width="10%">ข้อมูล</th>
               <th width="15%">ที่อยู่</th>
               <th width="5%">สถานะ</th>

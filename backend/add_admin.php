@@ -7,15 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php include('h.php');?>
   <?php include('datatable.php');?>
-   <?php include('menu.php');?>      
+   <?php include('menu.php');?>
 </head>
 <body>
   <div class="container">
     <?php include('navbar.php');?>
     <div class="row">
-    	
+
       <div class="col-md-10">
-        <h3 align="center">  เพิ่ม  Admin </h3>
+        <h3 align="center">  เพิ่ม  ผู้ดูแล </h3>
 <div class="table">
         <form  name="register" action="add_admin_db.php" method="POST" id="register" class="form-horizontal">
          <div class="form-group">
@@ -25,14 +25,14 @@
            </div>
          </div>
          <div class="form-group">
-          <div class="col-sm-2" align="right"> Username : </div>
+          <div class="col-sm-2" align="right"> ชื่อผู้ใช้ : </div>
           <div class="col-sm-5" align="left">
             <input  name="admin_user" type="text" required class="form-control" id="admin_user" placeholder="username" pattern="^[a-zA-Z0-9]+$" title="ภาษาอังกฤษหรือตัวเลขเท่านั้น" minlength="2"  />
           </div>
         </div>
-        
+
         <div class="form-group">
-          <div class="col-sm-2" align="right"> Password : </div>
+          <div class="col-sm-2" align="right"> รหัสผ่าน : </div>
           <div class="col-sm-5" align="left">
             <input  name="admin_pass" type="password" required class="form-control" id="admin_pass" placeholder="password" pattern="^[a-zA-Z0-9]+$" minlength="2" />
           </div>
@@ -48,7 +48,7 @@
          <div class="form-group">
         <div class="col-sm-2" align="right"> ที่อยู่ : </div>
         <div class="col-sm-5" align="left">
-          <textarea name="admin_address" type="textarea" required class="form-control" id="admin_address" placeholder="ที่อยู่" ></textarea> 
+          <textarea name="admin_address" type="textarea" required class="form-control" id="admin_address" placeholder="ที่อยู่" ></textarea>
         </div>
       </div>
 
@@ -60,7 +60,7 @@
       </div>
 
       <div class="form-group">
-        <div class="col-sm-2" align="right"> E-mail : </div>
+        <div class="col-sm-2" align="right"> อีเมล : </div>
         <div class="col-sm-5" align="left">
           <input  name="admin_email" type="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required class="form-control" id="admin_email" placeholder="E-mail" title="กรุณากรอก Email ให้ถูกต้อง" minlength="2"/>
         </div>
@@ -94,7 +94,7 @@
 </div>
 </div>
 </div>
-</div> 
+</div>
 </body>
 </html>
 <?php  include('f.php');?>

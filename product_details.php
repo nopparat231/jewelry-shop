@@ -1,5 +1,5 @@
 <?php require_once('Connections/condb.php'); ?>
-<?php 
+<?php
 
 include 'header.php';?>
 <div class="row">
@@ -7,9 +7,9 @@ include 'header.php';?>
 	<?php include 'sidebar.php';?>
 	<!-- end sidebar -->
 	<?php
-	
+
 	$pp_id = $_GET['p_id'];
-	
+
 	mysql_select_db($database_condb);
 	$query_prdt = "SELECT * FROM tbl_product WHERE p_id = '$pp_id'";
 	$prdt = mysql_query($query_prdt, $condb);
@@ -30,10 +30,10 @@ include 'header.php';?>
 
 	<div class="span9">
 		<ul class="breadcrumb">
-			<li><a href="index.php">Home</a> <span class="divider">/</span></li>
-			<li><a href="grid-view.php">Items</a> <span class="divider">/</span></li>
-			<li class="active">Preview</li>
-		</ul>	
+			<li><a href="index.php">หน้าแรก</a> <span class="divider">/</span></li>
+			<li><a href="grid-view.php">สินค้า</a> <span class="divider">/</span></li>
+			<li class="active">ตัวอย่าง</li>
+		</ul>
 		<div class="well well-small">
 			<div class="row-fluid">
 				<div class="span5">
@@ -59,11 +59,11 @@ include 'header.php';?>
 					<form class="form-horizontal qtyFrm" action="cart.php" method="get">
 						<div class="control-group">
 							<label class="control-label"><span><b>[ <?php echo number_format($row_prdt['p_price'],2); ?> ] บาท</b></span></label><br>
-							
+
 
 						</div>
 						<label class="control-label"><span>ไซส์ <b><?php echo $row_prdt['p_size']; ?></b></span></label>
-						
+
 						<br /><br />
 
 						<h5><span class="icon-eye-open"></span> <?php echo $row_prdt['p_view']; ?></h5>
@@ -79,14 +79,14 @@ include 'header.php';?>
 			</div>
 
 
-			
+
 			<hr class="softn clr" />
 
 
 			<ul id="productDetail" class="nav nav-tabs">
-				<li class="active"><a href="#home" data-toggle="tab">Product Details</a></li>
-				<li class=""><a href="#profile" data-toggle="tab">Related Products </a></li>
-				
+				<li class="active"><a href="#home" data-toggle="tab">ข้อมูลสินค้า</a></li>
+				<li class=""><a href="#profile" data-toggle="tab">สินค้าอื่นๆ </a></li>
+
 			</ul>
 			<div id="myTabContent" class="tab-content tabWrapper">
 				<div class="tab-pane fade active in" id="home">
@@ -96,11 +96,11 @@ include 'header.php';?>
 				</div>
 				<div class="tab-pane fade" id="profile">
 					<?php include 'tbl_prd.php'; ?>
-					
+
 					<?php if ($totalRows_prd > 0) {?>
 
 						<?php do { ?>
-							<div class="row-fluid">	  
+							<div class="row-fluid">
 								<div class="span2">
 									<img src="pimg/<?php echo $row_prd['p_img1'];?>" alt="">
 								</div>

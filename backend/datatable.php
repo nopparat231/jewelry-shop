@@ -12,14 +12,35 @@ $(document).ready(function() {
 
     $('#example').DataTable( {
 
-      "aaSorting" :[[0,'desc']],
-      "language": {
-            "lengthMenu": "แสดง _MENU_ หน้า",
-            "zeroRecords": "ค้นหาไม่พบ",
-            "info": "แสดงหน้า _PAGE_ ถึง _PAGES_",
-            "infoEmpty": "ไม่พบข้อมูลในตาราง",
-            "infoFiltered": "(กรองจาก _MAX_ จำนวนตรารงทั้งหมด)"
-        }
+      
+          "aaSorting" :[[0,'asc']],
+
+          "language": {
+             "lengthMenu": "Display _MENU_ records",
+              "sEmptyTable":     "ไม่มีข้อมูลในตาราง",
+              "sInfo":           "แสดง _START_ ถึง _END_ จาก _TOTAL_ แถว",
+              "sInfoEmpty":      "แสดง 0 ถึง 0 จาก 0 แถว",
+              "sInfoFiltered":   "(กรองข้อมูล _MAX_ ทุกแถว)",
+              "sInfoPostFix":    "",
+              "sInfoThousands":  ",",
+              "sLengthMenu":     "แสดง _MENU_ แถว",
+              "sLoadingRecords": "กำลังโหลดข้อมูล...",
+              "sProcessing":     "กำลังดำเนินการ...",
+              "sSearch":         "ค้นหา: ",
+              "sZeroRecords":    "ไม่พบข้อมูล",
+              "oPaginate": {
+                "sFirst":    "หน้าแรก",
+                "sPrevious": "ก่อนหน้า",
+                "sNext":     "ถัดไป",
+                "sLast":     "หน้าสุดท้าย"
+          },
+          "oAria": {
+                "sSortAscending":  ": เปิดใช้งานการเรียงข้อมูลจากน้อยไปมาก",
+                "sSortDescending": ": เปิดใช้งานการเรียงข้อมูลจากมากไปน้อย"
+          }
+    }
+
+
 
 	  //"lengthMenu":[[20,50, 100, -1], [20,50, 100,"All"]]
 

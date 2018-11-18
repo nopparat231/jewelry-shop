@@ -73,7 +73,7 @@ Body Section
 					<li class="span4">
 						<div class="thumbnail">
 							<a href="product_details.php?p_id=<?php echo $row_prdg['p_id'];?>" class="overlay"></a>
-							<a class="zoomTool" href="product_details.php?p_id=<?php echo $row_prdg['p_id'];?>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+							<a class="zoomTool" href="product_details.php?p_id=<?php echo $row_prdg['p_id'];?>" title="add to cart"><span class="icon-search"></span> ดูข้อมูลสินค้า</a>
 							<a href="product_details.php?p_id=<?php echo $row_prdg['p_id'];?>"><img src="pimg/<?php echo $row_prdg['p_img1'];?>" alt=""></a>
 							
 							<?php 
@@ -82,7 +82,7 @@ Body Section
 
 								<div class="caption cntr" >
 									<p><?php echo $row_prdg['p_name']; ?></p>
-									<p><strong><?php echo number_format($row_prdg['p_price']); ?> บาท</strong></p>
+									<p><strong><?php echo number_format($row_prdg['p_price'],2); ?> บาท</strong></p>
 									<h4><a class="shopBtn" href="cart.php?p_id=<?php echo $row_prdg['p_id'];?>&act=add" dissable title="add to cart"> สินค้าหมด </a></h4>
 									 
 									<br class="clr">
@@ -99,7 +99,7 @@ Body Section
 
 									<div class="caption cntr">
 										<p><?php echo $row_prdg['p_name']; ?></p>
-										<p><strong><?php echo number_format($row_prdg['p_price']); ?> บาท</strong></p>
+										<p><strong><?php echo number_format($row_prdg['p_price'],2); ?> บาท</strong></p>
 										<h4><a class="shopBtn" href="cart.php?p_id=<?php echo $row_prdg['p_id'];?>&act=add" title="add to cart"><span class="totalInCart" ></span> เพิ่มลงตระกล้า </a></h4>
 										
 										<br class="clr">

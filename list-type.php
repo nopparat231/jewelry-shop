@@ -77,7 +77,7 @@ echo "ไม่มีสินค้า";
 					<li class="span4">
 						<div class="thumbnail">
 							<a href="product_details.php?p_id=<?php echo $row_prdt['p_id'];?>" class="overlay"></a>
-							<a class="zoomTool" href="product_details.php?p_id=<?php echo $row_prdt['p_id'];?>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+							<a class="zoomTool" href="product_details.php?p_id=<?php echo $row_prdt['p_id'];?>" title="add to cart"><span class="icon-search"></span>ดูข้อมูลสินค้า</a>
 							<a href="product_details.php?p_id=<?php echo $row_prdt['p_id'];?>"><img src="pimg/<?php echo $row_prdt['p_img1'];?>" alt=""></a>
 							<?php 
 							$qty = $row_prdt['p_qty'];

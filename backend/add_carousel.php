@@ -73,13 +73,13 @@ $totalRows_carousel = mysql_num_rows($carousel);
   <div class="container">
 
   	<div class="row">
-    	
+
       <div class="col-md-10">
-        <h3 align="center"> เพิ่ม Carousel </h3>
+        <h3 align="center"> เพิ่ม คิว </h3>
         <div class="table">
         <form action="<?php echo $editFormAction; ?>" method="POST" name="carousel" id="carousel" class="form-horizontal">
         	<div class="form-group">
-            	<div class="col-sm-3" align="right"> Carousel </div>
+            	<div class="col-sm-3" align="right"> คิว </div>
                 <div class="col-sm-7">
                 	<input type="text" name="carousel_config" class="form-control" required>
                 </div>

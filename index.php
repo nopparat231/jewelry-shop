@@ -1,36 +1,36 @@
 <?php include 'header.php';?>
-
+<!-- แถบบน -->
 <div class="row">
 
-<!-- sidebar -->
+<!-- แถบข้าง-->
 <?php include 'sidebar.php';?>
 <!-- end sidebar -->
 
 	<div class="span9">
-	<!-- carousel -->
+	<!-- รูปภาพสไล -->
 <?php include 'carousel_head.php'; ?>
-	<!-- End carousel -->
+	<!-- End รูปภาพสไล -->
 <!--
-New Products
+New แสดงสินค้าล่าสุดs
 -->
 	<?php include 'new_prd.php'; ?>
 
 	<!--
-End New Products
+End New แสดงสินค้าล่าสุดs
 -->
 	<!--
-	Featured Products
+	Featured สินค้าแนะนำ
 	-->
 <?php include 'featured_prd.php'; ?>
 	<!--
-	End Featured Products
+	End Featured สินค้าแนะนำ
 	-->
 		
 	
 	
 	<hr>
 	<div class="well well-small">
-	<a class="btn btn-mini pull-right" href="products.php">View more <span class="icon-plus"></span></a>
+	<a class="btn btn-mini pull-right" href="products.php">แสดงทั้งหมด <span class="icon-plus"></span></a>
 	<b>สินค้าทั้งหมด</b> 
 	</div>
 	</div>

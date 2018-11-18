@@ -6,20 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php include('h.php');?>
- <?php include('menu.php');?>  
+ <?php include('menu.php');?>
 
   </head>
   <body>
   <div class="container">
  <?php include('navbar.php');?>
   	<div class="row">
-    	
+
       <div class="col-md-10">
         <h3 align="center"> เพิ่มรายการธนาคาร</h3>
         <div class="table">
         		<form action="add_bank_db.php"  method="post" enctype="multipart/form-data" name="Add_Product" id="Add_Product" >
 
-  
+
   <table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
     <tr>
       <td colspan="3" align="center">&nbsp;</td>
@@ -67,7 +67,7 @@
     </tr>
 
     <tr>
-      <td align="right" valign="middle">Logo</td>
+      <td align="right" valign="middle">โลโก้</td>
       <td colspan="2"><label for="b_logo"></label>
         <input type="file" name="b_logo" id="b_logo" required></td>
     </tr>
@@ -80,12 +80,12 @@
       <td colspan="2">
       <button type="submit" name="button" id="button" value="ตกลง" class="btn btn-primary">เพิ่มข้อมูล</button></td>
     </tr>
-  </table> 
+  </table>
 </form>
             </div>
       </div>
     </div>
- </div> 
+ </div>
   </body>
 </html>
 
