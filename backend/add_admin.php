@@ -71,8 +71,8 @@
           <div class="col-sm-7" align="left">
 
             <select name="status">
-             <option value="staff">staff</option>
              <option value="admin">admin</option>
+             <option value="superadmin">superadmin</option>
 
            </select>
          </div>

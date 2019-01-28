@@ -58,7 +58,7 @@ $totalRows_listadmin = mysql_num_rows($listadmin);
 
         <div class="col-md-10">
         <h3 align="center"> รายการ ผู้ดูแลระบบ  <a href="add_admin.php" class="btn btn-primary"> + เพิ่ม </a> </h3>
-        <div class="table-responsive">
+        <div class="table">
           <table id="example" class="display" cellspacing="0" border="1">
 		<thead>
             <tr align="center">
