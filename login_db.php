@@ -1,43 +1,15 @@
-
-<?php require_once('Connections/condb.php'); ?>
-<?php
-if (!function_exists("GetSQLValueString")) {
-  function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
-  {
-    if (PHP_VERSION < 6) {
-      $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-    }
-
-    $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
-
-    switch ($theType) {
-      case "text":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;
-      case "long":
-      case "int":
-      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
-      break;
-      case "double":
-      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
-      break;
-      case "date":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;
-      case "defined":
-      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
-      break;
-    }
-    return $theValue;
-  }
-}
-?>
-<?php
-// *** Validate request to login to this site.
+<?php 
 if (!isset($_SESSION)) {
   session_start();
 
 }
+
+ ?>
+<?php require_once('Connections/condb.php'); ?>
+
+<?php
+// *** Validate request to login to this site.
+
 
 $loginFormAction = $_SERVER['PHP_SELF'];
 if (isset($_GET['accesscheck'])) {
@@ -53,8 +25,7 @@ if (isset($_POST['mem_username'])) {
   $MM_redirecttoReferrer = false;
   mysql_select_db($database_condb);
 
-  $LoginRS__query=sprintf("SELECT mem_username, mem_password FROM tbl_member WHERE mem_username=%s AND mem_password=%s AND active='yes'",
-    GetSQLValueString($loginUsername, "text"), GetSQLValueString($password, "text"));
+  $LoginRS__query="SELECT mem_username, mem_password FROM tbl_member WHERE mem_username='$loginUsername' AND mem_password='$password' AND active='yes'";
 
   $LoginRS = mysql_query($LoginRS__query, $condb) or die(mysql_error());
   $loginFoundUser = mysql_num_rows($LoginRS);
