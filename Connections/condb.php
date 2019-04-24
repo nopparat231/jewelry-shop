@@ -3,7 +3,7 @@
 # Type="MYSQL"
 # HTTP="true"
 $hostname_condb = "localhost";
-$database_condb = "jewelry-shop-master";
+$database_condb = "jewelry-shop";
 $username_condb = "root";
 $password_condb = "";
 
