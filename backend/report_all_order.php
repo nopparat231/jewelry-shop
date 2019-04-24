@@ -53,7 +53,7 @@ if (isset($_SESSION['MM_Username'])) {
 }
 // echo $colname_mm;
 mysql_select_db($database_condb);
-$query_mm = "SELECT * FROM tbl_member WHERE mem_username = '$colname_mm'";
+$query_mm = sprintf("SELECT * FROM tbl_member WHERE mem_username = %s", GetSQLValueString($colname_mm, "text"));
 $mm = mysql_query($query_mm, $condb) or die(mysql_error());
 $row_mm = mysql_fetch_assoc($mm);
 $totalRows_mm = mysql_num_rows($mm);

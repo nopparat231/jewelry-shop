@@ -1,11 +1,13 @@
 <?php
-error_reporting( error_reporting() & ~E_NOTICE );
-$hostname_condb = "fdb26.runhosting.com";
-$database_condb = "2959038_chata";
-$username_condb = "2959038_chata";
-$password_condb = "Password23.";
+# FileName="Connection_php_mysql.htm"
+# Type="MYSQL"
+# HTTP="true"
+$hostname_condb = "localhost";
+$database_condb = "jewelry-shop-master";
+$username_condb = "root";
+$password_condb = "";
 
-$condb = mysql_connect($hostname_condb, $username_condb, $password_condb) or trigger_error(mysql_error(),E_USER_ERROR); 
+$condb = mysql_pconnect($hostname_condb, $username_condb, $password_condb) or trigger_error(mysql_error(),E_USER_ERROR);
 mysql_query("SET NAMES UTF8");
-
+error_reporting( error_reporting() & ~E_NOTICE );
 ?>

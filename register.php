@@ -1,6 +1,6 @@
 <?php include 'header.php';?>
-<!-- 
-Body Section 
+<!--
+Body Section
 -->
 	<div class="row">
 <!-- sidebar -->
@@ -9,32 +9,32 @@ Body Section
 
 	<div class="span9">
     <ul class="breadcrumb">
-		<li><a href="index.php">Home</a> <span class="divider">/</span></li>
-		<li class="active">Registration</li>
+		<li><a href="index.php">หน้าแรก</a> <span class="divider">/</span></li>
+		<li class="active">สมัครสมาชิก</li>
     </ul>
-	<h3> Registration</h3>	
+	<h3> สมัครสมาชิก</h3>
 	<hr class="soft"/>
 	<div class="well">
 	<form class="form-horizontal" action="register_db.php" method="POST" name="register" >
 		<h3>*กรุณากรอกข้อมูลให้ครบทุกช่อง</h3>
-		
+
 		<div class="control-group">
-			<label class="control-label" for="mem_username">Username : <sup>*</sup></label>
+			<label class="control-label" for="mem_username">ชื่อผู้ใช้ : <sup>*</sup></label>
 			<div class="controls">
-			  <input type="text" name="mem_username" required placeholder="Username" pattern="^[a-zA-Z0-9]+$" title="ภาษาอังกฤษหรือตัวเลขเท่านั้น" minlength="4" >
+			  <input type="text" name="mem_username" required placeholder="ชื่อผู้ใช้" pattern="^[a-zA-Z0-9]+$" title="ภาษาอังกฤษหรือตัวเลขเท่านั้น" minlength="4" >
 			</div>
 		 </div>
 		 <div class="control-group">
-			<label class="control-label" for="mem_password">Password : <sup>*</sup></label>
+			<label class="control-label" for="mem_password">รหัสผ่าน : <sup>*</sup></label>
 			<div class="controls">
-			  <input type="password" id="txtNewPassword" name="mem_password" required placeholder="Password" pattern="^[a-zA-Z0-9]+$" minlength="6">
+			  <input type="password" id="txtNewPassword" name="mem_password" required placeholder="รหัสผ่าน" pattern="^[a-zA-Z0-9]+$" minlength="6">
 			</div>
 		 </div>
 
 		 <div class="control-group">
-			<label class="control-label" for="mem_check">Confrim Password : <sup>*</sup></label>
+			<label class="control-label" for="mem_check">ยืนยัน รหัสผ่าน : <sup>*</sup></label>
 			<div class="controls">
-			  <input type="password"  id="txtConfirmPassword" onkeyup="checkPasswordMatch();" required placeholder="Password" pattern="^[a-zA-Z0-9]+$" minlength="6">
+			  <input type="password"  id="txtConfirmPassword" onkeyup="checkPasswordMatch();" required placeholder="ยืนยัน รหัสผ่าน" pattern="^[a-zA-Z0-9]+$" minlength="6">
 			<div class="registrationFormAlert" id="divCheckPasswordMatch"></div>
 			</div>
 		 </div>
@@ -48,7 +48,7 @@ Body Section
 		 <div class="control-group">
 			<label class="control-label" for="mem_address">ที่อยู่ : <sup>*</sup></label>
 			<div class="controls">
-			  <textarea type="textarea" name="mem_address" required placeholder="ที่อยู่" ></textarea> 
+			  <textarea type="textarea" name="mem_address" required placeholder="ที่อยู่" ></textarea>
 			</div>
 		 </div>
 		 <div class="control-group">
@@ -58,14 +58,14 @@ Body Section
 			</div>
 		 </div>
 		<div class="control-group">
-		<label class="control-label" for="inputEmail">Email <sup>*</sup></label>
+		<label class="control-label" for="inputEmail">อีเมล์ <sup>*</sup></label>
 		<div class="controls">
-		  <input type="text" name="mem_email" required placeholder="Email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="กรุณากรอก Email ให้ถูกต้อง" minlength="10" >
+		  <input type="text" name="mem_email" required placeholder="อีเมล์"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="กรุณากรอก Email ให้ถูกต้อง" minlength="10" >
 		</div>
-	  </div>	  
+	  </div>
 	<div class="control-group">
 		<div class="controls">
-		 <input type="submit" name="submitAccount" value="Register" class="exclusive shopBtn">
+		 <input type="submit" name="submitAccount" value="ยืนยัน" class="exclusive shopBtn">
 		</div>
 	</div>
 	</form>
@@ -91,6 +91,5 @@ End Footer
     else
         $("#divCheckPasswordMatch").html("Passwords match.");
 }
-	
-</script>
 
+</script>

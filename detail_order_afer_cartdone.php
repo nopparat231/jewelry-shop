@@ -6,7 +6,7 @@ error_reporting( error_reporting() & ~E_NOTICE );
 date_default_timezone_set('Asia/Bangkok');
   //print_r($_SESSION);
 if (!function_exists("GetSQLValueString")) {
-  function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+  function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
   {
     if (PHP_VERSION < 6) {
       $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
@@ -15,7 +15,7 @@ if (!function_exists("GetSQLValueString")) {
     switch ($theType) {
       case "text":
       $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
+      break;
       case "long":
       case "int":
       $theValue = ($theValue != "") ? intval($theValue) : "NULL";
@@ -53,15 +53,15 @@ if (isset($_GET['order_id'])) {
 }
 mysql_select_db($database_condb);
 $query_cartdone = sprintf("
-  SELECT * FROM 
-  tbl_order as o, 
-  tbl_order_detail as d, 
+  SELECT * FROM
+  tbl_order as o,
+  tbl_order_detail as d,
   tbl_product as p,
   tbl_member  as m
-  WHERE o.order_id = %s 
-  AND o.order_id=d.order_id 
+  WHERE o.order_id = %s
+  AND o.order_id=d.order_id
   AND d.p_id=p.p_id
-  AND o.mem_id = m.mem_id 
+  AND o.mem_id = m.mem_id
   ORDER BY o.order_date ASC", GetSQLValueString($colname_cartdone, "int"));
 $cartdone = mysql_query($query_cartdone, $condb) or die(mysql_error());
 $row_cartdone = mysql_fetch_assoc($cartdone);
@@ -95,8 +95,8 @@ input[type='radio']:checked:before {
 
 
 <ul class="breadcrumb">
-  <li><a href="index.php">Home</a> <span class="divider">/</span></li>
-  <li class="active">Check Out</li>
+  <li><a href="index.php">หน้าแรก</a> <span class="divider">/</span></li>
+  <li class="active">ชำระเงิน</li>
 </ul>
 <div class="well">
 
@@ -108,14 +108,14 @@ input[type='radio']:checked:before {
       <tr>
         <td colspan="7" align="center"><strong>รายการสั่งซื้อล่าสุด คุณ <?php echo $row_cartdone['mem_name'];?> <br />
           <font color="red"> สถานะ :
-            <?php 
+            <?php
             $status =  $row_cartdone['order_status'];
             include('backend/status.php');
             ?>
           </font></strong>
         </td>
 
-        <a href="print_report.php?order_id=<?php echo $colname_cartdone;?>" class="btn btn-primary btn-sm pull-right" target="_blank" id="hp" >  <span class="icon icon-print"></span> พิมพ์ใบเสร็จ </a> 
+        <a href="print_report.php?order_id=<?php echo $colname_cartdone;?>" class="btn btn-primary btn-sm pull-right" target="_blank" id="hp" >  <span class="icon icon-print"></span> พิมพ์ใบเสร็จ </a>
 
 
       </tr>
@@ -127,7 +127,7 @@ input[type='radio']:checked:before {
            <strong><font color="red">
             ชำระเงิน ธ.<?php echo $row_cartdone['b_name'];?> <br />
 
-            เลข บ/ช <?php 
+            เลข บ/ช <?php
             echo $row_cartdone['b_number'];?> <br />
 
             จำนวน <?php echo number_format($row_cartdone['pay_amount'],2);?> บาท<br />
@@ -170,7 +170,7 @@ input[type='radio']:checked:before {
 
  do { ?>
 
-  <?php 
+  <?php
   $sum  = $row_cartdone['p_price']*$row_cartdone['p_c_qty'];
   $totalp  += $sum;
   $total  += $sum;
@@ -186,9 +186,9 @@ input[type='radio']:checked:before {
     <td align="center"><?php echo $row_cartdone['p_c_qty'];?></td>
     <td align='center'><?php echo number_format($ems,2);?></td>
     <td align="center"><?php echo number_format($sum,2);?></td>
-  </tr> 
+  </tr>
 
-<?php } while ($row_cartdone = mysql_fetch_assoc($cartdone)); 
+<?php } while ($row_cartdone = mysql_fetch_assoc($cartdone));
 $tax = $total*0.07;
 $total += $tax;
 echo "<tr>";
@@ -211,20 +211,20 @@ echo "</tr>";
 </table>
 </div>
 
-<?php 
+<?php
    // $status =  $row_cartdone['order_status'];
-if($status > 1){ }else{?> 
+if($status > 1){ }else{?>
   <div class="well">
     <br /><br />
     <table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
 
      <tr >
-      <h4 align="center">รายละเอียดการโอนเงิน  
+      <h4 align="center">รายละเอียดการโอนเงิน
         <font color="red">
           *กรุุณาเลือกบัญชีที่โอนเงิน
         </font>
       </h4>
-    </tr> 
+    </tr>
     <br>
 
     <?php do { ?>
@@ -297,11 +297,11 @@ if($status > 1){ }else{?>
 
 
       <p align="center">
-        <button type="submit" name="add" class="shopBtn"> บันทึก </button> 
+        <button type="submit" name="add" class="shopBtn"> บันทึก </button>
         <a href="?page=mycart"  type="submit " class="shopBtn pull-left">ชำระเงินภายหลัง</a>
 
       </p>
-      
+
 
     </form>
   </div>
@@ -309,7 +309,7 @@ if($status > 1){ }else{?>
 
 
 
-<?php  
+<?php
 mysql_free_result($buyer);
 mysql_free_result($rb);
 mysql_free_result($cartdone);

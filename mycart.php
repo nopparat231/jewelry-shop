@@ -1,12 +1,39 @@
 <?php require_once('Connections/condb.php'); ?>
 <?php
-
+if (!function_exists("GetSQLValueString")) {
+	function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
+	{
+		if (PHP_VERSION < 6) {
+			$theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+		}
+		$theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+		switch ($theType) {
+			case "text":
+			$theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+			break;
+			case "long":
+			case "int":
+			$theValue = ($theValue != "") ? intval($theValue) : "NULL";
+			break;
+			case "double":
+			$theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
+			break;
+			case "date":
+			$theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+			break;
+			case "defined":
+			$theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
+			break;
+		}
+		return $theValue;
+	}
+}
 $colname_mm = "-1";
 if (isset($_SESSION['MM_Username'])) {
 	$colname_mm = $_SESSION['MM_Username'];
 }
 mysql_select_db($database_condb);
-$query_mm = "SELECT * FROM tbl_member WHERE mem_username = '$colname_mm'";
+$query_mm = sprintf("SELECT * FROM tbl_member WHERE mem_username = %s", GetSQLValueString($colname_mm, "text"));
 $mm = mysql_query($query_mm, $condb) or die(mysql_error());
 $row_mm = mysql_fetch_assoc($mm);
 $totalRows_mm = mysql_num_rows($mm);
@@ -22,8 +49,8 @@ $totalRows_mycart = mysql_num_rows($mycart);
 
 <div class="span9">
 	<ul class="breadcrumb">
-		<li><a href="index.php">Home</a> <span class="divider">/</span></li>
-		<li class="active">Check Out</li>
+		<li><a href="index.php">หน้าแรก</a> <span class="divider">/</span></li>
+		<li class="active">ชำระเงิน</li>
 	</ul>
 	<div class="well">
 
@@ -76,17 +103,17 @@ $totalRows_mycart = mysql_num_rows($mycart);
 							</td>
 						</tr>
 					<?php } ?>
-				<?php } while ($row_mycart = mysql_fetch_assoc($mycart)); 
+				<?php } while ($row_mycart = mysql_fetch_assoc($mycart));
 
 
 			}
-				?> 
+				?>
 			</table>
 		</div>
 	</div>
 
 	<?php
-	
+
 	mysql_free_result($mycart);
 	mysql_free_result($mm);
 

@@ -1,14 +1,44 @@
 <?php include 'header.php';
 require_once('Connections/condb.php'); ?>
 <?php
-
+//error_reporting( error_reporting() & ~E_NOTICE );
+session_start();
+// print_r($_SESSION);
+if (!function_exists("GetSQLValueString")) {
+  function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
+  {
+    if (PHP_VERSION < 6) {
+      $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+    }
+    $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+    switch ($theType) {
+      case "text":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;
+      case "long":
+      case "int":
+      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
+      break;
+      case "double":
+      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
+      break;
+      case "date":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;
+      case "defined":
+      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
+      break;
+    }
+    return $theValue;
+  }
+}
 //session_start();
 $colname_buyer = "-1";
 if (isset($_SESSION['MM_Username'])) {
   $colname_buyer = $_SESSION['MM_Username'];
 }
 mysql_select_db($database_condb);
-$query_buyer = "SELECT * FROM tbl_member WHERE mem_username = '$colname_buyer'";
+$query_buyer = sprintf("SELECT * FROM tbl_member WHERE mem_username = %s", GetSQLValueString($colname_buyer, "text"));
 $buyer = mysql_query($query_buyer, $condb) or die(mysql_error());
 $row_buyer = mysql_fetch_assoc($buyer);
 $totalRows_buyer = mysql_num_rows($buyer);
@@ -16,30 +46,30 @@ $totalRows_buyer = mysql_num_rows($buyer);
 if($_SESSION['MM_Username']!=''){  ?>
 
 
-<!-- 
-Body Section 
+<!--
+Body Section
 -->
 <div class="row">
 	<div class="span12">
     <ul class="breadcrumb">
-      <li><a href="index.php">Home</a> <span class="divider">/</span></li>
-      <li class="active">Check Out</li>
+      <li><a href="index.php">หน้าแรก</a> <span class="divider">/</span></li>
+      <li class="active">ชำระเงิน</li>
     </ul>
     <div class="well well-small">
       <h1>ยืนยันการสั่งซื้อ <small class="pull-right"></small></h1>
-      <hr class="soften"/>	
+      <hr class="soften"/>
 
       <table class="table table-bordered table-condensed">
         <thead>
           <tr>
-            <th>Product</th>
+            <th>สินค้า</th>
 
-            <th>Unit price</th>
-            <th>Size </th>
-            <th>Ems</th>
-            <th>Qty </th>
-            
-            <th>Total</th>
+            <th>ราคาต่อหน่วย</th>
+            <th>ขนาด </th>
+            <th>คาจัดส่ง</th>
+            <th>จำนวน </th>
+
+            <th>ราคารวม</th>
 
           </tr>
 
@@ -64,7 +94,7 @@ Body Section
                 $total += $ems;
 
                 $sumems +=$ems;
-                
+
 
 
                 ?>
@@ -88,19 +118,19 @@ Body Section
               ?>
 
              <tr>
-              <td colspan="5" class="alignR">Total products:  </td>
+              <td colspan="5" class="alignR">ราคาสินค้า:  </td>
               <td ><?php echo number_format($totalp,2); ?></td>
             </tr>
             <tr>
-              <td colspan="5" class="alignR">Total ems  </td>
+              <td colspan="5" class="alignR">ค่าจัดส่ง  </td>
               <td> <?php echo number_format($sumems,2); ?></td>
             </tr>
             <tr>
-              <td colspan="5" class="alignR">Total vat 7%  </td>
+              <td colspan="5" class="alignR">ภาษ๊ 7%  </td>
               <td> <?php echo number_format($tax,2); ?></td>
             </tr>
             <tr>
-              <td colspan="5" class="alignR">Total :  </td>
+              <td colspan="5" class="alignR">ราคารวม :  </td>
               <td class="label label-primary" align="center"><h4> <?php echo number_format($total,2); ?></h4></td>
             </tr>
 
@@ -111,7 +141,7 @@ Body Section
       <table class="table table-bordered">
        <tbody>
         <tr><td ><h2>ที่อยู่ในการจัดส่ง</h2></td></tr>
-        <tr> 
+        <tr>
          <td>
 
            <div class="control-group">
@@ -124,7 +154,7 @@ Body Section
           <div class="control-group">
             <label class="span2 control-label" >ที่อยู่</label>
             <div class="controls">
-              <textarea name="address" class="form-control"  required placeholder="ที่อยู่ในการส่งสินค้า"><?php echo $row_buyer['mem_address']; ?></textarea> 
+              <textarea name="address" class="form-control"  required placeholder="ที่อยู่ในการส่งสินค้า"><?php echo $row_buyer['mem_address']; ?></textarea>
             </div>
           </div>
 
@@ -136,7 +166,7 @@ Body Section
           </div>
 
           <div class="control-group">
-            <label class="span2 control-label" >E-mail</label>
+            <label class="span2 control-label" >อีเมล์</label>
             <div class="controls">
               <input type="text" name="email" value="<?php echo $row_buyer['mem_email']; ?>" required placeholder="อีเมล์" >
             </div>
@@ -153,12 +183,12 @@ Body Section
               <button type="submit" class="shopBtn">ยืนยันสั่งซื้อ</button>
             </div>
           </div>
-        </form> 
+        </form>
       </td>
     </tr>
   </tbody>
-</table>		
-<a href="cart.php" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Cart </a>
+</table>
+<a href="cart.php" class="shopBtn btn-large"><span class="icon-arrow-left"></span> ย้อนกลับ </a>
 
 
 </div>
@@ -166,10 +196,10 @@ Body Section
 </div>
 <?php
 
-} else{  
-  include('logout3.php'); 
+} else{
+  include('logout3.php');
  }//end seseion
- 
+
  mysql_free_result($buyer);
  ?>
 <!--

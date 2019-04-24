@@ -4,32 +4,32 @@
 ?>
 
 
-<!-- 
-Body Section 
+<!--
+Body Section
 -->
 <div class="row">
 	<div class="span12">
     <ul class="breadcrumb">
-      <li><a href="index.php">Home</a> <span class="divider">/</span></li>
-      <li class="active">Check Out</li>
+      <li><a href="index.php">หน้าแรก</a> <span class="divider">/</span></li>
+      <li class="active">ตะกร้าสินค้า</li>
     </ul>
     <div class="well well-small">
       <h1>รายการสินค้า</h1>
-      <hr class="soften"/>	
+      <hr class="soften"/>
 
       <table class="table table-bordered table-condensed">
         <thead>
           <tr>
-            <th>Product</th>
-            <th>Description</th>
+            <th>สินค้า</th>
+            <th>รายละเอียด</th>
 
 
-            <th>Unit price</th>
-            <th>Size </th>
-            <th>Ems</th>
-            <th>Qty </th>
-             
-            <th>Total</th>
+            <th>ราคาต่อหน่วย</th>
+            <th>ขนาด </th>
+            <th>ค่าจัดส่ง</th>
+            <th>จำนวนสินค้า </th>
+
+            <th>ราคา</th>
           </tr>
         </thead>
         <tbody>
@@ -40,7 +40,7 @@ Body Section
 
           if(!empty($_SESSION['shopping_cart']))
           {
-            require_once('Connections/condb.php'); 
+            require_once('Connections/condb.php');
             foreach($_SESSION['shopping_cart'] as $p_id=>$p_qty)
             {
 
@@ -57,7 +57,7 @@ Body Section
               $sumems +=$ems;
               ?>
 
-              
+
               <tr>
                 <td><img width="100" src="pimg/<?php echo $rowc['p_img1'];?>" alt=""></td>
                 <td><?php echo $rowc['p_name']; ?><br>
@@ -71,7 +71,7 @@ Body Section
                    <div class="input-append">
                     <form action="cart.php?act=update" method="post">
 
-                      <a class="btn" type="button" style="max-width:20px" href="cart.php?p_id=<?php echo $rowc['p_id'];?>&act=rem">-</a> 
+                      <a class="btn" type="button" style="max-width:20px" href="cart.php?p_id=<?php echo $rowc['p_id'];?>&act=rem">-</a>
 
 
                       <input class="span1" style="max-width:20px" placeholder="1" id="appendedInputButtons" size="16" type="text" name='amount[<?php echo $rowc['p_id'];?>]' value="<?php echo $p_qty; ?>" onkeyup="if(this.value > <?php echo $rowc['p_qty']; ?>) this.value = <?php echo $rowc['p_qty']; ?>;" />
@@ -96,7 +96,7 @@ Body Section
                </tr>
 
 
-             <?php } 
+             <?php }
 
 
              $tax = $total * 0.07;
@@ -108,19 +108,19 @@ Body Section
 
 
              <tr>
-              <td colspan="6" class="alignR">Total products:  </td>
+              <td colspan="6" class="alignR">ราคาสินค้า:  </td>
               <td ><?php echo number_format($totalp,2); ?></td>
             </tr>
             <tr>
-              <td colspan="6" class="alignR">Total ems	</td>
+              <td colspan="6" class="alignR">ค่าจัดส่ง	</td>
               <td> <?php echo number_format($sumems,2); ?></td>
             </tr>
             <tr>
-              <td colspan="6" class="alignR">Total vat 9%  </td>
+              <td colspan="6" class="alignR">ภาษี 9%  </td>
               <td> <?php echo number_format($tax,2); ?></td>
             </tr>
             <tr>
-              <td colspan="6" class="alignR">Total :	</td>
+              <td colspan="6" class="alignR">ราคารวม :	</td>
               <td class="label label-primary" align="center"><h4> <?php echo number_format($total,2); ?></h4></td>
             </tr>
           </tbody>
@@ -128,8 +128,8 @@ Body Section
       <?php  } ?>
 
 
-      <a href="products.php" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Continue Shopping </a>
-      <button  class="shopBtn btn-large pull-right">Next <span class="icon-arrow-right"></span></button>
+      <a href="products.php" class="shopBtn btn-large"><span class="icon-arrow-left"></span> กลับไปหน้าสินค้า </a>
+      <button  class="shopBtn btn-large pull-right">ถัดไป <span class="icon-arrow-right"></span></button>
 
     </form>
 

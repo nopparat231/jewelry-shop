@@ -71,8 +71,9 @@
           <div class="col-sm-7" align="left">
 
             <select name="status">
-             <option value="admin">admin</option>
-             <option value="superadmin">superadmin</option>
+             <option value="admin">ผู้ดูแล</option>
+             <option value="superadmin">ผู้บริหาร</option>
+             <option value="staff">พนักงาน</option>
 
            </select>
          </div>

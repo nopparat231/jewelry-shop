@@ -25,11 +25,26 @@
 			<?php } ?>
 
 			<?php if ($row_mm['status'] == 'admin') { ?>
+			<!--	<li><a href="index.php" >รายการสั่งซื้อ<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-list-alt"></span></a></li>
+				<li><a href="list_product.php">จัดการสินค้า <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>
+				<li><a href="list_product_type.php">จัดการประเภทสินค้า <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>-->
+				<li><a href="list_admin.php" >จัดการผู้ดูแลระบบ <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-user"></span></a></li>
+				<li><a href="list_member.php">จัดการสมาชิค <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-user"></span></a></li>
+
+			<!--	<li><a href="list_bank.php">จัดการข้อมูลธนาคาร <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-xbt"></span></a></li>
+
+
+				<li><a href="carousel.php">แก้ไขรูปสไลด์ <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-picture"></span></a></li>-->
+
+				<li><a href="../logout.php"><font style="color: #CD8373">ออกจากระบบ</font>  <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-log-in"></span></a></li>
+
+			<?php }?>
+            <?php if ($row_mm['status'] == 'staff') { ?>
 				<li><a href="index.php" >รายการสั่งซื้อ<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-list-alt"></span></a></li>
 				<li><a href="list_product.php">จัดการสินค้า <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>
 				<li><a href="list_product_type.php">จัดการประเภทสินค้า <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>
-				<li><a href="list_admin.php" >จัดการผู้ดูแลระบบ <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-user"></span></a></li>
-				<li><a href="list_member.php">จัดการสมาชิค <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-user"></span></a></li>
+				<!--<li><a href="list_admin.php" >จัดการผู้ดูแลระบบ <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-user"></span></a></li>
+				<li><a href="list_member.php">จัดการสมาชิค <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-user"></span></a></li>-->
 
 				<li><a href="list_bank.php">จัดการข้อมูลธนาคาร <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-xbt"></span></a></li>
 
@@ -39,6 +54,7 @@
 				<li><a href="../logout.php"><font style="color: #CD8373">ออกจากระบบ</font>  <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-log-in"></span></a></li>
 
 			<?php }?>
+            
 		</ul>
 	</div>
 </nav>

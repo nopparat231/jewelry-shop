@@ -1,5 +1,35 @@
 <?php require_once('../Connections/condb.php'); ?>
 <?php
+if (!function_exists("GetSQLValueString")) {
+  function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
+  {
+    if (PHP_VERSION < 6) {
+      $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+    }
+
+    $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+
+    switch ($theType) {
+      case "text":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;
+      case "long":
+      case "int":
+      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
+      break;
+      case "double":
+      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
+      break;
+      case "date":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;
+      case "defined":
+      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
+      break;
+    }
+    return $theValue;
+  }
+}
 
 $t_id = $_POST['t_id'];
 $t_name = $_POST['t_name'];
@@ -13,13 +43,13 @@ if (isset($_SERVER['QUERY_STRING'])) {
 
 
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "ptype")) {
-  $updateSQL = "UPDATE tbl_type SET t_name='$t_name',t_type='$t_type' WHERE t_id='$t_id'";
+  $updateSQL = sprintf("UPDATE tbl_type SET t_name='$t_name',t_type='$t_type' WHERE t_id='$t_id'");
  mysql_select_db($condb, $condb);
  $Result1 = mysql_query($updateSQL, $condb) or die(mysql_error());
 
   $updateGoTo = "edit_product_type.php?t_id=" . $row_edittype['t_id'] . "";
   if (isset($_SERVER['QUERY_STRING'])) {
-   header("Location: list_product_type.php");
+   header(sprintf("Location: list_product_type.php"));
   }
   
 }
@@ -29,7 +59,7 @@ if (isset($_GET['t_id'])) {
   $colname_edittype = $_GET['t_id'];
 }
 mysql_select_db($database_condb);
-$query_edittype = "SELECT * FROM tbl_type WHERE t_id = '$colname_edittype'";
+$query_edittype = sprintf("SELECT * FROM tbl_type WHERE t_id = '$colname_edittype'");
 $edittype = mysql_query($query_edittype, $condb) or die(mysql_error());
 $row_edittype = mysql_fetch_assoc($edittype);
 $totalRows_edittype = mysql_num_rows($edittype);

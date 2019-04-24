@@ -1,5 +1,5 @@
  <?php
- //session_start();
+ session_start();
  ?>
  
 
@@ -45,7 +45,7 @@ Lower Header Section
 			<div class="span4">
 				<h1>
 					<a class="logo" href="index.php"><span>Twitter Bootstrap ecommerce template</span> 
-						<img src="img/cc.png" alt="bootstrap sexy shop" width="100%">
+						<img src="img/LOGO CHATA02.png" alt="bootstrap sexy shop" width="166" height="109">
 					</a>
 				</h1>
 			</div>

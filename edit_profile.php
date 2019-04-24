@@ -40,7 +40,7 @@ if (isset($_GET['mem_id'])) {
 
 }
 mysql_select_db($database_condb);
-$query_editmem = "SELECT * FROM tbl_member WHERE mem_id = '$colname_editmem'";
+$query_editmem = sprintf("SELECT * FROM tbl_member WHERE mem_id = %s", GetSQLValueString($colname_editmem, "int"));
 $editmem = mysql_query($query_editmem, $condb) or die(mysql_error());
 $row_editmem = mysql_fetch_assoc($editmem);
 $totalRows_editmem = mysql_num_rows($editmem);
