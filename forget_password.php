@@ -1,4 +1,3 @@
-
 <?php include 'header.php';?>
 <!-- 
 Body Section 
@@ -17,9 +16,10 @@ Body Section
 	Please enter the e-mail address used to register. We will e-mail you your new password.<br/><br/><br/>
 	
 	
-	<form class="form-inline">
+	<form class="form-inline" action="reset_password.php" method="post">
 		<label class="control-label" for="inputEmail">E-mail address</label>
-		<input type="text" class="span4" placeholder="Email">			  
+		<input type="email" class="span4" placeholder="Email" name="mem_email">	
+		<input type="hidden" name="resetpassword">		  
 		<button type="submit" class="shopBtn block">Send My Password</button>
 	</form>
 </div>
