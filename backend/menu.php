@@ -8,7 +8,7 @@
 	<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
 		<ul class="nav navbar-nav">
 
-			<?php if ($row_mm['status'] == 'superadmin') { ?>
+			<?php if ($row_mm['status'] === 'superadmin') { ?>
 
 				<li><a href="report_all_prd.php">รายงานสินค้าทั้งหมด <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>
 				<li><a href="report_all_order.php">รายงานการสั่งซื้อ <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>
@@ -22,9 +22,7 @@
 
 
 				<li><a href="../logout.php" >ออกจากระบบ <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-log-in"></span></a></li>
-			<?php } ?>
-
-			<?php if ($row_mm['status'] == 'admin') { ?>
+			<?php }elseif ($row_mm['status'] === 'admin') { ?>
 			<!--	<li><a href="index.php" >รายการสั่งซื้อ<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-list-alt"></span></a></li>
 				<li><a href="list_product.php">จัดการสินค้า <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>
 				<li><a href="list_product_type.php">จัดการประเภทสินค้า <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>-->
@@ -38,8 +36,7 @@
 
 				<li><a href="../logout.php"><font style="color: #CD8373">ออกจากระบบ</font>  <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-log-in"></span></a></li>
 
-			<?php }?>
-            <?php if ($row_mm['status'] == 'staff') { ?>
+			<?php }elseif ($row_mm['status'] === 'staff') { ?>
 				<li><a href="index.php" >รายการสั่งซื้อ<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-list-alt"></span></a></li>
 				<li><a href="list_product.php">จัดการสินค้า <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>
 				<li><a href="list_product_type.php">จัดการประเภทสินค้า <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>

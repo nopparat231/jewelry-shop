@@ -7,10 +7,10 @@ include('Connections/condb.php');
 
 $mem_username = $_POST['mem_username'];
 $mem_password = $_POST['mem_password'];
-$mem_name = $_POST['mem_name'];
+$mem_name = $_POST['mem_name']. "&nbsp;&nbsp;" .$_POST['meml_name'];
 $mem_email = $_POST['mem_email'];
 $mem_tel = $_POST['mem_tel'];
-$mem_address = $_POST['mem_address'];
+$mem_address = $_POST['a']." แขวง/ตำบล ".$_POST['t']." เขต/อำเภอ ".$_POST['o']." จังหวัด ".$_POST['j']." รหัสไปรษณีย์ ".$_POST['p'];
 $user = "user";
 $session_id = session_id();
 $no = "no";
