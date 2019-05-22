@@ -3,7 +3,9 @@
 <div class="row">
 
 <!-- แถบข้าง-->
+
 <?php include 'sidebar.php';?>
+
 <!-- end sidebar -->
 
 	<div class="span9">

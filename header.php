@@ -1,21 +1,21 @@
 <?php
-  session_start();
+session_start();
 
 ?>
- <!DOCTYPE html>
- <html lang="en">
- <head>
- 	<meta charset="utf-8">
- 	<title>CHATA Shop</title>
- 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
- 	<meta name="description" content="">
- 	<meta name="author" content="">
- 	<!-- Bootstrap styles -->
- 	<link href="assets/css/bootstrap.css" rel="stylesheet"/>
- 	<!-- Customize styles -->
- 	<link href="style.css" rel="stylesheet"/>
- 	<!-- font awesome styles -->
- 	<link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>CHATA Shop</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<!-- Bootstrap styles -->
+	<link href="assets/css/bootstrap.css" rel="stylesheet"/>
+	<!-- Customize styles -->
+	<link href="style.css" rel="stylesheet"/>
+	<!-- font awesome styles -->
+	<link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 		<!--[if IE 7]>
 			<link href="css/font-awesome-ie7.min.css" rel="stylesheet">
 		<![endif]-->
@@ -37,35 +37,38 @@
 <!--
 Lower Header Section 
 -->
-<div class="container">
-	<div id="gototop"> </div>
-	<header id="header">
-		<div class="row">
-			<div class="span4">
-				<h1>
-					<a class="logo" href="index.php"><span>Twitter Bootstrap ecommerce template</span> 
-						<img src="img/LOGO CHATA02.png" alt="bootstrap sexy shop" width="166" height="109">
-					</a>
-				</h1>
-			</div>
-			<div class="span4">
-				
-			</div>
-			<div class="span4 alignR">
-				<p><br>
-				 <strong> Support (จ-ส/10.00-21.00) :  081-493-3899 </strong><br>
-				 <strong> 					414 สีลม36 แขวงสุริยวงศ์ เขตบางรัก กรุงเทพฯ
-			 </strong><br>
+
+	<div class="container" >
+		
+		<div id="gototop"> </div>
+		<header id="header">
+			<div class="row">
+				<div class="span4">
+					<h1>
+						<a class="logo" href="index.php"><span>Twitter Bootstrap ecommerce template</span> 
+							<img src="img/LOGO CHATA02.png" alt="bootstrap sexy shop" width="166" height="109">
+						</a>
+					</h1>
+				</div>
+				<div class="span4">
+
+				</div>
+				<div class="span4 alignR">
+					<p><br>
+						<strong> Support (จ-ส/10.00-21.00) :  081-493-3899 </strong><br>
+						<strong> 					414 สีลม36 แขวงสุริยวงศ์ เขตบางรัก กรุงเทพฯ
+						</strong><br>
 
 
-					<br></p>
-				
-		</div>
-	</header>
+						<br></p>
+
+					</div>
+				</header>
 
 <!--
 Navigation Bar Section 
 -->
+
 <div class="navbar">
 	<div class="navbar-inner">
 		<div class="container">
@@ -111,7 +114,7 @@ Navigation Bar Section
 
 								<li><a href="my_order.php?page=mycart"><span class="icon-chevron-right"></span> รายการสั่งซื้อทั้งหมด</a></li>
 
-							
+
 
 								<li><a href="logout.php" class="list-group-item list-group-item-danger"><span class="icon-chevron-right"></span> ออกจากระบบ</a></li>
 
@@ -146,6 +149,7 @@ Navigation Bar Section
 		</div>
 	</div>
 </div>
+
 <!-- 
 Body Section 
 -->

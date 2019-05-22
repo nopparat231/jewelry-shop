@@ -251,6 +251,20 @@ if($status > 1){ }else{?>
     </tr>
     <tr>
       <td width="5%" align="center">&nbsp;</td>
+      <td align="center" colspan="2">วันที่แจ้งชำระเงิน</td>
+      <td colspan="5" align="left"><label for="pay_date"></label>
+        <input type="date" id="pay_date" value="<?php echo date('Y-m-d');?>"/></td>
+      </tr>
+      <tr>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+         <tr>
+      <td width="5%" align="center">&nbsp;</td>
       <td align="center" colspan="2">วันที่ชำระเงิน</td>
       <td colspan="5" align="left"><label for="pay_date"></label>
         <input type="date" name="pay_date" id="pay_date" value="<?php echo date('Y-m-d');?>"/></td>
