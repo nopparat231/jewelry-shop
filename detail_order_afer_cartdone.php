@@ -115,47 +115,55 @@ input[type='radio']:checked:before {
           </font></strong>
         </td>
 
-        <a href="print_report.php?order_id=<?php echo $colname_cartdone;?>" class="btn btn-primary btn-sm pull-right" target="_blank" id="hp" >  <span class="icon icon-print"></span> พิมพ์ใบเสร็จ </a>
+        <?php
+        $status =  $row_cartdone['order_status'];
+        if ($status == 1) { ?>
+         <a href="print_report.php?order_id=<?php echo $colname_cartdone;?>&tex=พิมพ์ใบแจ้งหนี้" class="btn btn-primary btn-sm pull-right" target="_blank" id="hp" >  <span class="icon icon-print"></span> พิมพ์ใบแจ้งหนี้ </a>
+
+       <?php }else{ ?>
+         <a href="print_report.php?order_id=<?php echo $colname_cartdone;?>&tex=พิมพ์ใบเสร็จ" class="btn btn-primary btn-sm pull-right" target="_blank" id="hp" >  <span class="icon icon-print"></span> พิมพ์ใบเสร็จ </a>
+
+       <?php }  ?>
 
 
-      </tr>
-      <tr>
-        <td colspan="7" align="center">
+     </tr>
+     <tr>
+      <td colspan="7" align="center">
 
-          <table width="100%" >
+        <table width="100%" >
 
-           <strong><font color="red">
-            ชำระเงิน ธ.<?php echo $row_cartdone['b_name'];?> <br />
+         <strong><font color="red">
+          ชำระเงิน ธ.<?php echo $row_cartdone['b_name'];?> <br />
 
-            เลข บ/ช <?php
-            echo $row_cartdone['b_number'];?> <br />
+          เลข บ/ช <?php
+          echo $row_cartdone['b_number'];?> <br />
 
-            จำนวน <?php echo number_format($row_cartdone['pay_amount'],2);?> บาท<br />
-            วันที่ชำระ <?php echo date('d/m/Y',strtotime($row_cartdone['pay_date']));?>
-          </font>
-          <br />
-          <h4 style="color:blue">
-            เลขพัสดุ :  <?php echo $row_cartdone['postcode'];?>
-          </h4>
+          จำนวน <?php echo number_format($row_cartdone['pay_amount'],2);?> บาท<br />
+          วันที่ชำระ <?php echo date('d/m/Y',strtotime($row_cartdone['pay_date']));?>
+        </font>
+        <br />
+        <h4 style="color:blue">
+          เลขพัสดุ :  <?php echo $row_cartdone['postcode'];?>
+        </h4>
 
 
 
-        </strong>
+      </strong>
 
-        <td >
+      <td >
 
-          <?php if ($row_cartdone['pay_slip'] != '') { ?>
+        <?php if ($row_cartdone['pay_slip'] != '') { ?>
 
-           <img src="pimg/<?php echo $row_cartdone['pay_slip'];?>"  width="200"/>
+         <img src="pimg/<?php echo $row_cartdone['pay_slip'];?>"  width="200"/>
 
-         <?php } ?>
+       <?php } ?>
 
-       </td>
+     </td>
 
-     </table>
-   </td>
- </tr>
- <tr class="success">
+   </table>
+ </td>
+</tr>
+<tr class="success">
   <td width="99" align="center">รหัส</td>
   <td width="200" align="center">สินค้า</td>
   <td width="50" align="center">ไซส์</td>
@@ -168,15 +176,15 @@ input[type='radio']:checked:before {
 
 <?php
 
- do { ?>
+do { ?>
 
   <?php
   $sum  = $row_cartdone['p_price']*$row_cartdone['p_c_qty'];
   $totalp  += $sum;
   $total  += $sum;
-  $ems = $row_cartdone['p_ems'] * $row_cartdone['p_c_qty'];
-  $total += $ems;
-  $sumems +=$ems;
+  $sumems = $total*15/100; 
+  $sumemsall +=$sumems;
+  $total += $sumems;
   ?>
   <tr>
     <td align="center"><?php echo $row_cartdone['order_id'];?></td>
@@ -184,7 +192,7 @@ input[type='radio']:checked:before {
     <td align="center"><?php echo $row_cartdone['p_size'];?></td>
     <td align="center"><?php echo number_format($row_cartdone['p_price'],2);?></td>
     <td align="center"><?php echo $row_cartdone['p_c_qty'];?></td>
-    <td align='center'><?php echo number_format($ems,2);?></td>
+    <td align='center'><?php echo number_format($sumems,2);?></td>
     <td align="center"><?php echo number_format($sum,2);?></td>
   </tr>
 
@@ -197,7 +205,7 @@ echo "<td align='center'>"."<b>".number_format($totalp,2)."</b>"."</td>";
 echo "</tr>";
 echo "<tr>";
 echo "<td  align='left' colspan='6'><b>จัดส่ง</b></td>";
-echo "<td align='center'>"."<b>".number_format($sumems,2)."</b>"."</td>";
+echo "<td align='center'>"."<b>".number_format($sumemsall,2)."</b>"."</td>";
 echo "</tr>";
 echo "<tr>";
 echo "<td  align='left' colspan='6'><b>ภาษี 9%</b></td>";
@@ -253,21 +261,14 @@ if($status > 1){ }else{?>
       <td width="5%" align="center">&nbsp;</td>
       <td align="center" colspan="2">วันที่แจ้งชำระเงิน</td>
       <td colspan="5" align="left"><label for="pay_date"></label>
-        <input type="date" id="pay_date" value="<?php echo date('Y-m-d');?>"/></td>
-      </tr>
-      <tr>
-        <td align="center">&nbsp;</td>
-        <td align="center">&nbsp;</td>
-        <td align="center">&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-         <tr>
-      <td width="5%" align="center">&nbsp;</td>
-      <td align="center" colspan="2">วันที่ชำระเงิน</td>
-      <td colspan="5" align="left"><label for="pay_date"></label>
-        <input type="date" name="pay_date" id="pay_date" value="<?php echo date('Y-m-d');?>"/></td>
+        <?php
+
+        $or = date('Y-m-d');
+              //$date1 = str_replace('-', '/', $date);
+              //$new_startDate = date("Y-m-d",strtotime($startDate));
+        $tomorrow = date('Y-m-d',strtotime($or . "+2 days"));
+        ?>
+        <input type="date" name="pay_date" min="<?php echo $or; ?>" max="<?php echo $tomorrow; ?>"  autocomplete="off" required="required">
       </tr>
       <tr>
         <td align="center">&nbsp;</td>
@@ -279,9 +280,9 @@ if($status > 1){ }else{?>
       </tr>
       <tr>
         <td width="5%" align="center">&nbsp;</td>
-        <td align="center" colspan="2">จำนวนเงิน</td>
-        <td colspan="5" align="left"><label for="pay_amount"></label>
-          <input type="text" name="pay_amount" id="pay_amount"  value="<?php echo number_format($total,2,'.','');?>" required="required"/></td>
+        <td align="center" colspan="2">วันที่ชำระเงิน</td>
+        <td colspan="5" align="left"><label for="pay_date"></label>
+          <input type="date" name="pay_date" id="pay_date" value="<?php echo date('Y-m-d');?>"/></td>
         </tr>
         <tr>
           <td align="center">&nbsp;</td>
@@ -293,38 +294,52 @@ if($status > 1){ }else{?>
         </tr>
         <tr>
           <td width="5%" align="center">&nbsp;</td>
-          <td align="center" colspan="2">หลักฐานการโอน</td>
-          <td colspan="5" align="left">
-            <input name="pay_slip" id="pay_slip" type="file"  required="required" accept="image/jpeg"/><br>
-          (ไฟล์ .jpg, gif, png, pdf&nbsp;ไม่เกิน 2mb)</td>
-        </tr>
-        <tr>
-          <td align="center">&nbsp;</td>
-          <td align="center">&nbsp;</td>
-          <td align="center">&nbsp;</td>
-          <td><input name="order_id" type="hidden" id="order_id" value="<?php echo $colname_cartdone;?>" /></td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-        </tr>
+          <td align="center" colspan="2">จำนวนเงิน</td>
+          <td colspan="5" align="left"><label for="pay_amount"></label>
+            <input type="number" name="pay_amount" id="pay_amount"  value="<?php echo number_format($total,2,'.','');?>" required="required"/></td>
+          </tr>
+          <tr>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td width="5%" align="center">&nbsp;</td>
+            <td align="center" colspan="2">หลักฐานการโอน</td>
+            <td colspan="5" align="left">
+              <input name="pay_slip" id="pay_slip" type="file"  required="required" accept="image/jpeg"/><br>
+            (ไฟล์ .jpg, gif, png, pdf&nbsp;ไม่เกิน 2mb)</td>
+          </tr>
+          <tr>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td><input name="order_id" type="hidden" id="order_id" value="<?php echo $colname_cartdone;?>" /></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
 
-      </table>
+        </table>
 
 
-      <p align="center">
-        <button type="submit" name="add" class="shopBtn"> บันทึก </button>
-        <a href="?page=mycart"  type="submit " class="shopBtn pull-left">ชำระเงินภายหลัง</a>
+        <p align="center">
+          <button type="submit" name="add" class="shopBtn"> บันทึก </button>
+          <a href="?page=mycart"  type="submit " class="shopBtn pull-left">ชำระเงินภายหลัง</a>
 
-      </p>
-
-
-    </form>
-  </div>
-<?php } ?>
+        </p>
 
 
+      </form>
+    </div>
+  <?php } ?>
 
-<?php
-mysql_free_result($buyer);
-mysql_free_result($rb);
-mysql_free_result($cartdone);
-?>
+
+
+  <?php
+  mysql_free_result($buyer);
+  mysql_free_result($rb);
+  mysql_free_result($cartdone);
+  ?>

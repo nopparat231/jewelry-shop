@@ -86,21 +86,36 @@ $totalRows_editmem = mysql_num_rows($editmem);
           </div>
         </div>
         <div class="form-group">
-        <div class="col-sm-2" align="right"> ชื่อ-สกุล : </div>
+        <div class="col-sm-2" align="right"> ชื่อ : </div>
           <div class="col-sm-5" align="left">
-            <input  name="mem_name" type="text" required class="form-control" id="mem_name" placeholder="ชื่อ-สกุล" value="<?php echo $row_editmem['mem_name']; ?>"  value="<?php echo $row_editmem['mem_pass']; ?>" minlength="2"/>
+            <input  name="mem_name" type="text" required class="form-control" id="mem_name" placeholder="ชื่อ" value="<?php echo $row_editmem['mem_name']; ?>"  value="<?php echo $row_editmem['mem_pass']; ?>" minlength="2"/>
           </div>
         </div>
-
+        <div class="form-group">
+        <div class="col-sm-2" align="right"> สกุล : </div>
+          <div class="col-sm-5" align="left">
+            <input  name="lastname" type="text" required class="form-control" id="lastname" placeholder="สกุล" value="<?php echo $row_editmem['lastname']; ?>"  value="<?php echo $row_editmem['mem_pass']; ?>" minlength="2"/>
+          </div>
+        </div>
 
 
         <div class="form-group">
         <div class="col-sm-2" align="right"> ที่อยู่ : </div>
           <div class="col-sm-10" align="left">
-            <input name="mem_address" type="text" required class="form-control" id="mem_address" placeholder="ที่อยู่"  value="<?php echo $row_editmem['mem_address']; ?>" minlength="2"></input>
+            <input name="mem_address" type="text" required class="form-control" id="mem_address" placeholder="บ้านเลขที่"  value="<?php echo $row_editmem['mem_address']; ?>" minlength="2"></input>
           </div>
         </div>
-
+        <div class="form-group">
+        <div class="col-sm-2" align="right">  : </div>
+          <div class="col-sm-10" align="left">
+            <input name="district" type="text" required class="form-control" id="district" placeholder="อำเภอ-ตำบล"  value="<?php echo $row_editmem['district']; ?>" minlength="2"></input>
+          </div>
+        </div><div class="form-group">
+        <div class="col-sm-2" align="right">  : </div>
+          <div class="col-sm-10" align="left">
+            <input name="proince" type="text" required class="form-control" id="proince" placeholder="จังหวัด"  value="<?php echo $row_editmem['proince']; ?>" minlength="2"></input>
+          </div>
+        </div>
         <div class="form-group">
         <div class="col-sm-2" align="right"> เบอร์โทร : </div>
           <div class="col-sm-5" align="left">

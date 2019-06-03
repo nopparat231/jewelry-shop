@@ -42,7 +42,7 @@
       <div class="form-group">
         <div class="col-sm-2" align="right"> ชื่อ-สกุล : </div>
         <div class="col-sm-5" align="left">
-          <input  name="mem_name" type="text" required class="form-control" id="mem_name" placeholder="ชื่อ-สกุล" />
+          <input  name="mem_name" type="text" required class="form-control" id="mem_name" placeholder="ชื่อ" />
         </div>
       </div>
 
@@ -56,7 +56,7 @@
       <div class="form-group">
         <div class="col-sm-2" align="right"> เบอร์โทร : </div>
         <div class="col-sm-5" align="left">
-          <input  name="mem_tel" type="text" required class="form-control" id="mem_tel" placeholder="0912345678" pattern="[0-9]{10}" minlength="2" title="เบอร์โทร 0-9" minlength="2"/>
+          <input  name="mem_tel" type="number" required class="form-control" id="mem_tel" placeholder="0912345678" pattern="[0-9]{10}" minlength="2" title="เบอร์โทร 0-9" max="10" />
         </div>
       </div>
 

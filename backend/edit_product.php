@@ -88,12 +88,12 @@ $totalRows_prd = mysql_num_rows($prd);
       <form action="edit_product_db.php"  method="post" enctype="multipart/form-data" name="Add_Product" id="Add_Product" >
 
 
-        <table width="600" border="0" align="center" cellpadding="0" cellspacing="0">
+        <table width="599" border="0" align="center" cellpadding="0" cellspacing="0">
           <tr>
             <td colspan="3" align="center">&nbsp;</td>
           </tr>
           <tr>
-            <td width="129" align="right" valign="middle">ชื่อสินค้า :</td>
+            <td width="99" align="right" valign="middle">ชื่อสินค้า :</td>
             <td colspan="2"><label for="pro_name2"></label>
               <input name="p_name" type="text" required id="pro_name2" value="<?php echo $row_eprd['p_name']; ?>" size="50"/></td>
             </tr>
@@ -102,18 +102,35 @@ $totalRows_prd = mysql_num_rows($prd);
               <td colspan="2">&nbsp;</td>
             </tr>
             <tr>
-              <td width="129" align="right" valign="middle">จำนวนสินค้า :</td>
+              <td width="99" align="right" valign="middle">จำนวนสินค้า :</td>
               <td colspan="2"><label for="p_qty"></label>
-                <input name="p_qty" type="number" required id="p_qty" value="<?php echo $row_eprd['p_qty']; ?>" size="5"/></td>
+                <input name="p_qty" type="number" min"1" max"3" required id="p_qty" value="<?php echo $row_eprd['p_qty']; ?>" size="5"/></td>
               </tr>
+            <tr>
+              <td align="right" valign="middle">&nbsp;</td>
+              <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="right" valign="middle">หน่วยสินค้า</td>
+              <td colspan="2"><label for="pro_qty"></label>
+                :
+                <select name="p_unit" id="p_unit" required>
+                  <option value="<?php echo $row_eprd['p_unit'];?>"><?php echo $row_eprd['p_unit'];?></option>
+                  <option value="ชิ้น">ชิ้น</option>
+                  <option value="ใบ">ใบ</option>
+                  <option value="คู่">คู่</option>
+                  <option value="ตัว">ตัว</option>
+                </select></td>
+            </tr>
               <tr>
                 <td align="right" valign="middle">&nbsp;</td>
                 <td colspan="2">&nbsp;</td>
               </tr>
               <tr>
                 <td align="right" valign="middle">ราคาก่อนลด :</td>
-                <td width="2"><label for="promo"></label>
-                 <input name="promo" type="number" required id="promo" value="<?php echo $row_eprd['promo']; ?>" size="5"/></td>
+                <td width="501"><label for="promo"></label>
+                 <input name="promo" type="number" min"3" max"6" required id="promo" value="<?php echo $row_eprd['promo']; ?>" size="5"/>
+                 บาท</td>
                </tr>
 
                <tr>
@@ -122,8 +139,9 @@ $totalRows_prd = mysql_num_rows($prd);
               </tr>
               <tr>
                 <td align="right" valign="middle">ราคาหลังลด :</td>
-                <td width="2"><label for="p_price"></label>
-                 <input name="p_price" type="number" required id="p_price" value="<?php echo $row_eprd['p_price']; ?>" size="5"/></td>
+                <td width="501"><label for="p_price"></label>
+                 <input name="p_price" type="number" min"3" max"6" required id="p_price" value="<?php echo $row_eprd['p_price']; ?>" size="5"/>
+                 บาท</td>
                </tr>
 
                <tr>
@@ -131,7 +149,7 @@ $totalRows_prd = mysql_num_rows($prd);
                 <td colspan="2">&nbsp;</td>
               </tr>
               <tr>
-                <td width="129" align="right" valign="middle">ไซส์ :</td>
+                <td width="99" align="right" valign="middle">ไซส์ :</td>
                 <td colspan="2"><label for="p_size"></label>
                   <input name="p_size" type="text" required id="p_size" value="<?php echo $row_eprd['p_size']; ?>" size="5"/></td>
                 </tr>
@@ -140,9 +158,10 @@ $totalRows_prd = mysql_num_rows($prd);
                   <td colspan="2">&nbsp;</td>
                 </tr>
                 <tr>
-                  <td width="129" align="right" valign="middle">ค่าจัดส่ง :</td>
+                  <td width="99" align="right" valign="middle">ค่าจัดส่ง :</td>
                   <td colspan="2"><label for="p_ems"></label>
-                    <input name="p_ems" type="number" required id="p_ems" value="<?php echo $row_eprd['p_ems']; ?>" size="5"/></td>
+                    <input name="p_ems" type="number" required id="p_ems" value="<?php echo $row_eprd['p_ems']; ?>" size="5"/>
+                    บาท</td>
                   </tr>
                   <tr>
                     <td align="right" valign="middle">&nbsp;</td>
@@ -189,24 +208,7 @@ $totalRows_prd = mysql_num_rows($prd);
                   <td colspan="2">&nbsp;</td>
                 </tr>
 
-                <tr>
-                  <td align="right" valign="middle">&nbsp;</td>
-                  <td colspan="2">&nbsp;</td>
-                </tr>
-                <tr>
-                  <td align="right" valign="middle">หน่วยสินค้า</td>
-                  <td colspan="2"><label for="pro_qty"></label>
-                   :
-                   <select name="p_unit" id="p_unit" required>
-                    <option value="<?php echo $row_eprd['p_unit'];?>"><?php echo $row_eprd['p_unit'];?></option>
-                    <option value="ชิ้น">ชิ้น</option>
-                    <option value="ใบ">ใบ</option>
-                    <option value="คู่">คู่</option>
-                    <option value="ตัว">ตัว</option>
-
-                  </select></td>
-                </tr>
-                <tr>
+                                <tr>
                   <td align="right" valign="middle">&nbsp;</td>
                   <td colspan="2">&nbsp;</td>
                 </tr>
@@ -219,7 +221,7 @@ $totalRows_prd = mysql_num_rows($prd);
                   <td colspan="2"><img src="../pimg/<?php echo $row_eprd['p_img1']; ?>" width="100"></td>
                 </tr>
                 <tr>
-                  <td align="right" valign="middle">แก้รูปที่1 :</td>
+                  <td align="right" valign="middle">แก้ภาพที่1 :</td>
                   <td colspan="2"><label for="p_img1"></label>
                     <input name="p_img1" type="file"  class="bg-warning" id="p_img1" size="40" />
                     <input name="p_img11" type="hidden" id="p_img11" value="<?php echo $row_eprd['p_img1']; ?>">
@@ -238,7 +240,7 @@ $totalRows_prd = mysql_num_rows($prd);
                     <td colspan="2"><img src="../pimg/<?php echo $row_eprd['p_img2']; ?>" width="100"></td>
                   </tr>
                   <tr>
-                    <td align="right" valign="middle">แก้รูปที่2 :</td>
+                    <td align="right" valign="middle">แก้ภาพที่2 :</td>
                     <td colspan="2"><label for="p_img2"></label>
                       <input name="p_img2" type="file"  class="bg-warning" id="p_img2" size="40" />
                       <input name="p_img22" type="hidden" id="p_img22" value="<?php echo $row_eprd['p_img2']; ?>"></td>

@@ -10,7 +10,7 @@ function isAuthorized($strUsers, $strGroups, $UserName, $UserGroup) {
   // For security, start by assuming the visitor is NOT authorized. 
   $isValid = False; 
 
-  // When a visitor has logged into this site, the Session variable MM_Username set equal to their username. 
+  // When a visitor has logged into this site, the Session variable MM_Admin set equal to their username. 
   // Therefore, we know that a user is NOT logged in if that Session variable is blank. 
   if (!empty($UserName)) { 
     // Besides being logged in, you may restrict access to only certain users based on an ID established when they login. 
@@ -32,7 +32,7 @@ function isAuthorized($strUsers, $strGroups, $UserName, $UserGroup) {
 }
 
 $MM_restrictGoTo = "../login_admin.php";
-if (!((isset($_SESSION['MM_Username'])) && (isAuthorized("",$MM_authorizedUsers, $_SESSION['MM_Username'], $_SESSION['MM_UserGroup'])))) {   
+if (!((isset($_SESSION['MM_Admin'])) && (isAuthorized("",$MM_authorizedUsers, $_SESSION['MM_Admin'], $_SESSION['MM_AdminGroup'])))) {   
   $MM_qsChar = "?";
   $MM_referrer = $_SERVER['PHP_SELF'];
   if (strpos($MM_restrictGoTo, "?")) $MM_qsChar = "&";

@@ -33,13 +33,16 @@ foreach($_SESSION['shopping_cart'] as $p_id=>$p_qty)
 	$query3 =mysql_query($sql3,$condb  )or die ("Error in query : sql3 " . mysql_error());
 	$row3 = mysql_fetch_array($query3)or die(mysql_error());
 	$total = $row3['p_price'] * $p_qty;
-	$ems = $row3['p_ems'] * $p_qty;
-	$total += $ems;
+	$sumems = $total*15/100; 
+	$sumemsall +=$sumems;
+	$total += $sumemsall;
 	$tax = $total*0.07;
 	$total += $tax;
 	$count = mysql_num_rows($query3)or die(mysql_error());
 	$sql4 = "INSERT INTO tbl_order_detail VALUES(null , '$order_id','$p_id','$p_name','$p_qty','$total')";
 	$query4 = mysql_query($sql4,$condb  )or die ("Error in query : sql4 " . mysql_error());
+
+
 	$sqlpname ="UPDATE tbl_order_detail t2,
 	(
 	SELECT p_name , p_id FROM tbl_product

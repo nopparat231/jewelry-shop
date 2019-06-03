@@ -43,14 +43,14 @@ Body Section
 				<div class="control-group">
 					<label class="control-label" for="mem_name">ชื่อ : <sup>*</sup></label>
 					<div class="controls">
-						<input type="text" name="mem_name" required placeholder="ชื่อ - สกุล"  autocomplete="off" maxlength="250" minlength="3">
+						<input type="text" name="mem_name" required placeholder="ชื่อ"  autocomplete="off" maxlength="250" minlength="3">
 					</div>
 				</div>
 
 				<div class="control-group">
-					<label class="control-label" for="meml_name">สกุล : <sup>*</sup></label>
+					<label class="control-label" for="lastname">สกุล : <sup>*</sup></label>
 					<div class="controls">
-						<input type="text" name="meml_name" required placeholder="สกุล"  autocomplete="off" axlength="250" minlength="3">
+						<input type="text" name="lastname" required placeholder="สกุล"  autocomplete="off" axlength="250" minlength="3">
 					</div>
 				</div>
 
@@ -62,7 +62,7 @@ Body Section
 				<div class="control-group">
 					<label class="control-label" for="mem_tel">เบอร์ โทร : <sup>*</sup></label>
 					<div class="controls">
-						<input type="textarea" name="mem_tel" required placeholder="0912345678" pattern="[0-9]{10}" minlength="2" title="เบอร์โทร 0-9" maxlength="10"  autocomplete="off">
+						<input type="number" name="mem_tel" required placeholder="0912345678" pattern="[0-9]{10}" minlength="2" title="เบอร์โทร 0-9" maxlength="10"  autocomplete="off">
 					</div>
 				</div>
 				<div class="control-group">

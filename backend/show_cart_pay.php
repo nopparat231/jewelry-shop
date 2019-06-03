@@ -29,8 +29,8 @@ if (!function_exists("GetSQLValueString")) {
 	}
 }
 $colname_mm = "-1";
-if (isset($_SESSION['MM_Username'])) {
-	$colname_mm = $_SESSION['MM_Username'];
+if (isset($_SESSION['MM_Admin'])) {
+	$colname_mm = $_SESSION['MM_Admin'];
 }
 // echo $colname_mm;
 mysql_select_db($database_condb);

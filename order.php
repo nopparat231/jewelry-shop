@@ -66,9 +66,9 @@ Body Section
 
             <th>ราคาต่อหน่วย</th>
             <th>ขนาด </th>
-            <th>คาจัดส่ง</th>
+            
             <th>จำนวน </th>
-
+            <th>คาจัดส่ง</th>
             <th>ราคารวม</th>
 
           </tr>
@@ -90,11 +90,13 @@ Body Section
                 $totalp += $sum;
                 $total += $sum;
 
-                $ems = $row['p_ems'] * $p_qty;
-                $total += $ems;
+                // $ems = $row['p_ems'] * $p_qty;
+                // $total += $ems;
 
-                $sumems +=$ems;
-
+                // $sumems +=$ems;
+                $sumems = $total*15/100; 
+                $total += $sumems;
+                $sumemsall +=$sumems;
 
 
                 ?>
@@ -103,10 +105,11 @@ Body Section
                   <td><?php echo $row['p_name'];?></td>
                   <td><?php echo number_format($row['p_price'],2); ?></td>
                   <td><?php echo $row['p_size']; ?></td>
-                  <td><?php echo $row['p_ems']; ?></td>
+                  
                   <td>
                    <?php echo $p_qty; ?>
                  </td>
+                 <td><?php echo number_format($sumems,2); ?></td>
                  <td><?php echo number_format($sum,2); ?></td>
                </tr>
 
@@ -115,7 +118,7 @@ Body Section
              $tax = $total * 0.07;
              $total += $tax;
 
-              ?>
+             ?>
 
              <tr>
               <td colspan="5" class="alignR">ราคาสินค้า:  </td>
@@ -123,7 +126,7 @@ Body Section
             </tr>
             <tr>
               <td colspan="5" class="alignR">ค่าจัดส่ง  </td>
-              <td> <?php echo number_format($sumems,2); ?></td>
+              <td> <?php echo number_format($sumemsall,2); ?></td>
             </tr>
             <tr>
               <td colspan="5" class="alignR">ภาษ๊ 7%  </td>

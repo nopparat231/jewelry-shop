@@ -20,17 +20,23 @@ $check = "SELECT * FROM tbl_member WHERE mem_username = '$mem_username'";
 $result = mysql_query($check,$condb);
 $num = mysql_num_rows($result);
 
-
+$checkemail = "SELECT * FROM tbl_member WHERE mem_email = '$mem_email' ";
+$resultemail = mysql_query($checkemail,$condb);
+$numemail = mysql_num_rows($resultemail);
 if ($num > 0 ){
 	echo"<script>";
-	echo"alert('User นี้มีผู้ใช้แล้ว กรุณาลองใหม่อีกครั้ง'",$mem_username;");";
-	echo $user;
-	echo"window.location = 'register.php';";
-	echo"</script>";	
+	echo"alert('ชื่อผู้ใช้ นี้มีผู้ใช้แล้ว กรุณาลองใหม่อีกครั้ง');";
+	echo"window.location = 'index.php';";
+	echo"</script>";
 	
+}elseif ($numemail > 0 ){
+	echo"<script>";
+	echo"alert('Email นี้มีผู้ใช้แล้ว กรุณาลองใหม่อีกครั้ง');";
+	echo"window.location = 'index.php';";
+	echo"</script>";
 }else{
 
-$sql ="INSERT INTO tbl_member (mem_username , mem_password , mem_name , mem_email ,  mem_tel , mem_address , status ,sid , active ) VALUES ('$mem_username' , '$mem_password' ,'$mem_name','$mem_email','$mem_tel','$mem_address' ,'$user' ,'$session_id','$no' )";
+$sql ="INSERT INTO tbl_member (mem_username , mem_password , mem_name , meml_name , mem_email ,  mem_tel , mem_address , status ,sid , active ) VALUES ('$mem_username' , '$mem_password' ,'$mem_name','$mem_email','$mem_tel','$mem_address' ,'$user' ,'$session_id','$no' )";
 
 $result1 = mysql_query($sql,$condb) or die ("Error in query : $sql" .mysql_error());
 
@@ -48,8 +54,8 @@ $result1 = mysql_query($sql,$condb) or die ("Error in query : $sql" .mysql_error
 		$strMessage .= "=================================<br>";
 		$strMessage .= "<br>";
 
-		$flgSend = mail($strTo,$strSubject,$strMessage,$strHeader); 
-	
+		$flgSend = mail($strTo,$strSubject,$strMessage,$strHeader);
+
 }
 
 mysql_close();
@@ -57,7 +63,7 @@ if($result1){
 	echo"<script>";
 	echo"alert('สมัครสมาชิกเรียบร้อยแล้ว กรุณายืนยันที่ E-mail !');";
 	echo"window.location = 'index.php';";
-	echo"</script>";	
+	echo"</script>";
 }else{
 	echo"<script>";
 	echo"alert('สมัครสมาชิกไม่สำเร็จ!' );";

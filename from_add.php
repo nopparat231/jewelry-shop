@@ -1,6 +1,6 @@
 
 <div class="control-group">
-	
+
 	<label class="control-label" for="mem_address">ที่อยู่ : <sup>*</sup></label>
 	<div class="controls">
 
@@ -20,7 +20,7 @@
 
 
 <div class="control-group">
-	
+
 	<label class="control-label" for="mem_address">เขต/อำเภอ : <sup>*</sup></label>
 	<div class="controls">
 
@@ -32,7 +32,7 @@
 
 
 <div class="control-group">
-	<label class="control-label" for="mem_address">จังหวัด : <sup>*</sup></label>
+	<label class="control-label" for="proince">จังหวัด : <sup>*</sup></label>
 	<div class="controls">
 
 
@@ -42,8 +42,8 @@
 </div>
 
 <div class="control-group">
-	
-	<label class="control-label" for="mem_address">รหัสไปรษณีย์ : <sup>*</sup></label>
+
+	<label class="control-label" for="proince">รหัสไปรษณีย์ : <sup>*</sup></label>
 	<div class="controls" >
 
 		<input type="text" id="zipcode" name="p" class="form-control" required autocomplete="off" placeholder="รหัสไปรษณีย์">

@@ -2,7 +2,7 @@
 <?php
 
 if (!function_exists("GetSQLValueString")) {
-  function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+  function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
   {
     if (PHP_VERSION < 6) {
       $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
@@ -13,7 +13,7 @@ if (!function_exists("GetSQLValueString")) {
     switch ($theType) {
       case "text":
       $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
+      break;
       case "long":
       case "int":
       $theValue = ($theValue != "") ? intval($theValue) : "NULL";
@@ -83,7 +83,7 @@ $totalRows_editmem = mysql_num_rows($editmem);
       <div class="control-group">
         <label class="control-label" for="mem_address">ที่อยู่ : <sup>*</sup></label>
         <div class="controls">
-          <textarea type="textarea" name="mem_address" required placeholder="ที่อยู่"><?php echo $row_editmem['mem_address']; ?> </textarea> 
+          <textarea type="textarea" name="mem_address" required placeholder="ที่อยู่"><?php echo $row_editmem['mem_address']; ?> </textarea>
         </div>
       </div>
       <div class="control-group">
@@ -93,11 +93,11 @@ $totalRows_editmem = mysql_num_rows($editmem);
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label" for="inputEmail">Email <sup>*</sup></label>
+        <label class="control-label" for="inputEmail">อีเมล <sup>*</sup></label>
         <div class="controls">
           <input type="text" name="mem_email" required placeholder="Email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="กรุณากรอก Email ให้ถูกต้อง" minlength="10"  value="<?php echo $row_editmem['mem_email']; ?>" >
         </div>
-      </div>    
+      </div>
       <div class="control-group">
         <div class="controls">
          <input type="submit" name="submitAccount" value="แก้ไข" class="exclusive shopBtn">
@@ -125,4 +125,3 @@ mysql_free_result($editmem);
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-

@@ -1,6 +1,7 @@
 <br>
 <br>
 <br>
+<div style="position: fixed;width: 500px">
 <?php include('mm.php');?>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="glyphicon glyphicon-user"> </b>&nbsp;<b>ผูู้ใช้ระบบ : <?php echo $row_mm['admin_name'];?></b>
 <br>
@@ -10,18 +11,18 @@
 
 			<?php if ($row_mm['status'] === 'superadmin') { ?>
 
-				<li><a href="report_all_prd.php">รายงานสินค้าทั้งหมด <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>
+				<li><a href="report_all_prd.php">รายงานสินค้าคงคลัง <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>
 				<li><a href="report_all_order.php">รายงานการสั่งซื้อ <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>
-				
-						
-				
+ 			<li><a href="list_member1.php">จัดการสมาชิค <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-user"></span></a></li>
+
+
 				<li><a href="report_all_type.php">รายงานประเภทสินค้า <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>
 				<li><a href="report_all_bank.php">รายงานธนาคาร <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>
-				
-				
 
 
-				<li><a href="../logout.php" >ออกจากระบบ <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-log-in"></span></a></li>
+
+
+				<li><a href="../logout_admin.php" >ออกจากระบบ <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-log-in"></span></a></li>
 			<?php }elseif ($row_mm['status'] === 'admin') { ?>
 			<!--	<li><a href="index.php" >รายการสั่งซื้อ<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-list-alt"></span></a></li>
 				<li><a href="list_product.php">จัดการสินค้า <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>
@@ -34,24 +35,25 @@
 
 				<li><a href="carousel.php">แก้ไขรูปสไลด์ <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-picture"></span></a></li>-->
 
-				<li><a href="../logout.php"><font style="color: #CD8373">ออกจากระบบ</font>  <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-log-in"></span></a></li>
+				<li><a href="../logout_admin.php"><font style="color: #CD8373">ออกจากระบบ</font>  <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-log-in"></span></a></li>
 
 			<?php }elseif ($row_mm['status'] === 'staff') { ?>
 				<li><a href="index.php" >รายการสั่งซื้อ<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-list-alt"></span></a></li>
-				<li><a href="list_product.php">จัดการสินค้า <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>
+				<li><a href="add_product1.php">รับสินค้า <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>
+				<li><a href="list_product.php">สินค้าคงคลัง <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>
 				<li><a href="list_product_type.php">จัดการประเภทสินค้า <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>
 				<!--<li><a href="list_admin.php" >จัดการผู้ดูแลระบบ <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-user"></span></a></li>
 				<li><a href="list_member.php">จัดการสมาชิค <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-user"></span></a></li>-->
 
-				<li><a href="list_bank.php">จัดการข้อมูลธนาคาร <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-xbt"></span></a></li>
+				<li><a href="list_bank.php">จัดการบัญชีธนาคาร <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-xbt"></span></a></li>
 
 
 				<li><a href="carousel.php">แก้ไขรูปสไลด์ <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-picture"></span></a></li>
 
-				<li><a href="../logout.php"><font style="color: #CD8373">ออกจากระบบ</font>  <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-log-in"></span></a></li>
+				<li><a href="../logout_admin.php"><font style="color: #CD8373">ออกจากระบบ</font>  <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-log-in"></span></a></li>
 
 			<?php }?>
-            
+
 		</ul>
 	</div>
 </nav>
@@ -179,3 +181,4 @@ section{
 
 
 </style>
+</div>

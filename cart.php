@@ -26,9 +26,9 @@ Body Section
 
             <th>ราคาต่อหน่วย</th>
             <th>ขนาด </th>
-            <th>ค่าจัดส่ง</th>
-            <th>จำนวนสินค้า </th>
 
+            <th>จำนวนสินค้า </th>
+            <th>ค่าจัดส่ง</th>
             <th>ราคา</th>
           </tr>
         </thead>
@@ -51,10 +51,12 @@ Body Section
               $totalp += $sum;
               $total += $sum;
 
-              $ems = $rowc['p_ems'] * $p_qty;
-              $total += $ems;
+              //$ems = $rowc['p_ems'] * $p_qty;
+              $sumems = $total*15/100; 
+              $total += $sumems;
+              $sumemsall +=$sumems;
 
-              $sumems +=$ems;
+              //$sumems +=$ems;
               ?>
 
 
@@ -65,7 +67,7 @@ Body Section
 
                   <td><?php echo number_format($rowc['p_price'],2); ?></td>
                   <td><?php echo $rowc['p_size']; ?></td>
-                  <td><?php echo $rowc['p_ems']; ?></td>
+
                   <td>
 
                    <div class="input-append">
@@ -80,40 +82,47 @@ Body Section
                         <a class="btn" type="button" disabled="disabled" style="max-width:20px" href="#" >+</a>
                       <?php }else{ ?>
                        <a class="btn" type="button" style="max-width:20px" href="cart.php?p_id=<?php echo $rowc['p_id'];?>&act=add" >+</a>
+                       <td>
 
-                       <?php
-                     }
-
-
-                     ?>
-
-
-                     <button class="btn btn-danger" type="button"><a href="cart.php?p_id=<?php echo $p_id; ?>&act=remove"><span class="icon-remove"></span></a></button>
-
-                   </div>
-                 </td>
-                 <td><?php echo number_format($sum,2); ?></td>
-               </tr>
+                        <?php 
+                        echo number_format($sumems,2);
+                        ?>
 
 
-             <?php }
+                      </td>
+                      <?php
+                    }
 
 
-             $tax = $total * 0.07;
-             $total += $tax;
+                    ?>
 
 
-             ?>
+                    <button class="btn btn-danger" type="button"><a href="cart.php?p_id=<?php echo $p_id; ?>&act=remove"><span class="icon-remove"></span></a></button>
+
+                  </div>
+                </td>
+                <td><?php echo number_format($sum,2); ?></td>
+              </tr>
+
+
+            <?php }
+
+
+            $tax = $total * 0.07;
+            $total += $tax;
+
+
+            ?>
 
 
 
-             <tr>
+            <tr>
               <td colspan="6" class="alignR">ราคาสินค้า:  </td>
               <td ><?php echo number_format($totalp,2); ?></td>
             </tr>
             <tr>
               <td colspan="6" class="alignR">ค่าจัดส่ง	</td>
-              <td> <?php echo number_format($sumems,2); ?></td>
+              <td> <?php echo number_format($sumemsall,2); ?></td>
             </tr>
             <tr>
               <td colspan="6" class="alignR">ภาษี 9%  </td>
