@@ -1,34 +1,34 @@
 <?php require_once('../Connections/condb.php'); ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
-{
-  if (PHP_VERSION < 6) {
-    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-  }
+  function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
+  {
+    if (PHP_VERSION < 6) {
+      $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+    }
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+    $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
 
-  switch ($theType) {
-    case "text":
+    switch ($theType) {
+      case "text":
       $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
       break;
-    case "long":
-    case "int":
+      case "long":
+      case "int":
       $theValue = ($theValue != "") ? intval($theValue) : "NULL";
       break;
-    case "double":
+      case "double":
       $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
       break;
-    case "date":
+      case "date":
       $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
       break;
-    case "defined":
+      case "defined":
       $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
       break;
+    }
+    return $theValue;
   }
-  return $theValue;
-}
 }
 
 mysql_select_db($database_condb);
@@ -43,18 +43,18 @@ $totalRows_prd = mysql_num_rows($prd);
 <?php include('access.php');?>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<?php include('h.php');?>
-    <?php include('datatable.php');?>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <?php include('h.php');?>
+  <?php include('datatable.php');?>
 
 
-  </head>
-  <body>
-    <?php include('navbar.php');?>
-    <?php include('menu.php');?>
+</head>
+<body>
+  <?php include('navbar.php');?>
+  <?php include('menu.php');?>
   <div class="container">
 
 
@@ -63,9 +63,9 @@ $totalRows_prd = mysql_num_rows($prd);
       <div class="col-md-10">
         <h3 align="center"> รายการสินค้า </h3>
         <div class="table">
-           <table width="100%" border="1" cellspacing="0" class="display" id="example">
-		<thead>
-         <tr>
+         <table width="100%" border="1" cellspacing="0" class="display" id="example">
+          <thead>
+           <tr>
             <th width="5%">รหัส</th>
             <th width="10%">ประเภท</th>
             <th width="40%">รายละเอียด</th>
@@ -77,8 +77,8 @@ $totalRows_prd = mysql_num_rows($prd);
             <th>แก้ไข</th>
             <th>ลบ</th>
           </tr>
-          </thead>
-          <?php if($totalRows_prd>0){?>
+        </thead>
+        <?php if($totalRows_prd>0){?>
           <?php do { ?>
             <tr>
               <td align="center" valign="top"><?php echo $row_prd['p_id']; ?></td>
@@ -86,36 +86,36 @@ $totalRows_prd = mysql_num_rows($prd);
               <td valign="top"><b> <?php echo $row_prd['p_name']; ?>
 
               <a href="product_detail.php?p_id=<?php echo $row_prd['p_id'];?>&t_id=<?php echo $row_prd['t_id'];?>&act=edit" class="btn btn-info btn-xs" target="_blank"> รายละเอียด </a>
-              </b>
-              <br>ตัวแทนจำหน่าย : 
-              <?php echo $row_prd['p_sell']; ?>
-               </td>
-              <td align="right" valign="top"><?php echo number_format($row_prd['p_price'],2); ?></td>
-              <td align="center" valign="top">
-        <?php echo $row_prd['p_qty']; ?>
+            </b>
+            <br>ตัวแทนจำหน่าย : 
+            <?php echo $row_prd['p_sell']; ?>
+          </td>
+          <td align="right" valign="top"><?php echo number_format($row_prd['p_price'],2); ?></td>
+          <td align="center" valign="top">
+            <?php echo $row_prd['p_qty']; ?>
 
-              <?php echo $row_prd['p_unit'];?>
-              </td>
-              <td align="center" valign="top">
-                <?php echo $row_prd['p_size'];?>
-              </td>
-               <td align="center" valign="top">
-                <?php echo $row_prd['p_ems'];?>
-              </td>
-              <td><img src="../pimg/<?php echo $row_prd['p_img1'];?>" width="100px"></td>
-              <td><center>
-              <a href="edit_product.php?p_id=<?php echo $row_prd['p_id'];?>&t_id=<?php echo $row_prd['t_id'];?>&act=edit" class="btn btn-warning btn-xs">
-              แก้ไข </a>
-              </center></td>
-              <td><center> <a href="del_product.php?p_id=<?php echo $row_prd['p_id'];?>" class="btn btn-danger btn-xs" onClick="return confirm('ยืนยันการลบ');"> ลบ </a> </center></td>
-            </tr>
-            <?php } while ($row_prd = mysql_fetch_assoc($prd)); ?>
-            <?php } ?>
-        </table>
-      </div>
-    </div>
- </div>
-  </body>
+            <?php echo $row_prd['p_unit'];?>
+          </td>
+          <td align="center" valign="top">
+            <?php echo $row_prd['p_size'];?>
+          </td>
+          <td align="center" valign="top">
+            <?php echo $row_prd['p_ems'];?>
+          </td>
+          <td><img src="../pimg/<?php echo $row_prd['p_img1'];?>" width="100px"></td>
+          <td><center>
+            <a href="edit_product.php?p_id=<?php echo $row_prd['p_id'];?>&t_id=<?php echo $row_prd['t_id'];?>&act=edit" class="btn btn-warning btn-xs">
+            แก้ไข </a>
+          </center></td>
+          <td><center> <a href="del_product.php?p_id=<?php echo $row_prd['p_id'];?>" class="btn btn-danger btn-xs" onClick="return confirm('ยืนยันการลบ');"> ลบ </a> </center></td>
+        </tr>
+      <?php } while ($row_prd = mysql_fetch_assoc($prd)); ?>
+    <?php } ?>
+  </table>
+</div>
+</div>
+</div>
+</body>
 </html>
 <?php
 mysql_free_result($prd);
